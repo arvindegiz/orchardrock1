@@ -1,0 +1,199 @@
+2023-04-04T07:23:01+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\plugins.php(605): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
+2023-04-04T07:23:17+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\plugins.php(605): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
+2023-04-04T07:23:21+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\plugins.php(605): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
+2023-04-04T07:23:28+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\plugins.php(605): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
+2023-04-04T07:23:37+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\plugins.php(605): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
+2023-04-04T07:23:42+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\about.php(18): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
+2023-04-04T07:23:58+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\plugins.php(605): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
+2023-04-04T07:24:05+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\plugin-install.php(136): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
+2023-04-04T07:26:39+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\about.php(18): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
+2023-04-04T07:26:58+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\themes.php(246): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
+2023-04-04T07:27:06+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\plugins.php(605): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
+2023-04-04T07:27:41+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\plugins.php(605): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
+2023-04-04T07:30:07+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\themes.php(246): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
+2023-04-04T07:30:15+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\admin.php(239): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\orchardrock1\wp-admin\themes.php(10): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
+2023-04-04T07:30:22+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\themes.php(246): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
+2023-04-04T07:30:29+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\index.php(137): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
+2023-04-04T07:30:34+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\admin.php(239): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
+2023-04-04T07:30:41+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\plugins.php(605): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
+2023-04-04T07:30:46+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\plugin-editor.php(155): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
+2023-04-04T07:30:51+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\plugin-install.php(136): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
+2023-04-04T07:34:03+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\about.php(18): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
+2023-04-04T07:34:48+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "wooproducttablesProInstallBaseMsg" not found or invalid function name in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-admin\admin-header.php(303): do_action('admin_notices')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\plugins.php(605): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308
+
