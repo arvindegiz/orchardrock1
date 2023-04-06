@@ -1,3 +1,0 @@
-<div class="wtbpPopupOptRow">
-	
-</span>
