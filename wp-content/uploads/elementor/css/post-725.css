@@ -1,71 +1,8 @@
-.elementor-725 .elementor-element.elementor-element-76bf446{text-align:center;}.elementor-725 .elementor-element.elementor-element-76bf446 .elementor-heading-title{color:#000000;font-family:"Myriad Pro", Sans-serif;font-weight:600;}/* Start Custom Fonts CSS */@font-face {
-	font-family: 'Myriad Pro';
-	font-style: normal;
-	font-weight: normal;
-	font-display: auto;
-	src: url('http://localhost/orchardrock1/wp-content/uploads/2023/03/MYRIADPRO-SEMIBOLDIT.woff') format('woff');
-}
-@font-face {
-	font-family: 'Myriad Pro';
-	font-style: normal;
-	font-weight: normal;
-	font-display: auto;
-	src: url('http://localhost/orchardrock1/wp-content/uploads/2023/03/MYRIADPRO-SEMIBOLD.woff') format('woff');
-}
-@font-face {
-	font-family: 'Myriad Pro';
-	font-style: normal;
-	font-weight: normal;
-	font-display: auto;
-	src: url('http://localhost/orchardrock1/wp-content/uploads/2023/03/MYRIADPRO-REGULAR.woff') format('woff');
-}
-@font-face {
-	font-family: 'Myriad Pro';
+.elementor-725 .elementor-element.elementor-element-ebd33af > .elementor-container{max-width:945px;}.elementor-725 .elementor-element.elementor-element-76bf446{text-align:left;}.elementor-725 .elementor-element.elementor-element-76bf446 .elementor-heading-title{color:#000000;font-family:"Myriad Pro Light", Sans-serif;font-weight:600;}.elementor-725 .elementor-element.elementor-element-5a4f3d7 > .elementor-container{max-width:945px;}/* Start Custom Fonts CSS */@font-face {
+	font-family: 'Myriad Pro Light';
 	font-style: normal;
 	font-weight: normal;
 	font-display: auto;
 	src: url('http://localhost/orchardrock1/wp-content/uploads/2023/03/MyriadPro-Light.woff') format('woff');
-}
-@font-face {
-	font-family: 'Myriad Pro';
-	font-style: normal;
-	font-weight: normal;
-	font-display: auto;
-	src: url('http://localhost/orchardrock1/wp-content/uploads/2023/03/MYRIADPRO-CONDIT.woff') format('woff');
-}
-@font-face {
-	font-family: 'Myriad Pro';
-	font-style: normal;
-	font-weight: normal;
-	font-display: auto;
-	src: url('http://localhost/orchardrock1/wp-content/uploads/2023/03/MYRIADPRO-COND.woff') format('woff');
-}
-@font-face {
-	font-family: 'Myriad Pro';
-	font-style: normal;
-	font-weight: normal;
-	font-display: auto;
-	src: url('http://localhost/orchardrock1/wp-content/uploads/2023/03/MYRIADPRO-BOLDIT.woff') format('woff');
-}
-@font-face {
-	font-family: 'Myriad Pro';
-	font-style: normal;
-	font-weight: normal;
-	font-display: auto;
-	src: url('http://localhost/orchardrock1/wp-content/uploads/2023/03/MYRIADPRO-BOLDCONDIT.woff') format('woff');
-}
-@font-face {
-	font-family: 'Myriad Pro';
-	font-style: normal;
-	font-weight: normal;
-	font-display: auto;
-	src: url('http://localhost/orchardrock1/wp-content/uploads/2023/03/MYRIADPRO-BOLDCOND.woff') format('woff');
-}
-@font-face {
-	font-family: 'Myriad Pro';
-	font-style: normal;
-	font-weight: normal;
-	font-display: auto;
-	src: url('http://localhost/orchardrock1/wp-content/uploads/2023/03/MYRIADPRO-BOLD.woff') format('woff');
 }
 /* End Custom Fonts CSS */
