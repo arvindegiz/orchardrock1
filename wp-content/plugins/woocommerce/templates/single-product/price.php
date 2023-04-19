@@ -21,5 +21,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product;
 
+$course_date = get_post_meta( get_the_ID(), 'course_date', true );
+$timestamp = strtotime($course_date);
+$new_course_date = date('M d, Y');
+
+
 ?>
 <p class="<?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?>"><?php echo $product->get_price_html(); ?></p>
+
+<p class="">Course Date: <?php echo $new_course_date; ?></p>
+<p class="">Course Duration: <?php echo get_post_meta( get_the_ID(), 'course_duration', true ); ?> <i class="fa fa-clock-o" aria-hidden="true"></i></p>
+
+
