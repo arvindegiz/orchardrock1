@@ -37,6 +37,14 @@ function woocommerce_product_custom_fields()
             'label' => __('Course Duration', 'woocommerce'),
         )
     );
+    // Custom Product Text Field for venue
+   woocommerce_wp_text_input(
+        array(
+            'id' => 'course_venue',
+            'placeholder' => 'Enter course venue',
+            'label' => __('Course Venue', 'woocommerce'),
+        )
+    );
     
     echo '</div>';
 }
@@ -44,17 +52,22 @@ function woocommerce_product_custom_fields()
 
 function woocommerce_product_custom_fields_save($post_id)
 {
-    // Custom Product Text Field
+    // Custom Product Text Field course date
     $course_date_field = $_POST['course_date'];
     if (!empty($course_date_field))
         update_post_meta($post_id, 'course_date', esc_attr($course_date_field));
 
     
-// Custom Product Number Field
+// Custom Product Number Field Duration
     $course_duration_field = $_POST['course_duration'];
     if (!empty($course_duration_field))
         update_post_meta($post_id, 'course_duration', esc_attr($course_duration_field));
 
+
+    $course_venue_field = $_POST['course_venue'];
+    if (!empty($course_venue_field))
+        update_post_meta($post_id, 'course_venue', esc_attr($course_venue_field));
 }
 
+ 
 ?>

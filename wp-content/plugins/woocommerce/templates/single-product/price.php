@@ -31,5 +31,6 @@ $new_course_date = date('M d, Y');
 
 <p class="">Course Date: <?php echo $new_course_date; ?></p>
 <p class="">Course Duration: <?php echo get_post_meta( get_the_ID(), 'course_duration', true ); ?> <i class="fa fa-clock-o" aria-hidden="true"></i></p>
+<p class="">Course Venue: <?php echo get_post_meta( get_the_ID(), 'course_venue', true ); ?> </p>
 
 
