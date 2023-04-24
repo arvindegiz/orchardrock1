@@ -62,7 +62,7 @@
     
 </div>
 
-<?php 
+<?php  
 
 	if ( ( bazaarlite_postmeta('wip_bottom_sidebar') ) && ( bazaarlite_postmeta('wip_bottom_sidebar') <> "none" ) ):
 	

@@ -85,6 +85,8 @@ if ( woocommerce_product_loop() ) {
 	 * @hooked woocommerce_pagination - 10
 	 */
 	do_action( 'woocommerce_after_shop_loop' );
+
+ 	
 } else {
 	/**
 	 * Hook: woocommerce_no_products_found.
@@ -107,3 +109,6 @@ do_action( 'woocommerce_after_main_content' );
  * @hooked woocommerce_get_sidebar - 10
  */
 get_footer( 'shop' );
+?>
+
+

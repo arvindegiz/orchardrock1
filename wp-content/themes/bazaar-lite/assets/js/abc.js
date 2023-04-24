@@ -7303,9 +7303,11 @@ jQuery(function($){
   $('.wcpt').each(init_instant_search);
   $('body').on('wcpt_after_every_load', '.wcpt', init_instant_search);
 
+
+
   // -- search logic
-  $('body').on('keyup input', '#product_search, .wcpt-instant-search .wcpt-search-input', function(e){
-      
+  $('body').on('click', '#search_venue', function(e){
+      alert("test")
     var $this = $(this),
         val = $this.val().toLowerCase().trim(),
         $wcpt = $this.closest('.wcpt'),
