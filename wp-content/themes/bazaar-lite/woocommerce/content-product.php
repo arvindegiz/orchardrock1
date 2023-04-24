@@ -25,7 +25,40 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 ?>
 
-<article <?php wc_product_class( 'product-container masonry-element col-md-4', $product); ?>>
+<!-- 
+<table>
+    <thead>
+        <tr>
+            <td>Image</td>
+            <td>Date</td>
+            <td>Name</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <td><div class="product-thumbnail">
+        
+        <?php echo woocommerce_get_product_thumbnail(); ?>
+        
+    </div></td>
+            <td>Date</td>
+            <td> <div class="product-content">
+    
+        <?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
+        
+            <?php do_action( 'woocommerce_before_shop_loop_item_title' ); ?>
+        
+            <h3 class="product-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                
+            <?php do_action( 'woocommerce_after_shop_loop_item_title' ); ?>
+        
+        <?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
+    
+    </div></td>
+    </tbody>
+</table> -->
+
+<article <?php wc_product_class( 'product-container masonry-element col-md-4 product-listing-block', $product); ?>>
 
 	<div class="product-thumbnail">
         
