@@ -102,6 +102,10 @@ function skyverge_add_postmeta_ordering_args( $sort_args ) {
 add_filter( 'woocommerce_get_catalog_ordering_args', 'skyverge_add_postmeta_ordering_args' );
 
 
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 50, 50, true ); // Normal post thumbnails
+add_image_size( 'small_thumbnail', 50, 100, true);
+
 // Add these new sorting arguments to the sortby options on the frontend
 function skyverge_add_new_postmeta_orderby( $sortby ) {
     

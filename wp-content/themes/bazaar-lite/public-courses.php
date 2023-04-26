@@ -1,53 +1,54 @@
 <?php 
 /* Template name: Public Courses Page */
 
-	get_header(); ?>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
- 
-	<!-- link bootstrap 5 -->
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	get_header(); 
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args = array(  
+        'post_type' => 'product',
+        'post_status' => 'publish',
+        'paged' => $paged, 
+        'posts_per_page' => 10
+    );
 
+    $loop = new WP_Query($args);
+   
+	?>
 
-
- <!-- <div class="container">
- 	<input type="text" value="" name="product_search" id="product_search" placeholder="Search Venue" /><button type="button" id="search_venue">Search</button>
- </div>
-	 -->
-
+	 
 
 
 <div class="container">
-	<div>
-		<h1 class="course_heading">Search Public Courses</h1>
+	<div class="course_heading my-5">
+		<h1 class="fw-bold">Search Public Courses</h1>
 	</div>
-	<div class="row searching_public_course">
-		<div class="col-md-2 course_srarch">
-			<input type="text" value="" name="product_search" id="product_search" placeholder="Search..." />
-			<button class="btn btn-info"><i class="fa fa-search" aria-hidden="true"></i></button>
+	<div class="row search_course my-5">
+		<div class="col-md-3 my-2 input_box">
+			<input class="form-control col-md-10" type="search" placeholder="Search Course"> 
+			<button class="text-white btn btn-info col-md-2"><i class="fa fa-search" aria-hidden="true"></i></button>
 		</div>
-		<div class="col-md-2 custom-control">
-			<select class="form-control">
-					<option value="volvo">Select</option>
+		<div class="col-md-3 my-2">
+			<select class="form-control" style="width:100% !important">
+					<option value="volvo">Select Venue</option>
 					<option value="volvo">Mohali</option>
 					<option value="saab">Ambala</option>
 					<option value="mercedes">Punjab</option>
 					<option value="audi">Chandigarh</option>
 			</select>
 		</div>
-		<div class="col-md-3 search_course_date">
-			<input type="date" id="" name="" class="form-control custom_date_piker">
-			<button class="btn btn-info"><i class="fa fa-search" aria-hidden="true"></i></button>
-		</div>
-		<div class="col-md-2">
-			<select class="form-control">
-					<option value="volvo">Sort by Popularity</option>
-					<option value="volvo">Sort by Rating</option>
-					<option value="saab">Sort by Price low to high</option>
-					<option value="mercedes">Sort by Price high to low</option>
-					<option value="audi">Sort by Name A - Z</option>
-					<option value="audi">Sort by Name Z - A</option>
-					<option value="audi">Sort by Date</option>
+		<div class="col-md-3 my-2">
+			<select class="form-control" style="width:100% !important">
+					<option value="">Sort by Popularity</option>
+					<option value="">Sort by Rating</option>
+					<option value="">Sort by Price low to high</option>
+					<option value="">Sort by Price high to low</option>
+					<option value="">Sort by Name A - Z</option>
+					<option value="">Sort by Name Z - A</option>
+					<option value="">Sort by Date</option>
 			</select>
+		</div>
+		<div class="col-md-3 my-2 d-flex input_box">
+			<input type="date" id="" name="" class="form-control col-md-10">
+			<button class="text-white btn btn-info col-md-2"><i class="fa fa-search" aria-hidden="true"></i></button>
 		</div>
 
 	</div>
@@ -57,81 +58,102 @@
 				<table class="table table-striped table-bordered"style="font-family:'Myriad Pro Light', Sans-serif;">
 					<thead>
 						<tr>
-							<th class="fw-bold" scope="col">Image</th>
-							<th class="fw-bold" scope="col">Name</th>
-							<th class="fw-bold" scope="col">Description</th>
-							<th class="fw-bold" scope="col">Venue</th>
+							<th class="fw-bold align-middle" scope="col">Image</th>
+							<th class="fw-bold align-middle" scope="col">Name</th>
+							<th class="fw-bold align-middle" scope="col">Description</th>
+							<th class="fw-bold align-middle" scope="col">Venue</th>
 							<th class="fw-bold" scope="col">Course Date</th>
 							<th class="fw-bold" scope="col">Course Duration</th>
-							<th class="fw-bold" scope="col">Price</th>
-							<th class="fw-bold" scope="col">BooK Now</th>
+							<th class="fw-bold align-middle" scope="col">Price</th>
+							<th class="fw-bold" scope="col">Book Now</th>
 						</tr>
 					</thead>
 					<tbody>
-					<tr>
-						<th scope="row"></th>
-						<td>MCA and DoLS</td>
-						<td>This course is aimed at people caring for individuals who… </td>
-						<td>Mohali</td>
-						<td>21 April,2023</td>
-						<td>3 Hrs</td>
-						<td>$ 1.0</td>
-						<td><button type="button" class="btn btn-info">BOOK</button></td>
+						<?php 
+						while ( $loop->have_posts() ) : $loop->the_post(); 
+						 ?>
+						
+						<tr>
+						<td><?php the_post_thumbnail("small_thumbnail"); ?></td>
+						<td><?php the_title(); ?></td>
+						<td><?php the_excerpt(); ?></td>
+						<td><?php echo get_post_meta(get_the_ID(), 'course_venue', true); ?></td>
+						<td><?php echo get_post_meta(get_the_ID(), 'course_date', true); ?></td>
+						<td><?php echo get_post_meta(get_the_ID(), 'course_duration', true); ?></td>
+						<td><?php $product = wc_get_product( get_the_ID() ); /* get the WC_Product Object */ ?>
+							<p><?php echo $product->get_price_html(); ?></p></td>
+						<td><?php woocommerce_template_loop_add_to_cart();?></td>
 					</tr>
-					<tr>
-						<th scope="row"></th>
+					
+						<?php endwhile; 
+						wp_reset_postdata(); ?>
+					
+					<!-- <tr>
+						<td scope="row"></td>
 						<td>MCA and DoLS</td>
 						<td>This course is aimed at people caring for individuals who… </td>
 						<td>Mohali</td>
-						<td>21 April,2023</td>
+						<td>2023-04-20</td>
 						<td>3 Hrs</td>
 						<td>$ 1.0</td>
-						<td><button type="button" class="btn btn-info">BOOK</button></td>
+						<td><button type="button" class="text-white fw-bold btn btn-info">BOOK</button></td>
 					</tr>
 						<tr>
-						<th scope="row"></th>
+						<td scope="row"></td>
 						<td>MCA and DoLS</td>
 						<td>This course is aimed at people caring for individuals who… </td>
 						<td>Mohali</td>
-						<td>21 April,2023</td>
+						<td>2023-04-20</td>
 						<td>3 Hrs</td>
 						<td>$ 1.0</td>
-						<td><button type="button" class="btn btn-info">BOOK</button></td>
-					</tr>
+						<td><button type="button" class="text-white fw-bold btn btn-info">BOOK</button></td>
+					</tr> -->
 					</tbody>
 				</table>
+				<nav>
+					<ul>
+						<li><?php previous_posts_link( '&laquo; PREV', $loop->max_num_pages) ?></li> 
+						<li><?php next_posts_link( 'NEXT &raquo;', $loop->max_num_pages) ?></li>
+					</ul>
+				</nav>
 			</div>	
 		</div>
 	</div>
 </div>
 
 <style>
-	.searching_public_course{
-		margin-bottom: 2rem;
-	}
 	.course_heading{
-		font-weight: bold;
-		text-decoration: none;
 		font-family: 'Myriad Pro';
 		font-size: 20px;
 	}
-	.course_srarch{
-		display: flex;
-		border: none;
-		margin-top: 8px;
-		margin-right: 16px;
-		font-size: 17px;
+	table, td {
+		font-family: "Myriad Pro Light", Sans-serif;
+	} 
+table, th {
+		font-family: "Myriad Pro";
+	} 
+	.table-bordered td{
+		border: none !important; 
+		border-right: solid 1px #ccc !important;
+		}
+		.search_course{
+			margin-top: 20px;
+			margin-bottom: 40px;
+			font-family: "Myriad Pro Light", Sans-serif;
+		}
+	.form-control {
+       width: 100% ;
 	}
-	#product_search{
-		/* border-radius: 1px 1px 1px 0px; */
-		/* width:70%; */
-	}
-	.custom_date_piker{
-		width:70%;
-	}
-	.search_course_date{
-		display: flex;
-	}
+	input.form-control.col-md-10 {
+    border-radius: 2px 2px 0 0;
+}
+.col-md-3.my-2.input_box {
+    display: flex; 
+}
+.my-2{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
 </style>
 
 
@@ -161,4 +183,7 @@
     });
     </script>  -->
 
+
+
+	
     <?php get_footer(); ?>

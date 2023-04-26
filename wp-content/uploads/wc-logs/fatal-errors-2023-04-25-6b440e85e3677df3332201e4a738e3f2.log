@@ -1,0 +1,48 @@
+2023-04-25T11:25:18+00:00 CRITICAL syntax error, unexpected identifier "title", expecting ")" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 10
+
+2023-04-25T12:07:43+00:00 CRITICAL syntax error, unexpected token "endwhile" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 99
+
+2023-04-25T12:11:42+00:00 CRITICAL syntax error, unexpected token "endwhile" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 99
+
+2023-04-25T12:12:09+00:00 CRITICAL syntax error, unexpected token "endwhile" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 99
+
+2023-04-25T12:12:21+00:00 CRITICAL syntax error, unexpected token "endwhile" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 99
+
+2023-04-25T12:12:24+00:00 CRITICAL syntax error, unexpected token "endwhile" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 99
+
+2023-04-25T12:12:32+00:00 CRITICAL syntax error, unexpected token "endwhile" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 98
+
+2023-04-25T12:12:41+00:00 CRITICAL syntax error, unexpected token "endwhile" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 98
+
+2023-04-25T12:12:42+00:00 CRITICAL syntax error, unexpected token "endwhile" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 98
+
+2023-04-25T12:13:06+00:00 CRITICAL syntax error, unexpected token "endwhile" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 99
+
+2023-04-25T12:13:09+00:00 CRITICAL syntax error, unexpected token "endwhile" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 99
+
+2023-04-25T12:31:42+00:00 CRITICAL Uncaught Error: Call to undefined function course_venue() in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php:79
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 79
+
+2023-04-25T12:39:57+00:00 CRITICAL Uncaught Error: Call to a member function get_price_html() on null in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php:82
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 82
+
+2023-04-25T12:44:12+00:00 CRITICAL syntax error, unexpected token "<" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 84
+
+2023-04-25T12:50:21+00:00 CRITICAL Uncaught Error: Call to undefined function get_field() in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php:79
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 79
+

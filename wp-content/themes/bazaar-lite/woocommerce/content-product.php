@@ -25,6 +25,11 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 ?>
 
+if ( $feature_img ) {
+           echo '< img src="'.$featured_img['url'].'" width="50" height="50"/>'
+        }
+
+
 <!-- 
 <table>
     <thead>
