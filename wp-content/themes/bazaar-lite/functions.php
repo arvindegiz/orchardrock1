@@ -251,4 +251,27 @@ function get_filtered_products(){
 //      echo "<pre>";
 //      print_r($data);
 
+// Add Trim Description 
+function get_excerpt(){
+    $excerpt = get_the_content();
+    $excerpt = preg_replace(" ([.*?])",'',$excerpt);
+    $excerpt = strip_shortcodes($excerpt);
+    $excerpt = strip_tags($excerpt);
+    $excerpt = substr($excerpt, 0, 30);
+    $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+    $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
+    $excerpt = $excerpt.'... <a href="'.get_the_permalink().'">more</a>';
+    return $excerpt;
+    }
+
+    // custom filter by venue
+ 
+    // add_filter( "taxonomy_template", 'load_our_custom_tax_template');
+    // function load_our_custom_tax_template ($tax_template) {
+    //   if (is_tax('course_venue')) {
+    //     $tax_template = dirname(  __FILE__  ) . '/templates/public-courses.php';
+    //   }
+    //   return $tax_template;
+    // }
+  
 ?>
