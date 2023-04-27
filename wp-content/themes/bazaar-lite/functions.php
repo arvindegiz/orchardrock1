@@ -132,6 +132,14 @@ function woocommerce_product_defualt_search(){
 
 add_action( 'wp_footer', 'my_ajax_without_file' );
 
+function get_course_venue() {
+  
+
+    
+}//end nelio_notify_on_post_published()
+
+add_action( 'publish_post', 'get_course_venue', 10, 2 );
+
 function my_ajax_without_file() { ?>
 
     <script type="text/javascript" >
@@ -157,25 +165,6 @@ function my_ajax_without_file() { ?>
         });
 
 
-        // jQuery("#search_course_date").click(function(){
-        //     var search_val = jQuery('#course_date').val();
-        // alert(search_val);
-        // ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ) ?>'; // get ajaxurl
-
-        // var data = {
-        //     'action': 'get_filtered_products', // your action name 
-        //     'search_val': search_val // some additional data to send
-        // };
-
-        // jQuery.ajax({
-        //     url: ajaxurl, // this will point to admin-ajax.php
-        //     type: 'POST',
-        //     data: data,
-        //     success: function (response) {
-        //         console.log(response); 
-        //         jQuery(".row.masonry").html(response)               
-        //     }
-        // });
 
          });
     });
@@ -216,40 +205,7 @@ function get_filtered_products(){
    
 } 
 
-// function my_enqueue() {
 
-//     wp_enqueue_script( 'ajax-script', get_template_directory_uri() . '/assets/js/custom.js', array('jquery') );
-
-//     wp_localize_script( 'ajax-script', 'my_ajax_object',
-//             array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
-// }
-// add_action( 'wp_enqueue_scripts', 'my_enqueue' );
-
-
-
-// function my_action_callback(){
-//   echo  "Hello"; die;
-// }
-// add_action('wp_ajax_nopriv_my_action', 'my_action_callback');
-
-
-
-// add_filter( 'woocommerce_product_query_meta_query', 'filter_woocommerce_product_query_meta_query', 10, 2 );
-// function filter_woocommerce_product_query_meta_query( array $meta_query ): array {
-//     if ( is_shop() || is_product_category() ) {
-//         $meta_query[] = [
-//             'key'     => 'course_venue',
-//             'value'   => 'Mohali',
-//             'compare' => 'LIKE'
-//         ];
-//     }
-
-//     return $meta_query;
-// }
-
-// $data =  json_decode($_POST);
-//      echo "<pre>";
-//      print_r($data);
 
 // Add Trim Description 
 function get_excerpt(){
@@ -264,14 +220,6 @@ function get_excerpt(){
     return $excerpt;
     }
 
-    // custom filter by venue
- 
-    // add_filter( "taxonomy_template", 'load_our_custom_tax_template');
-    // function load_our_custom_tax_template ($tax_template) {
-    //   if (is_tax('course_venue')) {
-    //     $tax_template = dirname(  __FILE__  ) . '/templates/public-courses.php';
-    //   }
-    //   return $tax_template;
-    // }
+
   
 ?>
