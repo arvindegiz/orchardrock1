@@ -32,7 +32,7 @@
 	</div>
 	<div class="row search_course my-5">
 		<div class="col-md-3 my-2 input_box">
-			<input class="form-control col-md-10" type="search" name="product_search" id="product_search" placeholder="Search Course"> 
+			<input class="form-control col-md-10" type="search" name="product_search" placeholder="Search Course">
 			<button class="text-white btn btn-info col-md-2" id="searchsubmit"><i class="fa fa-search" aria-hidden="true"></i></button>
 		</div>
 		<div class="col-md-3 my-2">
