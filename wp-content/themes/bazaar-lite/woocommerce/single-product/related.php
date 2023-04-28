@@ -53,8 +53,10 @@ if ( $related_products ) : ?>
 						{
 							while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				<tr>
-					<td><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></td>
-					<!--td><?php echo get_post_meta(get_the_ID(), 'course_date', true); ?></td-->
+					<td><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a>
+							<p class="custom_date"><?php echo get_post_meta(get_the_ID(), 'course_date', true); ?></p>
+				</td>
+					<!-- <td><?php echo get_post_meta(get_the_ID(), 'course_date', true); ?></td> -->
 					<td class="custom_add_to_cart"><?php woocommerce_template_loop_add_to_cart();?></td>		
 					</tr>
 
@@ -135,5 +137,11 @@ wp_reset_postdata();
 a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_cart {
     margin-top: 10px;
     margin-bottom: 5px;
+}
+
+.custom_date {
+    color: #2ecc71;
+    font-size: 12px;
+	margin-bottom: 0px;
 }
 </style>
