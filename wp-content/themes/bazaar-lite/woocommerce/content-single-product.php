@@ -48,7 +48,7 @@ if ( post_password_required() ) {
 
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 
-	<div class="product-content">
+	<div class="product-content col-md-8">
     
 	<?php
 		/**

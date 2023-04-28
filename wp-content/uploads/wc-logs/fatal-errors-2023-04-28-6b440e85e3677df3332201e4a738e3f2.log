@@ -1,0 +1,8 @@
+2023-04-28T06:49:44+00:00 CRITICAL syntax error, unexpected token "if" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 30
+
+2023-04-28T06:54:32+00:00 CRITICAL syntax error, unexpected variable "$filter_row" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 78
+
+2023-04-28T12:54:52+00:00 CRITICAL syntax error, unexpected token "}" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\related.php on line 60
+
+2023-04-28T12:55:28+00:00 CRITICAL syntax error, unexpected token "<", expecting "elseif" or "else" or "endif" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\related.php on line 68
+
