@@ -70,3 +70,5 @@ Stack trace:
 
 2023-04-27T12:29:44+00:00 CRITICAL syntax error, unexpected token "}" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 31
 
+2023-04-27T13:55:05+00:00 CRITICAL syntax error, unexpected token "global", expecting "," or ";" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 7
+

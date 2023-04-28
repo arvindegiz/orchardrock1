@@ -3,11 +3,10 @@
 
 	get_header();
 	
-	if (isset($_GET)) {
-echo "yes";
-	} else {
-		echo "nooooo";
-	}
+	echo get_site_url()."<br>";
+	$actual_link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+	echo $actual_link;
 	global $wpdb;
 	//Get course venue list
 	$query = "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = 'course_venue' ORDER BY meta_value;";
@@ -73,6 +72,53 @@ echo "yes";
 				'terms' => $_GET['searchByCategory']
 			)
 		);
+	}
+
+	if(isset($_GET['searchBydate']) && !empty($_GET['searchBydate'])) {
+		$filter_row = array();
+		$filter_row['type'] = 'searchBydate';
+		$filter_row['value'] = $_GET['searchBydate'];
+		$search_filter_values[] = $filter_row;
+
+		$args['meta_query'] = array(
+			'relation' => 'AND',
+			array(
+				array(
+					'key'       => 'course_date',
+					'value'     => $_GET['searchBydate'],
+					'compare'   => '=',
+				)
+			)
+		);   
+	}
+
+	if(isset($_GET['searchBySort']) && !empty($_GET['searchBySort'])) {
+		$searchByValue = explode("_", $_GET['searchBySort']);
+		$sort_by = "";
+		$sort_order = $searchByValue[1];
+	
+		$is_meta_key = false;
+		if($searchByValue[0] == 'name') {
+			$sort_by = "post_title";
+		} else if($searchByValue[0] == 'price') {
+			$is_meta_key = true;
+			$sort_by = "_price";
+		}else if($searchByValue[0] == 'date') {
+			$sort_order == 'desc' ? 'asc': 'desc'; 
+			$is_meta_key = true;
+			$sort_by = "course_date";
+		}
+
+		$filter_row = array();
+		$filter_row['type'] = 'searchBySort';
+		$filter_row['value'] = ucfirst($searchByValue[0]).": ".ucfirst($searchByValue[1]);
+		$search_filter_values[] = $filter_row;
+
+		$args['orderby'] = $sort_by;
+		$args['order'] = $sort_order;
+		if($is_meta_key) {
+			$args['meta_key'] = $sort_by;
+		}
 	}
 	
 
@@ -372,7 +418,7 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
 .clear_search_filter{
 	padding: 8px;
 	color:#fff;
-	margin: 10px auto 10px auto;
+	margin: 10px auto 10px 10px;
 	background-color: #000;
 	border-color: #d1d1d1;
 	border-radius: 5px ;
@@ -442,8 +488,15 @@ a.page-numbers {
 			jQuery('body').css("opacity", "0.5");
 			jQuery('#spinner').removeClass('hidden');
             var search_val = jQuery(this).val();
-			var current_url = window.location.origin+window.location.pathname;
-			window.location.href = current_url+'?searchByVenue='+search_val+'&';
+			var matches = window.location.href.match(/[a-z\d]+=[a-z\d]+/gi);
+			var count = matches? matches.length : 0;
+			var param_add = count > 0  ? "&" : "?";
+
+			const cut_url = new URL(window.location.href);
+			if (cut_url.searchParams.has('searchByVenue')) {
+				cut_url.searchParams.delete('searchByVenue');
+			}
+			window.location.href = cut_url+param_add+'searchByVenue='+search_val;
         });
 
 		$(document).on("click", ".clear_filter" ,function(){
@@ -460,8 +513,16 @@ a.page-numbers {
 			if(search_category != '') {
 				jQuery('body').css("opacity", "0.5");
 				jQuery('#spinner').removeClass('hidden');
-				var current_url = window.location.origin+window.location.pathname;
-				window.location.href = current_url+'?searchByCategory='+search_category+'&';
+
+				var matches = window.location.href.match(/[a-z\d]+=[a-z\d]+/gi);
+				var count = matches? matches.length : 0;
+				var param_add = count > 0  ? "&" : "?";
+
+				const cut_url = new URL(window.location.href);
+				if (cut_url.searchParams.has('searchByCategory')) {
+					cut_url.searchParams.delete('searchByCategory');
+				}
+				window.location.href = cut_url+param_add+'searchByCategory='+search_category;
 			}
 			
         });
@@ -471,33 +532,55 @@ a.page-numbers {
 			jQuery('body').css("opacity", "0.5");
 			jQuery('#spinner').removeClass('hidden');
             var search_course = document.getElementById('product_search').value;
-			var current_url = window.location.origin+window.location.pathname;
-			window.location.href = current_url+'?searchByCourse='+search_course+'&';
+			
+			var matches = window.location.href.match(/[a-z\d]+=[a-z\d]+/gi);
+			var count = matches? matches.length : 0;
+			var param_add = count > 0  ? "&" : "?";
+
+			const cut_url = new URL(window.location.href);
+			if (cut_url.searchParams.has('searchByCourse')) {
+				cut_url.searchParams.delete('searchByCourse');
+			}
+			window.location.href = cut_url+param_add+'searchByCourse='+search_course;
         });
 		// sort By Categoriy
 		$(document).on("change", "#sortByAttribute" ,function(){
 			jQuery('body').css("opacity", "0.5");
 			jQuery('#spinner').removeClass('hidden');
             var search_val = jQuery(this).val();
-			var current_url = window.location.origin+window.location.pathname;
-			window.location.href = current_url+'?searchBySort='+search_val+'&';
+			var matches = window.location.href.match(/[a-z\d]+=[a-z\d]+/gi);
+			var count = matches? matches.length : 0;
+			var param_add = count > 0  ? "&" : "?";
+
+			const cut_url = new URL(window.location.href);
+			if (cut_url.searchParams.has('searchBySort')) {
+				cut_url.searchParams.delete('searchBySort');
+			}
+			window.location.href = cut_url+param_add+'searchBySort='+search_val;
         });
 		// Search by Date
 		$(document).on("click", "#date_submit" ,function(){
 			jQuery('body').css("opacity", "0.5");
 			jQuery('#spinner').removeClass('hidden');
-		var search_date = jQuery("#course_date").val();
-		// alert(search_date);
-		var current_url = window.location.origin+window.location.pathname;
-		window.location.href = current_url+'?searchBydate='+search_date+'&';	
+			var search_date = jQuery("#course_date").val();
+
+			var matches = window.location.href.match(/[a-z\d]+=[a-z\d]+/gi);
+			var count = matches? matches.length : 0;
+			var param_add = count > 0  ? "&" : "?";
+
+			const cut_url = new URL(window.location.href);
+			if (cut_url.searchParams.has('searchBydate')) {
+				cut_url.searchParams.delete('searchBydate');
+			}
+			window.location.href = cut_url+param_add+'searchBydate='+search_date;	
 		});
 		// clear filter
 		$(document).on("click", ".clear_search_filter" ,function(){
 			jQuery('body').css("opacity", "0.5");
 			jQuery('#spinner').removeClass('hidden');
-		var clear_filter = jQuery(".search_filter_value").val();
-		var current_url = window.location.origin+window.location.pathname;
-		window.location.href = current_url;	
+			var clear_filter = jQuery(".search_filter_value").val();
+			var current_url = window.location.origin+window.location.pathname;
+			window.location.href = current_url;	
 		});
     });
     </script>
