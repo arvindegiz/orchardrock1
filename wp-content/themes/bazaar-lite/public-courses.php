@@ -70,11 +70,15 @@
 	}
 
 	$serach_course_date_value = '';
+	$is_date_filter = false;
 	if(isset($_GET['searchBydate']) && !empty($_GET['searchBydate'])) {
+		$is_date_filter = true;
 		$serach_course_date_value = $_GET['searchBydate'];
 		$filter_row = array();
 		$filter_row['type'] = 'searchBydate';
 		$filter_row['value'] = $_GET['searchBydate'];
+		$timestamp = strtotime($_GET['searchBydate']);
+		$filter_row['label'] = date('M d, Y', $timestamp);
 		$search_filter_values[] = $filter_row;
 
 		$args['meta_query'] = array(
@@ -174,8 +178,13 @@
 			<div class="col-md-12">
 			<div class ="search_filtes_block">
 			<?php
-				foreach($search_filter_values as $filter) { ?>
-					<span class ="search_filter_value"><?php echo $filter['value']; ?><i class="fa fa-times clear_filter" data-type = "<?php echo $filter['type']; ?>" aria-hidden="true"></i></span>
+				foreach($search_filter_values as $filter) { 
+					if($is_date_filter) {
+						$filter_label = $filter['label'];
+					} else {
+						$filter_label = $filter['value'];
+					} ?>
+					<span class ="search_filter_value"><?php echo $filter_label; ?><i class="fa fa-times clear_filter" data-type = "<?php echo $filter['type']; ?>" aria-hidden="true"></i></span>
 				<?php } ?>
 			
 				<a class = "clear_search_filter" href="javascript:void(0)">Clear Filter</a>
@@ -187,7 +196,7 @@
 	<div class="row">
 		<div class="col-md-12 ">
 			<div class ="table-container fixed-tbl-footer table-responsive">
-				<table class="table table-striped table-bordered"style="font-family:'Myriad Pro Light', Sans-serif;">
+				<table class="table table-striped table-bordered table-container-public-courses"style="font-family:'Myriad Pro Light', Sans-serif;">
 					<thead>
 						<tr>
 							<th class="fw-bold align-middle" scope="col">Image</th>
@@ -205,7 +214,16 @@
 						// echo $loop->post_count;
 						if($loop->post_count != 0)
 						{
-						while ( $loop->have_posts() ) : $loop->the_post(); ?>
+						while ( $loop->have_posts() ) : $loop->the_post(); 
+						
+						$new_course_date = '-';
+						$course_date = get_post_meta(get_the_ID(), 'course_date', true);
+						if(isset($course_date) && !empty($course_date)) {
+							$timestamp = strtotime($course_date);
+							$new_course_date = date('M d, Y', $timestamp);
+						}
+
+						?>
 								<tr>
 									<td><?php if ( has_post_thumbnail() ) {
 											the_post_thumbnail("small_thumbnail");
@@ -215,7 +233,7 @@
 									<td><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></td>
 									<td> <?php echo get_excerpt(); ?></td>
 									<td><?php echo get_post_meta(get_the_ID(), 'course_venue', true); ?></td>
-									<td><?php echo get_post_meta(get_the_ID(), 'course_date', true); ?></td>
+									<td><?php echo $new_course_date; ?></td>
 									<td><?php echo get_post_meta(get_the_ID(), 'course_duration', true); ?></td>
 									<td><?php $product = wc_get_product( get_the_ID() ); /* get the WC_Product Object */ ?>
 										<p><?php echo $product->get_price_html(); ?></p></td>
@@ -256,7 +274,7 @@
 </div>
 
 <style>
-/* Table css start */
+
 td.No_Record {
 	text-align:center;
 }
@@ -308,7 +326,7 @@ input.form-control.col-md-10 {
 	bottom: 0;
 	margin: auto;
 }
-/* add to cart  */
+
 a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_cart{
 	margin: 10px auto 10px auto;
 	width: 90px;
@@ -319,7 +337,7 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
 	a.added_to_cart.wc-forward {
 	display: none;
 }
-/* clear filter */
+
 .search_filter_value{
 	padding: 8px;
 	color:#fff;
@@ -341,8 +359,7 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
 .clear_search_filter:hover{
 	color:#fff !important;
 }
-/* Table css start */
-/*Pagination CSS*/
+
 	span.page-numbers.current{
 	background-color: #4CAF50;
 	color:#fff;
@@ -362,7 +379,6 @@ ul.pagination li a {
 	border: 1px solid #ddd;	
 }
 ul.pagination li a.active {
-	/* background-color: red; */
 	color: white;
 	border: 1px solid #fff;
 }
@@ -396,7 +412,7 @@ a.page-numbers {
 	margin-left: 5px!important;
 	margin-right: 5px !important;
 }
-/*Pagination CSS Ends here*/
+
 </style>
 <script type="text/javascript" >
 	// Search By Venue

@@ -72,52 +72,10 @@ function woocommerce_product_custom_fields_save($post_id)
         update_post_meta($post_id, 'course_venue', esc_attr($course_venue_field));
 }
 
-// filter product
-
-function skyverge_add_postmeta_ordering_args( $sort_args ) {
-        
-    $orderby_value = isset( $_GET['orderby'] ) ? wc_clean( $_GET['orderby'] ) : apply_filters( 'woocommerce_default_catalog_orderby', get_option( 'woocommerce_default_catalog_orderby' ) );
-    switch( $orderby_value ) {
-    
-        // Name your sortby key whatever you'd like; must correspond to the $sortby in the next function
-        case 'course_venue':
-            $sort_args['orderby']  = 'meta_value';
-            // Sort by meta_value because we're using alphabetic sorting
-            $sort_args['order']    = 'asc';
-            $sort_args['meta_key'] = 'course_venue';
-            // use the meta key you've set for your custom field, i.e., something like "course_venue" or "_wholesale_price"
-            break;
-                
-        case 'points_awarded':
-            $sort_args['orderby'] = 'meta_value_num';
-            // We use meta_value_num here because points are a number and we want to sort in numerical order
-            $sort_args['order'] = 'desc';
-            $sort_args['meta_key'] = 'points';
-            break;
-        
-    }
-    
-    return $sort_args;
-}
-add_filter( 'woocommerce_get_catalog_ordering_args', 'skyverge_add_postmeta_ordering_args' );
-
 
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 50, 50, true ); // Normal post thumbnails
 add_image_size( 'small_thumbnail', 50, 100, true);
-
-// Add these new sorting arguments to the sortby options on the frontend
-function skyverge_add_new_postmeta_orderby( $sortby ) {
-    
-    // Adjust the text as desired
-    $sortby['course_venue'] = __( 'Sort by venue', 'woocommerce' );
-    $sortby['points_awarded'] = __( 'Sort by points for purchase', 'woocommerce' );
-    
-    return $sortby;
-}
-add_filter( 'woocommerce_default_catalog_orderby_options', 'skyverge_add_new_postmeta_orderby' );
-add_filter( 'woocommerce_catalog_orderby', 'skyverge_add_new_postmeta_orderby' );
-
 
 add_action( 'woocommerce_before_shop_loop', 'woocommerce_product_defualt_search' );
 
@@ -129,83 +87,10 @@ function woocommerce_product_defualt_search(){
     echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" value="" name="course_date" id="course_date"/><button type="button" id="search_course_date">Search</button>';
 }
 
-
-add_action( 'wp_footer', 'my_ajax_without_file' );
-
-function get_course_venue() {
-  
-
-    
-}//end nelio_notify_on_post_published()
-
-add_action( 'publish_post', 'get_course_venue', 10, 2 );
-
-function my_ajax_without_file() { ?>
-
-    <script type="text/javascript" >
-    jQuery(document).ready(function($) {
-        jQuery("#search_venue").click(function(){
-            var search_val = jQuery('#product_search').val();
-        alert(search_val);
-        ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ) ?>'; // get ajaxurl
-
-        var data = {
-            'action': 'get_filtered_products', // your action name 
-            'search_val': search_val // some additional data to send
-        };
-
-        jQuery.ajax({
-            url: ajaxurl, // this will point to admin-ajax.php
-            type: 'POST',
-            data: data,
-            success: function (response) {
-                console.log(response); 
-                jQuery(".row.masonry").html(response)               
-            }
-        });
-
-
-
-         });
-    });
-    </script> 
-    <?php
+function add_css() {
+    // wp_enqueue_style( 'parent-style', get_stylesheet_directory_uri().'/style.css' );
+    wp_enqueue_style( 'style', get_stylesheet_directory_uri().'/assets/css/custom.css' );
 }
-
-add_action("wp_ajax_get_filtered_products" , "get_filtered_products");
-
-
-function get_filtered_products(){
-
- 
-
-  $args = array( 
-    'post_type'      => 'product', // product, not products
-    'post_status'    => 'publish',
-    'meta_key' => 'course_venue',
-    'meta_value' => $_POST['search_val'],
-    'posts_per_page' => 12 // change this based on your needs
-  );
-  $ajaxposts = new WP_Query( $args );
-
-  $response = '';
-
-  if ( $ajaxposts->posts ){ 
-    while ( $ajaxposts->have_posts() ) { 
-      $ajaxposts->the_post(); 
-      $response .= wc_get_template_part( 'content', 'product' ); // use WooCommerce function to get html
-    } 
-  } else { 
-    // handle not found by yourself or
-    // perhaps do_action( 'woocommerce_no_products_found' ); could do the trick?
-  }
-
-  return $response;
-  exit;
-   
-} 
-
-
 
 // Add Trim Description 
 function get_excerpt(){
@@ -218,6 +103,137 @@ function get_excerpt(){
     $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
     $excerpt = $excerpt.'...';
     return $excerpt;
+}
+
+
+// Change add to cart text on single product page
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'woocommerce_add_to_cart_button_text_single' ); 
+function woocommerce_add_to_cart_button_text_single() {
+    return __( 'Book Now', 'woocommerce' ); 
+}
+
+// Change add to cart text on product archives page
+add_filter( 'woocommerce_product_add_to_cart_text', 'woocommerce_add_to_cart_button_text_archives' );  
+function woocommerce_add_to_cart_button_text_archives() {
+    return __( 'Book Now', 'woocommerce' );
+}
+
+function wc_empty_cart_redirect_url() {
+	return get_site_url().'/public-courses/';
+}
+add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' );
+
+add_filter('woocommerce_return_to_shop_text', 'prefix_store_button');
+function prefix_store_button() {
+        $store_button = "Return to Public Courses"; // Change text as required
+        return $store_button;
+}
+
+// Update custom filed dat on CART and CHECKOUT page
+add_action('wp_ajax_wdm_add_user_custom_data_options', 'wdm_add_user_custom_data_options_callback');
+add_action('wp_ajax_nopriv_wdm_add_user_custom_data_options', 'wdm_add_user_custom_data_options_callback');
+
+// Add the field to the product
+
+// Store custom field
+function save_my_custom_checkout_field( $cart_item_data, $product_id ) {
+    
+        $course_venue = get_post_meta( $product_id, 'course_venue', true );
+        $course_duration = get_post_meta( $product_id, 'course_duration', true );
+        $course_date = get_post_meta( $product_id, 'course_date', true );
+        
+        if(isset($course_venue) && !empty($course_venue)) {
+            $cart_item_data[ 'course_venue' ] = $course_venue;
+        }
+
+        if(isset($course_date) && !empty($course_date)) {
+            $course_date = strtotime($course_date);
+            $cart_item_data[ 'course_date' ] = date('M d, Y', $course_date);
+        }
+
+        if(isset($course_duration) && !empty($course_duration)) {
+            $cart_item_data[ 'course_duration' ] = $course_duration;
+        }
+        
+        $cart_item_data['unique_key'] = md5( microtime().rand() );
+
+    return $cart_item_data;
+}
+add_action( 'woocommerce_add_cart_item_data', 'save_my_custom_checkout_field', 10, 2 );
+
+// Render meta on cart and checkout
+function render_meta_on_cart_and_checkout( $cart_data, $cart_item = null ) {
+    $custom_items = array();
+    /* Woo 2.4.2 updates */
+    if( !empty( $cart_data ) ) {
+        $custom_items = $cart_data;
     }
+    if( isset( $cart_item['course_venue'] ) ) {
+        $custom_items[] = array( "name" => 'Venue', "value" => $cart_item['course_venue'] );
+    }
+    if( isset( $cart_item['course_date'] ) ) {
+        $custom_items[] = array( "name" => 'Date', "value" => $cart_item['course_date'] );
+    }
+    if( isset( $cart_item['course_duration'] ) ) {
+        $custom_items[] = array( "name" => 'Duration', "value" => $cart_item['course_duration'] );
+    }
+    return $custom_items;
+}
+add_filter( 'woocommerce_get_item_data', 'render_meta_on_cart_and_checkout', 10, 2 );
+
+// Display as order meta
+function my_field_order_meta_handler( $item_id, $values, $cart_item_key ) {
+    if( isset( $values['course_venue'] ) ) {
+        wc_add_order_item_meta( $item_id, "Venue", $values['course_venue'] );
+    }
+    if( isset( $values['course_date'] ) ) {
+        wc_add_order_item_meta( $item_id, "Date", $values['course_date'] );
+    }
+    if( isset( $values['course_duration'] ) ) {
+        wc_add_order_item_meta( $item_id, "Duration", $values['course_duration'] );
+    }
+    
+}
+add_action( 'woocommerce_add_order_item_meta', 'my_field_order_meta_handler', 1, 3 );
+
+
+// Update the user meta with field value
+add_action('woocommerce_checkout_update_user_meta', 'my_custom_checkout_field_update_user_meta');
+function my_custom_checkout_field_update_user_meta( $user_id ) {
+    if ($user_id && $_POST['course_venue']) update_user_meta( $user_id, 'course_venue', esc_attr($_POST['course_venue']) );
+    if ($user_id && $_POST['course_date']) update_user_meta( $user_id, 'course_date', esc_attr($_POST['course_date']) );
+    if ($user_id && $_POST['course_duration']) update_user_meta( $user_id, 'course_duration', esc_attr($_POST['course_duration']) );
+}
+
+// Update the order meta with field value
+
+add_action('woocommerce_checkout_update_order_meta', 'my_custom_checkout_field_update_order_meta');
+function my_custom_checkout_field_update_order_meta( $order_id ) {
+    if ($_POST['course_venue']) update_post_meta( $order_id, 'Venue', esc_attr($_POST['course_venue']));
+    if ($_POST['course_date']) update_post_meta( $order_id, 'Date', esc_attr($_POST['course_date']));
+    if ($_POST['course_duration']) update_post_meta( $order_id, 'Duration', esc_attr($_POST['course_duration']));
+}
+
+add_action( 'woocommerce_admin_order_data_after_billing_address', 'my_custom_checkout_field_display_admin_order_meta', 10, 1 );
+function my_custom_checkout_field_display_admin_order_meta( $order ){
+    $order_id = method_exists( $order, 'get_id' ) ? $order->get_id() : $order->id;
+    
+    $course_venue = get_post_meta( $order_id, 'course_venue', true );
+    $course_date = get_post_meta( $order_id, 'course_date', true );
+    $course_duration = get_post_meta( $order_id, 'course_duration', true );
+
+    if(isset($course_venue) && !empty($course_venue)) {
+        echo '<p><strong>'.__('Venue').':</strong> ' . $course_venue . '</p>';
+    }
+
+    if(isset($course_date) && !empty($course_date)) {
+        echo '<p><strong>'.__('Date').':</strong> ' . $course_date . '</p>';
+    }
+
+    if(isset($course_duration) && !empty($course_duration)) {
+        echo '<p><strong>'.__('Duration').':</strong> ' . $course_duration . '</p>';
+    }
+    
+}
   
 ?>

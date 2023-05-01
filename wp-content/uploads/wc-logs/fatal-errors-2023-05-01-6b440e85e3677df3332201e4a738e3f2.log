@@ -1,0 +1,208 @@
+2023-05-01T06:21:27+00:00 CRITICAL syntax error, unexpected token "!", expecting "(" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\price.php on line 47
+
+2023-05-01T06:29:28+00:00 CRITICAL syntax error, unexpected single-quoted string "2023-05-05", expecting variable or "{" or "$" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 213
+
+2023-05-01T07:03:27+00:00 CRITICAL syntax error, unexpected identifier "get_site_url" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\meta.php on line 37
+
+2023-05-01T07:04:14+00:00 CRITICAL Uncaught Error: Undefined constant "category" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\meta.php:37
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include()
+#1 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1665): wc_get_template('single-product/...')
+#2 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): woocommerce_template_single_meta('')
+#3 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#4 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\content-single-product.php(77): do_action('woocommerce_sin...')
+#6 C:\xampp\htdocs\orchardrock1\wp-includes\template.php(785): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template('C:\\xampp\\htdocs...', false)
+#8 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product.php(30): wc_get_template_part('content', 'single-product')
+#9 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#12 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\meta.php on line 37
+
+2023-05-01T07:23:59+00:00 CRITICAL syntax error, unexpected token ")" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\related.php on line 103
+
+2023-05-01T07:28:23+00:00 CRITICAL syntax error, unexpected token ")" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\related.php on line 103
+
+2023-05-01T07:29:27+00:00 CRITICAL syntax error, unexpected token ">" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\related.php on line 103
+
+2023-05-01T07:34:34+00:00 CRITICAL syntax error, unexpected token ">" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\related.php on line 103
+
+2023-05-01T07:34:46+00:00 CRITICAL syntax error, unexpected token ">" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\related.php on line 103
+
+2023-05-01T07:42:33+00:00 CRITICAL syntax error, unexpected token "<" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\related.php on line 126
+
+2023-05-01T07:43:04+00:00 CRITICAL syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\related.php on line 160
+
+2023-05-01T07:44:07+00:00 CRITICAL syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\related.php on line 161
+
+2023-05-01T07:45:13+00:00 CRITICAL syntax error, unexpected token "<", expecting "elseif" or "else" or "endif" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\related.php on line 127
+
+2023-05-01T07:45:30+00:00 CRITICAL syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\related.php on line 164
+
+2023-05-01T10:07:18+00:00 CRITICAL syntax error, unexpected token "=" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\related.php on line 58
+
+2023-05-01T10:07:41+00:00 CRITICAL Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, WP_Query given in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\related.php:58
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include()
+#1 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-template-functions.php(2072): wc_get_template('single-product/...', Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-template-functions.php(2035): woocommerce_related_products(Array)
+#3 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): woocommerce_output_related_products('')
+#4 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\content-single-product.php(90): do_action('woocommerce_aft...')
+#7 C:\xampp\htdocs\orchardrock1\wp-includes\template.php(785): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template('C:\\xampp\\htdocs...', false)
+#9 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product.php(30): wc_get_template_part('content', 'single-product')
+#10 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#13 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\related.php on line 58
+
+2023-05-01T11:22:11+00:00 CRITICAL syntax error, unexpected token "}" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 185
+
+2023-05-01T11:22:35+00:00 CRITICAL Uncaught TypeError: date(): Argument #2 ($timestamp) must be of type ?int, string given in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php:80
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php(80): date('M d, Y', '2023-05-29')
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 80
+
+2023-05-01T11:23:41+00:00 CRITICAL Uncaught Error: Undefined constant "timestamp" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php:81
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 81
+
+2023-05-01T11:23:48+00:00 CRITICAL Uncaught Error: Undefined constant "timestamp" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php:81
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 81
+
+2023-05-01T12:07:28+00:00 CRITICAL syntax error, unexpected variable "$filter_row" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 135
+
+2023-05-01T12:07:38+00:00 CRITICAL syntax error, unexpected variable "$filter_row" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 135
+
+2023-05-01T12:26:50+00:00 CRITICAL Uncaught Error: Undefined constant "course_venue" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:135
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(310): save_my_custom_checkout_field(Array, 3111)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1138): apply_filters('woocommerce_add...', Array, 3111, 0, 1)
+#3 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-form-handler.php(824): WC_Cart->add_to_cart(3111, 1)
+#4 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-form-handler.php(796): WC_Form_Handler::add_to_cart_handler_simple(3111)
+#5 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_Form_Handler::add_to_cart_action('')
+#6 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#7 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\xampp\htdocs\orchardrock1\wp-settings.php(639): do_action('wp_loaded')
+#9 C:\xampp\htdocs\orchardrock1\wp-config.php(96): require_once('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\orchardrock1\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(13): require_once('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#13 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 135
+
+2023-05-01T12:43:36+00:00 CRITICAL Uncaught Error: Call to undefined function wp_get_url() in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:122
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): wc_empty_cart_redirect_url('http://localhos...')
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(205): WP_Hook->apply_filters('http://localhos...', Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\templates\cart\cart-empty.php(27): apply_filters('woocommerce_ret...', 'http://localhos...')
+#3 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-cart.php(97): wc_get_template('cart/cart-empty...')
+#5 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(72): WC_Shortcode_Cart::output(Array)
+#6 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(85): WC_Shortcodes::shortcode_wrapper(Array)
+#7 C:\xampp\htdocs\orchardrock1\wp-includes\shortcodes.php(355): WC_Shortcodes::cart('', '', 'woocommerce_car...')
+#8 [internal function]: do_shortcode_tag(Array)
+#9 C:\xampp\htdocs\orchardrock1\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(woocom...', 'do_shortcode_ta...', '<!-- wp:shortco...')
+#10 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\base\widget-base.php(426): do_shortcode('<!-- wp:shortco...')
+#11 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\widgets\text-editor.php(417): Elementor\Widget_Base->parse_text_editor('<!-- wp:shortco...')
+#12 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\base\controls-stack.php(2268): Elementor\Widget_Text_Editor->render()
+#13 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\base\widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
+#14 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\base\widget-base.php(750): Elementor\Widget_Base->render_content()
+#15 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\base\element-base.php(449): Elementor\Widget_Base->print_content()
+#16 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\base\element-base.php(1354): Elementor\Element_Base->print_element()
+#17 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\base\element-base.php(449): Elementor\Element_Base->print_content()
+#18 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\base\element-base.php(1354): Elementor\Element_Base->print_element()
+#19 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\base\element-base.php(449): Elementor\Element_Base->print_content()
+#20 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\core\base\document.php(1680): Elementor\Element_Base->print_element()
+#21 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\core\base\document.php(1106): Elementor\Core\Base\Document->print_elements(Array)
+#22 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\frontend.php(1179): Elementor\Core\Base\Document->print_elements_with_wrapper(Array)
+#23 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\frontend.php(1074): Elementor\Frontend->get_builder_content(7)
+#24 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): Elementor\Frontend->apply_builder_in_content('<p>[woocommerce...')
+#25 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(205): WP_Hook->apply_filters('<p>[woocommerce...', Array)
+#26 C:\xampp\htdocs\orchardrock1\wp-includes\post-template.php(255): apply_filters('the_content', '<!-- wp:shortco...')
+#27 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\core\templates\after-content.php(36): the_content()
+#28 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): bazaarlite_after_content_function('')
+#29 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#30 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#31 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\core\post-formats\page-format.php(19): do_action('bazaarlite_afte...')
+#32 C:\xampp\htdocs\orchardrock1\wp-includes\template.php(785): require('C:\\xampp\\htdocs...')
+#33 C:\xampp\htdocs\orchardrock1\wp-includes\template.php(718): load_template('C:\\xampp\\htdocs...', false, Array)
+#34 C:\xampp\htdocs\orchardrock1\wp-includes\general-template.php(204): locate_template(Array, true, false, Array)
+#35 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\core\templates\post-formats.php(40): get_template_part('core/post-forma...')
+#36 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): bazaarlite_postformat_function('')
+#37 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#38 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#39 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\page.php(36): do_action('bazaarlite_post...')
+#40 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#41 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#42 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#43 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 122
+
+2023-05-01T12:43:41+00:00 CRITICAL Uncaught Error: Call to undefined function wp_get_url() in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:122
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): wc_empty_cart_redirect_url('http://localhos...')
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(205): WP_Hook->apply_filters('http://localhos...', Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\templates\cart\cart-empty.php(27): apply_filters('woocommerce_ret...', 'http://localhos...')
+#3 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-cart.php(97): wc_get_template('cart/cart-empty...')
+#5 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(72): WC_Shortcode_Cart::output(Array)
+#6 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(85): WC_Shortcodes::shortcode_wrapper(Array)
+#7 C:\xampp\htdocs\orchardrock1\wp-includes\shortcodes.php(355): WC_Shortcodes::cart('', '', 'woocommerce_car...')
+#8 [internal function]: do_shortcode_tag(Array)
+#9 C:\xampp\htdocs\orchardrock1\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(woocom...', 'do_shortcode_ta...', '<!-- wp:shortco...')
+#10 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\base\widget-base.php(426): do_shortcode('<!-- wp:shortco...')
+#11 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\widgets\text-editor.php(417): Elementor\Widget_Base->parse_text_editor('<!-- wp:shortco...')
+#12 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\base\controls-stack.php(2268): Elementor\Widget_Text_Editor->render()
+#13 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\base\widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
+#14 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\base\widget-base.php(750): Elementor\Widget_Base->render_content()
+#15 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\base\element-base.php(449): Elementor\Widget_Base->print_content()
+#16 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\base\element-base.php(1354): Elementor\Element_Base->print_element()
+#17 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\base\element-base.php(449): Elementor\Element_Base->print_content()
+#18 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\base\element-base.php(1354): Elementor\Element_Base->print_element()
+#19 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\base\element-base.php(449): Elementor\Element_Base->print_content()
+#20 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\core\base\document.php(1680): Elementor\Element_Base->print_element()
+#21 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\core\base\document.php(1106): Elementor\Core\Base\Document->print_elements(Array)
+#22 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\frontend.php(1179): Elementor\Core\Base\Document->print_elements_with_wrapper(Array)
+#23 C:\xampp\htdocs\orchardrock1\wp-content\plugins\elementor\includes\frontend.php(1074): Elementor\Frontend->get_builder_content(7)
+#24 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): Elementor\Frontend->apply_builder_in_content('<p>[woocommerce...')
+#25 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(205): WP_Hook->apply_filters('<p>[woocommerce...', Array)
+#26 C:\xampp\htdocs\orchardrock1\wp-includes\post-template.php(255): apply_filters('the_content', '<!-- wp:shortco...')
+#27 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\core\templates\after-content.php(36): the_content()
+#28 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): bazaarlite_after_content_function('')
+#29 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#30 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#31 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\core\post-formats\page-format.php(19): do_action('bazaarlite_afte...')
+#32 C:\xampp\htdocs\orchardrock1\wp-includes\template.php(785): require('C:\\xampp\\htdocs...')
+#33 C:\xampp\htdocs\orchardrock1\wp-includes\template.php(718): load_template('C:\\xampp\\htdocs...', false, Array)
+#34 C:\xampp\htdocs\orchardrock1\wp-includes\general-template.php(204): locate_template(Array, true, false, Array)
+#35 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\core\templates\post-formats.php(40): get_template_part('core/post-forma...')
+#36 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): bazaarlite_postformat_function('')
+#37 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#38 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#39 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\page.php(36): do_action('bazaarlite_post...')
+#40 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#41 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#42 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#43 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 122
+

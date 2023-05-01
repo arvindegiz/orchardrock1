@@ -38,7 +38,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                             <tr>
                                 <th class="product-remove"><span class="screen-reader-text"><?php esc_html_e( 'Remove item', 'bazaar-lite' ); ?></span></th>
                                 <th class="product-thumbnail"><span class="screen-reader-text"><?php esc_html_e( 'Thumbnail image', 'bazaar-lite' ); ?></span></th>
-                                <th class="product-name"><?php esc_html_e( 'Product', 'bazaar-lite' ); ?></th>
+                                <th class="product-name"><?php esc_html_e( 'Course', 'bazaar-lite' ); ?></th>
                                 <th class="product-price"><?php esc_html_e( 'Price', 'bazaar-lite' ); ?></th>
                                 <th class="product-quantity"><?php esc_html_e( 'Quantity', 'bazaar-lite' ); ?></th>
                                 <th class="product-subtotal"><?php esc_html_e( 'Subtotal', 'bazaar-lite' ); ?></th>
