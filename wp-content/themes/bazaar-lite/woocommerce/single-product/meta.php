@@ -31,14 +31,15 @@ global $product;
 
 	<?php endif; 
     $category = get_the_terms( $product->ID, 'product_cat' );
-   
+	$tag = get_the_terms( $product->ID, 'product_tag' );
+	
 
     ?>
 
     <span class="posted_in">Category:<span> <a href="<?php echo get_site_url(); ?>/public-courses/?searchByCategory=<?php echo $category[0]->slug; ?>"><?php echo $category[0]->name; ?></a>
 
 
-	<?php echo wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
+	<!-- <?php echo wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?> -->
 
 	<?php do_action( 'woocommerce_product_meta_end' ); ?>
 

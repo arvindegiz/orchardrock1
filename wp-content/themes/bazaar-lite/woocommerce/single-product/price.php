@@ -40,23 +40,55 @@ if(isset($course_venue_data) && !empty($course_venue_data)) {
 	$course_venue = $course_venue_data;
 }
 
-
-
+$tag = get_the_terms( $product->ID, 'product_tag' );
+if($tag[0]->slug == 'public-course') {
+	
 ?>
+<script type="text/javascript">
+jQuery(document).ready(function() 
+{
+    jQuery(".woocommerce div.product form.cart div.quantity").css("display", "block");
+	jQuery(".woocommerce div.product form.cart .button").css("display", "block");
+});
+</script>
 <p class="<?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?>"><?php echo $product->get_price_html(); ?></p>
-<?php if (!empty($course_venue)) { ?>
-<p class=""><span class="price_addition_attr">Venue: </span><?php echo $course_venue; ?> </p>
+<?php } if (!empty($course_venue)) { ?>
+<p class="addition_attr"><span class="price_addition_attr">Venue: </span><?php echo $course_venue; ?> </p>
 <?php } if (!empty($new_course_date)) { ?>
-<p class=""><span class="price_addition_attr">Date: </span><?php echo $new_course_date; ?></p>
+<p class="addition_attr"><span class="price_addition_attr">Date: </span><?php echo $new_course_date; ?></p>
 <?php } if (!empty($course_duration)) { ?>
-<p class=""><span class="price_addition_attr">Duration: </span><?php echo $course_duration; ?> <i class="fa fa-clock-o" aria-hidden="true"></i></p>
+<p class="addition_attr"><span class="price_addition_attr">Duration: </span><?php echo $course_duration; ?> <i class="fa fa-clock-o" aria-hidden="true"></i></p>
 <?php }  ?>
 
 <style>
-	.price_addition_attr {
+	.price_addition_attr, .posted_in {
 		color:#00B4E0;
 		font-weight:600;
 	} 
+	.addition_attr {
+		margin-bottom:0;
+	}
+	.wcppec-checkout-buttons.woo_pp_cart_buttons_div {
+		display:none;
+	}
+	.woocommerce div.product form.cart div.quantity {
+		display: none;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	.woocommerce div.product form.cart .button {
+		display: none;
+		margin: 20px 0;
+	}
+	h1.product-title {
+		margin-bottom:10px;
+	}
+	.woocommerce-product-details__short-description {
+		margin-top: 15px;
+	}
+	.woocommerce div.product form.cart, .woocommerce div.product p.cart {
+		margin:0;
+	}
 </style>
 
 

@@ -20,12 +20,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 $course_venue = get_post_meta(get_the_ID(), 'course_venue', true);
 $category = get_the_terms( get_the_ID(), 'product_cat' ); 
+$tag = get_the_terms( get_the_ID(), 'product_tag' );
+$product_tag = $tag[0]->slug;
+
+if($product_tag == 'private-course') {
+	$more_link = get_site_url().'/private-courses/?searchByCategory='.$category[0]->slug;
+} else {
+	$more_link = get_site_url().'/public-courses/?searchByCategory='.$category[0]->slug;
+}
 
 $args = array(
 	'post_type' => 'product',
 	'post_status' => 'publish',
 	'posts_per_page' => 10,
 	'post__not_in' => array(get_the_ID()),
+	'product_tag'    => array($product_tag),
 	'meta_query' => array(
 		'relation' => 'AND',
 		array(
@@ -44,6 +53,8 @@ $loop = new WP_Query($args);
 $category_related_args = array(
 	'post_type' => 'product',
 	'post_status' => 'publish',
+	'post__not_in' => array(get_the_ID()),
+	'product_tag'    => array($product_tag),
 	'tax_query' => array(
 		'relation' => 'AND',
 		array(
@@ -76,16 +87,23 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 							}
 							?>
 				<tr>
-					<td><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a>
+					<td><a class="venue-related-product-title" href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a>
 							<p class="custom_date"><?php echo $new_course_date; ?></p>
 				</td>
-					<td class="custom_add_to_cart"><?php woocommerce_template_loop_add_to_cart();?></td>		
+					<td class="custom_add_to_cart">
+					<?php 
+					if($product_tag == 'public-course') {
+						woocommerce_template_loop_add_to_cart();
+					} else { ?>
+						<a class="view_deatils_btn" href="<?php echo get_the_permalink(); ?>"><button class="view_detail">View Detail</button></a>
+					<?php } ?>
+					</td>		
 					</tr>
 
 					<?php endwhile;
 					} else { ?>
 					<tr>
-						<td class="No_Record" colspan="8">No Record Found</td>
+						<td class="No_Record" colspan="8">No Course Found</td>
 					</tr>
 					<?php
 					}
@@ -107,15 +125,22 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 							<?php if ( has_post_thumbnail() ) {
 									the_post_thumbnail("small_thumbnail");
 									} else {
-									echo '<img src="'.get_site_url().'/wp-content/uploads/woocommerce-placeholder.png" width="50" hieght="50"/>';
+									echo '<img src="'.get_site_url().'/wp-content/uploads/2023/03/download-1-1.png" width="50" hieght="50"/>';
 							}; ?>
 					</div>
 					<div class="related-product-content">
 						<a class="related-product-title" href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a>
 						<?php $product = wc_get_product( get_the_ID() ); /* get the WC_Product Object */ ?>
-						<p><?php echo $product->get_price_html(); ?></p>
+						<?php if($product_tag == 'public-course') { ?>
+							<p><?php echo $product->get_price_html(); ?></p>
+						<?php } ?>
 					</div>
-					<?php woocommerce_template_loop_add_to_cart();?>
+					<?php 
+					if($product_tag == 'public-course') {
+						woocommerce_template_loop_add_to_cart();
+					} else { ?>
+						<a href="<?php echo get_the_permalink(); ?>"><button class="view_detail">View Detail</button></a>
+					<?php } ?>
 				</div>
 			</div>
 		<?php endwhile;
@@ -127,7 +152,7 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 	</div>
 	<?php	if($total_products->post_count > 4)  {	?>
 		<div class="all_realated_products">
-			<a class="" href="<?php echo get_site_url(); ?>/public-courses/?searchByCategory=<?php echo $category[0]->slug; ?>">More</a>
+			<a class="" href="<?php echo $more_link; ?>">More Courses</a>
 		</div>
 	<?php } ?>
 
@@ -184,6 +209,7 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
     padding: 0 10px;
 }
 .related-product-inner {
+	padding: 10px;
 	border: 1px solid #d1d1d1;
     float: left;
     width: 100%;
@@ -201,7 +227,56 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
     padding: 8px 15px;
 	text-decoration:none;
 }
-.related-product-title{
+.venue-related-product-title {
+	width:135px;
+}
+.related-product-title, .venue-related-product-title {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin: 0;
+	display:block;
+	
+}
+.related-product-title {
 	color:#0FBB56;
-} 
+	margin-bottom: 15px;
+}
+
+.view_detail{
+	color: #ffffff;
+	background-color: #333333;
+	margin: 25px auto -10px auto;
+	border-radius: 5px ;
+	border : 1px solid #d1d1d1;
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    display: inline-block; 
+    margin: auto;
+    padding: 8px 15px;
+}
+.view_detail:hover{
+	color: #ffffff;
+    background-color: #2ecc71;
+	margin: 25px auto -10px auto;
+	border-radius: 5px ;
+	border : 1px solid #d1d1d1;
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    display: inline-block; 
+    margin: auto;
+    width: auto;
+    padding: 8px 15px;
+}
+.view_deatils_btn{
+	width: 99px;
+    float: left;
+}
+.all_realated_products a {
+	border-radius: 5px ;
+	border : 1px solid #d1d1d1;
+}
+
 </style>

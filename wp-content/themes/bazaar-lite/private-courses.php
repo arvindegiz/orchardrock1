@@ -1,5 +1,5 @@
 <?php
-/* Template name: Public Courses Page */
+/* Template name: Private Courses Page */
 
 	get_header();
 	
@@ -22,7 +22,7 @@
 		'post_type' => 'product',
 		'post_status' => 'publish',
 		'paged' => $paged,
-		'product_tag'    => array('public-course'),
+		'product_tag'    => array('private-course'),
 		'posts_per_page' => 10
 	);
 
@@ -129,7 +129,7 @@
 	?>
 <div class="container"> 
 	<div class="course_heading my-5">
-		<h1 class="fw-bold">Search Public Courses</h1>
+		<h1 class="fw-bold">Search Private Courses</h1>
 	</div>
 	<div class="row search_course my-5">
 		<div class="col-md-3 top_search_bar input_box">
@@ -162,8 +162,6 @@
 		</div>
 		<div class="col-md-2 top_search_bar">
 			<select class="form-control" id="sortByAttribute" style="width:100% !important">
-					<option value="price_asc" <?php if(isset($_GET['sortByAttribute']) && !empty($_GET['sortByAttribute'])) {  echo $_GET['sortByAttribute']=='price_asc'?'selected':''; } ?>>Sort by Price low to high</option>
-					<option value="price_desc" <?php if(isset($_GET['sortByAttribute']) && !empty($_GET['sortByAttribute'])) {  echo $_GET['sortByAttribute']=='price_desc'?'selected':''; } ?>>Sort by Price high to low</option>
 					<option value="name_asc" <?php if(isset($_GET['sortByAttribute']) && !empty($_GET['sortByAttribute'])) {  echo $_GET['sortByAttribute']=='name_asc'?'selected':''; } ?>>Sort by Name A - Z</option>
 					<option value="name_desc" <?php if(isset($_GET['sortByAttribute']) && !empty($_GET['sortByAttribute'])) {  echo $_GET['sortByAttribute']=='name_desc'?'selected':''; } ?>>Sort by Name Z - A</option>
 					<option value="date_asc" <?php if(isset($_GET['sortByAttribute']) && !empty($_GET['sortByAttribute'])) {  echo $_GET['sortByAttribute']=='date_sort'?'selected':''; } ?>>Sort by Date</option>
@@ -206,8 +204,7 @@
 							<th class="fw-bold align-middle" scope="col">Venue</th>
 							<th class="fw-bold align-middle" scope="col">Course Date</th>
 							<th class="fw-bold align-middle" scope="col">Course Duration</th>
-							<th class="fw-bold align-middle" scope="col">Price</th>
-							<th class="fw-bold align-middle" scope="col">Book Now</th>
+							<th class="fw-bold align-middle" scope="col">Detail</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -236,9 +233,7 @@
 									<td><?php echo get_post_meta(get_the_ID(), 'course_venue', true); ?></td>
 									<td><?php echo $new_course_date; ?></td>
 									<td><?php echo get_post_meta(get_the_ID(), 'course_duration', true); ?></td>
-									<td><?php $product = wc_get_product( get_the_ID() ); /* get the WC_Product Object */ ?>
-										<p><?php echo $product->get_price_html(); ?></p></td>
-									<td ><?php woocommerce_template_loop_add_to_cart();?></td>
+									<td ><a href="<?php echo get_the_permalink(); ?>"><button class="view_detail button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart">View Detail</button></a></td>
 								</tr>
 
 							<?php endwhile;
@@ -331,7 +326,7 @@ input.form-control.col-md-10 {
 a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_cart{
 	margin: 10px auto 10px auto;
 	width: 90px;
-	/* background-color: #00B4E1; */
+	background-color: #00B4E1;
 	border-radius: 5px ;
 	border : 1px solid #d1d1d1;
 }
@@ -413,7 +408,41 @@ a.page-numbers {
 	margin-left: 5px!important;
 	margin-right: 5px !important;
 }
+.view_detail{
+	
+    /* vertical-align: middle !important; */
+	/* margin: 10px auto 10px auto; */
+	border-radius: 5px ;
+	border : 1px solid #d1d1d1;
+	color: #ffffff;
+	background-color: #333333;
+	height: 36px;
+	/* border: solid 1px #333; */
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    display: inline-block; 
+    /* margin: auto; */
+    width: auto;
+    padding: 8px 18px;
+}
+.view_detail:hover{
+	color: #ffffff;
+    background-color: #2ecc71;
+	margin: 25px auto -10px auto;
+	border: solid 1px #fff;
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    display: inline-block; 
+    margin: auto;
+    width: auto;
+    padding: 8px 18px;
+}
+td{
+    vertical-align: middle !important;
 
+}
 </style>
 <script type="text/javascript" >
 	// Search By Venue

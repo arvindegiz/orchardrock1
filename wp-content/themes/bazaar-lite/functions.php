@@ -235,5 +235,35 @@ function my_custom_checkout_field_display_admin_order_meta( $order ){
     }
     
 }
-  
+  //add custom WooCommerce checkout spinner button
+
+add_action('wp_head', 'custom_woocommerce_checkout_spinner_blogies', 1000 );
+function custom_woocommerce_checkout_spinner_blogies() {
+    ?>
+    <style>
+    .woocommerce .blockUI.blockOverlay:before,
+    .woocommerce .loader:before {
+        height: 7em;
+        width: 7em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -.5em;
+        margin-top: -.5em;
+        display: block;
+        position: fixed;
+        -webkit-animation: none;
+        -moz-animation: none;
+        animation: none;
+        background-image:url('http://localhost/orchardrock1/wp-content/uploads/2023/04/Spin-1.3s-281px-1.svg') !important;
+        background-position: center center;
+        background-size: cover;
+        line-height: 7;
+        text-align: center;
+        font-size: 2em;
+        color:white;
+    }
+    </style>
+    <?php
+}
 ?>
