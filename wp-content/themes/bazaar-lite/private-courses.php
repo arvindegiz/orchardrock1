@@ -409,24 +409,23 @@ a.page-numbers {
 	margin-right: 5px !important;
 }
 .view_detail{
-	
+	white-space: pre;
     /* vertical-align: middle !important; */
 	/* margin: 10px auto 10px auto; */
 	border-radius: 5px ;
 	border : 1px solid #d1d1d1;
 	color: #ffffff;
 	background-color: #333333;
-	height: 36px;
-	/* border: solid 1px #333; */
     font-size: 12px;
     text-align: center;
     position: relative;
     display: inline-block; 
-    /* margin: auto; */
+    margin: auto;
     width: auto;
     padding: 8px 18px;
 }
 .view_detail:hover{
+	white-space: pre;
 	color: #ffffff;
     background-color: #2ecc71;
 	margin: 25px auto -10px auto;
