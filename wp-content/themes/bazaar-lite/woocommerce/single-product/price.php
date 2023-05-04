@@ -59,8 +59,15 @@ jQuery(document).ready(function()
 <?php } if (!empty($course_duration)) { ?>
 <p class="addition_attr"><span class="price_addition_attr">Duration: </span><?php echo $course_duration; ?> <i class="fa fa-clock-o" aria-hidden="true"></i></p>
 <?php }  ?>
+<!-- <p class="addition_btn"><?php woocommerce_template_loop_add_to_cart();?></p> -->
 
 <style>
+	/* .button.single_add_to_cart_button.button.alt.wp-element-button {
+		display: none !important;
+	} 
+	.button.product_type_simple.add_to_cart_button.ajax_add_to_cart.added::after {
+    display: none !important;
+}*/
 	.price_addition_attr, .posted_in {
 		color:#00B4E0;
 		font-weight:600;
@@ -88,6 +95,24 @@ jQuery(document).ready(function()
 	}
 	.woocommerce div.product form.cart, .woocommerce div.product p.cart {
 		margin:0;
+	}
+	.ppc-button-wrapper {
+		display:none;
+	}
+	.addition_btn{
+		position: absolute;
+		margin-top: 13px;
+		margin-left: 60px;
+	}
+	.woocommerce div.product form.cart .button {
+		display: none;
+		margin: 20px 0;
+		border-radius: 5px;
+		border: 1px solid #d1d1d1;
+	}
+	a.button.wc-forward.wp-element-button {
+		border-radius: 5px;
+		border: 1px solid #d1d1d1;
 	}
 </style>
 

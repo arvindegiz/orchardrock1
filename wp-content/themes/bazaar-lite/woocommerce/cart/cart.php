@@ -25,7 +25,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 		<form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 
-        <div class="col-md-8">
+        <div class="col-md-12">
         
         	<div class="woocommerce_cart_details">
         
@@ -36,12 +36,12 @@ do_action( 'woocommerce_before_cart' ); ?>
                     <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
                         <thead>
                             <tr>
-                                <th class="product-remove"><span class="screen-reader-text"><?php esc_html_e( 'Remove item', 'bazaar-lite' ); ?></span></th>
                                 <th class="product-thumbnail"><span class="screen-reader-text"><?php esc_html_e( 'Thumbnail image', 'bazaar-lite' ); ?></span></th>
                                 <th class="product-name"><?php esc_html_e( 'Course', 'bazaar-lite' ); ?></th>
                                 <th class="product-price"><?php esc_html_e( 'Price', 'bazaar-lite' ); ?></th>
                                 <th class="product-quantity"><?php esc_html_e( 'Quantity', 'bazaar-lite' ); ?></th>
                                 <th class="product-subtotal"><?php esc_html_e( 'Subtotal', 'bazaar-lite' ); ?></th>
+                                <th class="product-remove"><span class="screen-reader-text"><?php esc_html_e( 'Remove item', 'bazaar-lite' ); ?></span></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -56,19 +56,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 								$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
                                 ?>
                                 <tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
-            
-                                    <td class="product-remove">
-                                        <?php
-                                            // @codingStandardsIgnoreLine
-                                            echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-                                                '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
-                                                esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-                                                __( 'Remove this item', 'bazaar-lite' ),
-                                                esc_attr( $product_id ),
-                                                esc_attr( $_product->get_sku() )
-                                            ), $cart_item_key );
-                                        ?>
-                                    </td>
             
                                     <td class="product-thumbnail">
                                     <?php
@@ -131,6 +118,18 @@ do_action( 'woocommerce_before_cart' ); ?>
                                             echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
                                         ?>
                                     </td>
+                                    <td class="product-remove">
+                                        <?php
+                                            // @codingStandardsIgnoreLine
+                                            echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
+                                                '<a href="%s" class="remove-cart-item" aria-label="%s" data-product_id="%s" data-product_sku="%s">Remove</a>',
+                                                esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
+                                                __( 'Remove this item', 'bazaar-lite' ),
+                                                esc_attr( $product_id ),
+                                                esc_attr( $_product->get_sku() )
+                                            ), $cart_item_key );
+                                        ?>
+                                    </td>
                                 </tr>
                                 <?php
                             }
@@ -174,7 +173,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
         <?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
 
-        <div class="col-md-4 cart-total">
+        <div class="col-md-12 cart-total">
         
             <div class="cart-collaterals">
             
@@ -191,3 +190,68 @@ do_action( 'woocommerce_before_cart' ); ?>
 </div>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>
+<style>
+    .cart_totals  tr.cart-subtotal {
+        display: none;
+    }
+
+    .cart_totals tr.woocommerce-shipping-totals.shipping {
+        display: none;
+    }
+
+    .woocommerce-cart .cart-collaterals .cart_totals tr th, .woocommerce-cart .cart-collaterals .cart_totals tr td {
+        border-top:0!important;
+    }
+
+    input.btn.btn-flat.update_cart {
+        display: none;
+    }
+
+    
+    .remove-cart-item{
+        color: #ffffff;
+        background-color: #ff0000;
+        margin: 25px auto -10px auto;
+        border-radius: 5px ;
+        border : 1px solid #d1d1d1;
+        font-size: 12px;
+        text-align: center;
+        position: relative;
+        display: inline-block; 
+        margin: auto;
+        padding: 8px 15px;
+        width:90px!important;
+    }
+
+    .remove-cart-item:hover{
+        color: #ffffff;
+        background-color: #f37575;
+        margin: 25px auto -10px auto;
+        border-radius: 5px ;
+        border : 1px solid #d1d1d1;
+        font-size: 12px;
+        text-align: center;
+        position: relative;
+        display: inline-block; 
+        margin: auto;
+        width: auto;
+        padding: 8px 15px;
+    }
+    .view_deatils_btn{
+        width: 99px;
+        float: left;
+    }
+
+</style>
+
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        jQuery(document).on("click", ".remove-cart-item" ,function() {
+            jQuery('body').css("opacity", "0.5");
+            setTimeout(function () {
+                jQuery('body').css("opacity", "1");
+             }, 3000);
+        })
+        
+    });
+</script>

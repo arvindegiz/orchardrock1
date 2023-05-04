@@ -69,7 +69,10 @@ $total_products = new WP_Query($category_related_args);
 
 $category_related_args['posts_per_page'] = 4;
 $category_related_loop = new WP_Query($category_related_args); ?>
-
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+   
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </div>
 	<div class="col-md-4 related_venue_courses" id="related_course_venue_product_<?php the_ID(); ?>">
 	
@@ -87,7 +90,7 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 							}
 							?>
 				<tr>
-					<td><a class="venue-related-product-title" href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a>
+					<td class="related-venue-td"><a class="venue-related-product-title" href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a>
 							<p class="custom_date"><?php echo $new_course_date; ?></p>
 				</td>
 					<td class="custom_add_to_cart">
@@ -120,6 +123,7 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 		<?php	if($category_related_loop->post_count != 0)  {	
 			while ( $category_related_loop->have_posts() ) : $category_related_loop->the_post();  ?>
 			<div class="col-md-3 related-product">
+				<input type="hidden" class="">
 				<div class="related-product-inner">
 					<div class="related-post-image">
 							<?php if ( has_post_thumbnail() ) {
@@ -179,13 +183,14 @@ $category_related_loop = new WP_Query($category_related_args); ?>
     border: 1px solid #d1d1d1;
     padding: 0 8px;
 }  
-.custom_add_to_cart{
+.custom_add_to_cart {
 	line-height: 1.42857143;
 }
 a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_cart {
     margin-top: 10px;
     margin-bottom: 5px;
 }
+
 
 .custom_date {
     color: #2ecc71;
@@ -278,5 +283,49 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
 	border-radius: 5px ;
 	border : 1px solid #d1d1d1;
 }
+a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_cart {
+    /* border: 1px; */
+	text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #d1d1d1;
+	font-size:14px;
+	padding:10px 15px;
+}
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.added::after {
+	display:none;
+}
 
 </style>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		jQuery(document).on("click", ".custom_add_to_cart .ajax_add_to_cart" ,function() {
+			var title = jQuery(this).closest('tr').find('.venue-related-product-title').text();
+			var add_to_cart_message = '"'+title+'" added to cart successfully!';
+			toastr["success"](add_to_cart_message)
+		});
+
+		jQuery(document).on("click", ".related-product-inner .ajax_add_to_cart" ,function() {
+			var title = jQuery(this).closest('.related-product').find('.related-product-inner').find('.related-product-content').find('.related-product-title').text();
+			var add_to_cart_message = '"'+title+'" added to cart successfully!';
+			toastr["success"](add_to_cart_message)
+		});
+
+		toastr.options = {
+			"closeButton": false,
+			"debug": false,
+			"newestOnTop": false,
+			"progressBar": false,
+			"positionClass": "toast-top-right",
+			"preventDuplicates": false,
+			"onclick": null,
+			"showDuration": "300",
+			"hideDuration": "2000",
+			"timeOut": "5000",
+			"extendedTimeOut": "2000",
+			"showEasing": "swing",
+			"hideEasing": "linear",
+			"showMethod": "fadeIn",
+			"hideMethod": "fadeOut"
+		}
+	});
+</script>

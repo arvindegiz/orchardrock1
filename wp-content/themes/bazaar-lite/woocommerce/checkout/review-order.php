@@ -108,3 +108,8 @@ defined( 'ABSPATH' ) || exit;
 
 	</tfoot>
 </table>
+<style>
+	.woocommerce-column.woocommerce-column--2.woocommerce-column--shipping-address.col-2 {
+	    display: none;
+	}
+</style>

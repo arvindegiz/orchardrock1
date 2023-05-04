@@ -32,14 +32,16 @@
 		$filter_row = array();
 		$filter_row['type'] = 'searchByCourse';
 		$filter_row['value'] = $_GET['searchByCourse'];
+		$filter_row['label'] = $filter_row['value'];
 		$search_filter_values[] = $filter_row;
 		$args['s'] = $_GET['searchByCourse'];
 	}
 
-	if(isset($_GET['searchByVenue']) && !empty($_GET['searchByVenue'])) {
+	if(isset($_GET['searchByVenue']) && !empty($_GET['searchByVenue']) && !isset($_GET['searchBydate']) && empty($_GET['searchBydate'])) {
 		$filter_row = array();
 		$filter_row['type'] = 'searchByVenue';
 		$filter_row['value'] = $_GET['searchByVenue'];
+		$filter_row['label'] = $filter_row['value'];
 		$search_filter_values[] = $filter_row;
 
 		$args['meta_query'] = array(
@@ -58,6 +60,7 @@
 		$search_filter = str_replace("-", " ", $_GET['searchByCategory']);
 		$filter_row['type'] = 'searchByCategory';
 		$filter_row['value'] = ucwords(strtolower($search_filter));
+		$filter_row['label'] = $filter_row['value'];
 		$search_filter_values[] = $filter_row;
 
 		$args['tax_query'] = array(
@@ -71,9 +74,7 @@
 	}
 
 	$serach_course_date_value = '';
-	$is_date_filter = false;
-	if(isset($_GET['searchBydate']) && !empty($_GET['searchBydate'])) {
-		$is_date_filter = true;
+	if(isset($_GET['searchBydate']) && !empty($_GET['searchBydate']) && !isset($_GET['searchByVenue']) && empty($_GET['searchByVenue'])) {
 		$serach_course_date_value = $_GET['searchBydate'];
 		$filter_row = array();
 		$filter_row['type'] = 'searchBydate';
@@ -114,6 +115,7 @@
 		$filter_row = array();
 		$filter_row['type'] = 'sortByAttribute';
 		$filter_row['value'] = ucfirst($searchByValue[0]).": ".ucfirst($searchByValue[1]);
+		$filter_row['label'] = $filter_row['value'];
 		$search_filter_values[] = $filter_row;
 
 		$args['orderby'] = $sort_by;
@@ -121,6 +123,40 @@
 		if($is_meta_key) {
 			$args['meta_key'] = $sort_by;
 		}
+	}
+
+	if(isset($_GET['searchByVenue']) && !empty($_GET['searchByVenue']) && isset($_GET['searchBydate']) && !empty($_GET['searchBydate'])) {
+		$filter_index = count($search_filter_values);
+		$filter_venue_row = array();
+		$filter_venue_row['type'] = 'searchByVenue';
+		$filter_venue_row['value'] = $_GET['searchByVenue'];
+		$filter_venue_row['label'] = $filter_venue_row['value'];
+		$search_filter_values[$filter_index] = $filter_venue_row;
+
+		$filter_date_row = array();
+		$filter_date_row['type'] = 'searchBydate';
+		$filter_date_row['value'] = $_GET['searchBydate'];
+		$timestamp = strtotime($_GET['searchBydate']);
+		$filter_date_row['label'] = date('M d, Y', $timestamp);
+		$search_filter_values[$filter_index+1] = $filter_date_row;
+
+		$args['meta_query'] = array(
+			'relation' => 'AND',
+			array(
+				array(
+					'key'       => 'course_venue',
+					'value'     => $_GET['searchByVenue'],
+					'compare'   => '=',
+				)
+				), 
+				array(
+					array(
+						'key'       => 'course_date',
+						'value'     => $_GET['searchBydate'],
+						'compare'   => '=',
+					)
+				)
+		);   
 	}
 	
 
@@ -178,15 +214,13 @@
 			<div class ="search_filtes_block">
 			<?php
 				foreach($search_filter_values as $filter) { 
-					if($is_date_filter) {
+					
 						$filter_label = $filter['label'];
-					} else {
-						$filter_label = $filter['value'];
-					} ?>
+					?>
 					<span class ="search_filter_value"><?php echo $filter_label; ?><i class="fa fa-times clear_filter" data-type = "<?php echo $filter['type']; ?>" aria-hidden="true"></i></span>
 				<?php } ?>
-			
-				<a class = "clear_search_filter" href="javascript:void(0)">Clear Filter</a>
+				
+			<a class = "clear_search_filter" href="javascript:void(0)">Clear Filter</a>
 			</div>
 		</div>
 		<?php } ?>
@@ -199,12 +233,12 @@
 					<thead>
 						<tr>
 							<th class="fw-bold align-middle" scope="col">Image</th>
-							<th class="fw-bold align-middle" scope="col">Name</th>
+							<th class="fw-bold align-middle" scope="col" width="20%">Name</th>
 							<th class="fw-bold align-middle" scope="col">Description</th>
 							<th class="fw-bold align-middle" scope="col">Venue</th>
 							<th class="fw-bold align-middle" scope="col">Course Date</th>
 							<th class="fw-bold align-middle" scope="col">Course Duration</th>
-							<th class="fw-bold align-middle" scope="col">Detail</th>
+							<th class="fw-bold align-middle" scope="col" width="10%">Detail</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -228,12 +262,12 @@
 											} else {
 											echo '<img src="'.get_site_url().'/wp-content/uploads/2023/03/download-1-1.png" width="50" hieght="50"/>';
 									}; ?></td>
-									<td><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></td>
+									<td  width="20%"><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></td>
 									<td> <?php echo get_excerpt(); ?></td>
 									<td><?php echo get_post_meta(get_the_ID(), 'course_venue', true); ?></td>
 									<td><?php echo $new_course_date; ?></td>
 									<td><?php echo get_post_meta(get_the_ID(), 'course_duration', true); ?></td>
-									<td ><a href="<?php echo get_the_permalink(); ?>"><button class="view_detail button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart">View Detail</button></a></td>
+									<td width="10%"><a href="<?php echo get_the_permalink(); ?>"><button class="view_detail button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart">View Detail</button></a></td>
 								</tr>
 
 							<?php endwhile;

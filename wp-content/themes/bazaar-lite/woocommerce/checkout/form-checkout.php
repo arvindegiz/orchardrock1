@@ -42,7 +42,6 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
             <div id="customer_details">
                 
                 <?php do_action( 'woocommerce_checkout_billing' ); ?>
-                <?php do_action( 'woocommerce_checkout_shipping' ); ?>
             
             </div>
     
@@ -73,3 +72,16 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 </div>
 
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
+<style>
+    table.shop_table.woocommerce-checkout-review-order-table  tr.cart-subtotal {
+        display: none;
+    }
+
+    table.shop_table.woocommerce-checkout-review-order-table tr.woocommerce-shipping-totals.shipping {
+        display: none;
+    }
+
+    table.shop_table.woocommerce-checkout-review-order-table .cart-collaterals .cart_totals tr th, table.shop_table.woocommerce-checkout-review-order-table .cart_totals tr td {
+        border-top:0!important;
+    }
+</style>

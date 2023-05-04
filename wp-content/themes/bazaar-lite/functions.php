@@ -245,24 +245,17 @@ function custom_woocommerce_checkout_spinner_blogies() {
     .woocommerce .loader:before {
         height: 7em;
         width: 7em;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-left: -.5em;
-        margin-top: -.5em;
-        display: block;
         position: fixed;
+        left:0;
+        right:0;
+        margin:auto;
+        display: block;
         -webkit-animation: none;
         -moz-animation: none;
         animation: none;
         background-image:url('http://localhost/orchardrock1/wp-content/uploads/2023/04/Spin-1.3s-281px-1.svg') !important;
-        background-position: center center;
-        background-size: cover;
-        line-height: 7;
-        text-align: center;
-        font-size: 2em;
-        color:white;
     }
+    
     </style>
     <?php
 }

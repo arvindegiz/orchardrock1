@@ -32,14 +32,16 @@
 		$filter_row = array();
 		$filter_row['type'] = 'searchByCourse';
 		$filter_row['value'] = $_GET['searchByCourse'];
+		$filter_row['label'] = $filter_row['value'];
 		$search_filter_values[] = $filter_row;
 		$args['s'] = $_GET['searchByCourse'];
 	}
 
-	if(isset($_GET['searchByVenue']) && !empty($_GET['searchByVenue'])) {
+	if(isset($_GET['searchByVenue']) && !empty($_GET['searchByVenue']) && !isset($_GET['searchBydate']) && empty($_GET['searchBydate'])) {
 		$filter_row = array();
 		$filter_row['type'] = 'searchByVenue';
 		$filter_row['value'] = $_GET['searchByVenue'];
+		$filter_row['label'] = $filter_row['value'];
 		$search_filter_values[] = $filter_row;
 
 		$args['meta_query'] = array(
@@ -50,7 +52,7 @@
 					'value'     => $_GET['searchByVenue'],
 					'compare'   => '=',
 				)
-			)
+				),
 		);   
 	}
 	if(isset($_GET['searchByCategory'])  && !empty($_GET['searchByCategory'])) {
@@ -58,6 +60,7 @@
 		$search_filter = str_replace("-", " ", $_GET['searchByCategory']);
 		$filter_row['type'] = 'searchByCategory';
 		$filter_row['value'] = ucwords(strtolower($search_filter));
+		$filter_row['label'] = $filter_row['value'];
 		$search_filter_values[] = $filter_row;
 
 		$args['tax_query'] = array(
@@ -71,9 +74,7 @@
 	}
 
 	$serach_course_date_value = '';
-	$is_date_filter = false;
-	if(isset($_GET['searchBydate']) && !empty($_GET['searchBydate'])) {
-		$is_date_filter = true;
+	if(isset($_GET['searchBydate']) && !empty($_GET['searchBydate']) && !isset($_GET['searchByVenue']) && empty($_GET['searchByVenue'])) {
 		$serach_course_date_value = $_GET['searchBydate'];
 		$filter_row = array();
 		$filter_row['type'] = 'searchBydate';
@@ -114,6 +115,7 @@
 		$filter_row = array();
 		$filter_row['type'] = 'sortByAttribute';
 		$filter_row['value'] = ucfirst($searchByValue[0]).": ".ucfirst($searchByValue[1]);
+		$filter_row['label'] = $filter_row['value'];
 		$search_filter_values[] = $filter_row;
 
 		$args['orderby'] = $sort_by;
@@ -122,11 +124,49 @@
 			$args['meta_key'] = $sort_by;
 		}
 	}
-	
 
+	if(isset($_GET['searchByVenue']) && !empty($_GET['searchByVenue']) && isset($_GET['searchBydate']) && !empty($_GET['searchBydate'])) {
+		$filter_index = count($search_filter_values);
+		$filter_venue_row = array();
+		$filter_venue_row['type'] = 'searchByVenue';
+		$filter_venue_row['value'] = $_GET['searchByVenue'];
+		$filter_venue_row['label'] = $filter_venue_row['value'];
+		$search_filter_values[$filter_index] = $filter_venue_row;
+
+		$filter_date_row = array();
+		$filter_date_row['type'] = 'searchBydate';
+		$filter_date_row['value'] = $_GET['searchBydate'];
+		$timestamp = strtotime($_GET['searchBydate']);
+		$filter_date_row['label'] = date('M d, Y', $timestamp);
+		$search_filter_values[$filter_index+1] = $filter_date_row;
+
+		$args['meta_query'] = array(
+			'relation' => 'AND',
+			array(
+				array(
+					'key'       => 'course_venue',
+					'value'     => $_GET['searchByVenue'],
+					'compare'   => '=',
+				)
+				), 
+				array(
+					array(
+						'key'       => 'course_date',
+						'value'     => $_GET['searchBydate'],
+						'compare'   => '=',
+					)
+				)
+		);   
+	}
+	
     $loop = new WP_Query($args);
 	
 	?>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
 <div class="container"> 
 	<div class="course_heading my-5">
 		<h1 class="fw-bold">Search Public Courses</h1>
@@ -180,11 +220,9 @@
 			<div class ="search_filtes_block">
 			<?php
 				foreach($search_filter_values as $filter) { 
-					if($is_date_filter) {
+					
 						$filter_label = $filter['label'];
-					} else {
-						$filter_label = $filter['value'];
-					} ?>
+					?>
 					<span class ="search_filter_value"><?php echo $filter_label; ?><i class="fa fa-times clear_filter" data-type = "<?php echo $filter['type']; ?>" aria-hidden="true"></i></span>
 				<?php } ?>
 			
@@ -201,7 +239,7 @@
 					<thead>
 						<tr>
 							<th class="fw-bold align-middle" scope="col">Image</th>
-							<th class="fw-bold align-middle" scope="col">Name</th>
+							<th class="fw-bold align-middle" scope="col" width="15%">Name</th>
 							<th class="fw-bold align-middle" scope="col">Description</th>
 							<th class="fw-bold align-middle" scope="col">Venue</th>
 							<th class="fw-bold align-middle" scope="col">Course Date</th>
@@ -231,13 +269,13 @@
 											} else {
 											echo '<img src="'.get_site_url().'/wp-content/uploads/2023/03/download-1-1.png" width="50" hieght="50"/>';
 									}; ?></td>
-									<td><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></td>
+									<td width="15%"><a class="public-course-title" href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></td>
 									<td> <?php echo get_excerpt(); ?></td>
 									<td><?php echo get_post_meta(get_the_ID(), 'course_venue', true); ?></td>
 									<td><?php echo $new_course_date; ?></td>
 									<td><?php echo get_post_meta(get_the_ID(), 'course_duration', true); ?></td>
 									<td><?php $product = wc_get_product( get_the_ID() ); /* get the WC_Product Object */ ?>
-										<p><?php echo $product->get_price_html(); ?></p></td>
+										<p class="product-price-del"><?php echo $product->get_price_html(); ?></p></td>
 									<td ><?php woocommerce_template_loop_add_to_cart();?></td>
 								</tr>
 
@@ -285,6 +323,7 @@ td.No_Record {
 }
 table, td{
 	font-family: "Myriad Pro Light", Sans-serif;
+	vertical-align: middle !important;
 }
 .clear_filter {
 	margin-left:10px;
@@ -327,7 +366,7 @@ input.form-control.col-md-10 {
 	bottom: 0;
 	margin: auto;
 }
-
+/* book now button Add to cart */
 a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_cart{
 	margin: 10px auto 10px auto;
 	width: 90px;
@@ -413,6 +452,13 @@ a.page-numbers {
 	margin-left: 5px!important;
 	margin-right: 5px !important;
 }
+span.woocommerce-Price-amount.amount {
+	color: green;
+    margin-left: 5px;
+}
+.product-price-del del span, .product-price-del del {
+	color:red!important;
+}
 
 </style>
 <script type="text/javascript" >
@@ -473,6 +519,30 @@ a.page-numbers {
 			var current_url = window.location.origin+window.location.pathname;
 			window.location.href = current_url;	
 		});
+
+		jQuery(document).on("click", ".ajax_add_to_cart" ,function() {
+			var title = jQuery(this).closest('tr').find('.public-course-title').text();
+			var add_to_cart_message = '"'+title+'" added to cart successfully!';
+			toastr["success"](add_to_cart_message)
+		});
+
+		toastr.options = {
+			"closeButton": false,
+			"debug": false,
+			"newestOnTop": false,
+			"progressBar": false,
+			"positionClass": "toast-top-right",
+			"preventDuplicates": false,
+			"onclick": null,
+			"showDuration": "300",
+			"hideDuration": "2000",
+			"timeOut": "5000",
+			"extendedTimeOut": "2000",
+			"showEasing": "swing",
+			"hideEasing": "linear",
+			"showMethod": "fadeIn",
+			"hideMethod": "fadeOut"
+		}
     });
 
 	// Set filter URL Functon
@@ -494,7 +564,7 @@ a.page-numbers {
 		var param_add = count > 0  ? "&" : "?";
 
 		window.location.href = cut_url+param_add+filter_type+'='+query_value;
-
+		
 	}
 
     </script>
