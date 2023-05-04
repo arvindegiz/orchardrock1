@@ -271,7 +271,7 @@
 									}; ?></td>
 									<td width="15%"><a class="public-course-title" href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></td>
 									<td> <?php echo get_excerpt(); ?></td>
-									<td><?php echo get_post_meta(get_the_ID(), 'course_venue', true); ?></td>
+									<td><?php echo get_post_meta(get_the_ID(), 'course_venue', true); ?> - <span class="public-course-location"><?php echo get_post_meta(get_the_ID(), 'course_location', true); ?></span></td>
 									<td><?php echo $new_course_date; ?></td>
 									<td><?php echo get_post_meta(get_the_ID(), 'course_duration', true); ?></td>
 									<td><?php $product = wc_get_product( get_the_ID() ); /* get the WC_Product Object */ ?>
@@ -458,6 +458,9 @@ span.woocommerce-Price-amount.amount {
 }
 .product-price-del del span, .product-price-del del {
 	color:red!important;
+}
+span.public-course-location {
+    color: #000;
 }
 
 </style>

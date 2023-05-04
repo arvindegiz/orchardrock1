@@ -47,6 +47,15 @@ function woocommerce_product_custom_fields()
             'label' => __('Course Venue', 'woocommerce'),
         )
     );
+    // Custom Product Text Field for venue
+   woocommerce_wp_text_input(
+    array(
+        'id' => 'course_location',
+        'placeholder' => 'Enter course location',
+        'label' => __('Course Location', 'woocommerce'),
+    )
+);
+
     
     echo '</div>';
 }
@@ -70,6 +79,13 @@ function woocommerce_product_custom_fields_save($post_id)
     $course_venue_field = $_POST['course_venue'];
     if (!empty($course_venue_field))
         update_post_meta($post_id, 'course_venue', esc_attr($course_venue_field));
+
+// Custom Product Number Field Location
+
+    $course_location_field = $_POST['course_location'];
+    if (!empty($course_location_field))
+        update_post_meta($post_id, 'course_location', esc_attr($course_location_field));
+
 }
 
 
@@ -141,6 +157,7 @@ function save_my_custom_checkout_field( $cart_item_data, $product_id ) {
         $course_venue = get_post_meta( $product_id, 'course_venue', true );
         $course_duration = get_post_meta( $product_id, 'course_duration', true );
         $course_date = get_post_meta( $product_id, 'course_date', true );
+        $course_location = get_post_meta( $product_id, 'course_location', true );
         
         if(isset($course_venue) && !empty($course_venue)) {
             $cart_item_data[ 'course_venue' ] = $course_venue;
@@ -153,6 +170,9 @@ function save_my_custom_checkout_field( $cart_item_data, $product_id ) {
 
         if(isset($course_duration) && !empty($course_duration)) {
             $cart_item_data[ 'course_duration' ] = $course_duration;
+        }
+        if(isset($course_location) && !empty($course_location)) {
+            $cart_item_data[ 'course_location' ] = $course_location;
         }
         
         $cart_item_data['unique_key'] = md5( microtime().rand() );
@@ -171,6 +191,9 @@ function render_meta_on_cart_and_checkout( $cart_data, $cart_item = null ) {
     if( isset( $cart_item['course_venue'] ) ) {
         $custom_items[] = array( "name" => 'Venue', "value" => $cart_item['course_venue'] );
     }
+    if( isset( $cart_item['course_location'] ) ) {
+        $custom_items[] = array( "name" => 'Location', "value" => $cart_item['course_location'] );
+    }
     if( isset( $cart_item['course_date'] ) ) {
         $custom_items[] = array( "name" => 'Date', "value" => $cart_item['course_date'] );
     }
@@ -186,13 +209,15 @@ function my_field_order_meta_handler( $item_id, $values, $cart_item_key ) {
     if( isset( $values['course_venue'] ) ) {
         wc_add_order_item_meta( $item_id, "Venue", $values['course_venue'] );
     }
+    if( isset( $values['course_location'] ) ) {
+        wc_add_order_item_meta( $item_id, "Location", $values['course_location'] );
+    }
     if( isset( $values['course_date'] ) ) {
         wc_add_order_item_meta( $item_id, "Date", $values['course_date'] );
     }
     if( isset( $values['course_duration'] ) ) {
         wc_add_order_item_meta( $item_id, "Duration", $values['course_duration'] );
     }
-    
 }
 add_action( 'woocommerce_add_order_item_meta', 'my_field_order_meta_handler', 1, 3 );
 
@@ -203,6 +228,8 @@ function my_custom_checkout_field_update_user_meta( $user_id ) {
     if ($user_id && $_POST['course_venue']) update_user_meta( $user_id, 'course_venue', esc_attr($_POST['course_venue']) );
     if ($user_id && $_POST['course_date']) update_user_meta( $user_id, 'course_date', esc_attr($_POST['course_date']) );
     if ($user_id && $_POST['course_duration']) update_user_meta( $user_id, 'course_duration', esc_attr($_POST['course_duration']) );
+    if ($user_id && $_POST['course_location']) update_user_meta( $user_id, 'course_location', esc_attr($_POST['course_location']) );
+
 }
 
 // Update the order meta with field value
@@ -212,6 +239,8 @@ function my_custom_checkout_field_update_order_meta( $order_id ) {
     if ($_POST['course_venue']) update_post_meta( $order_id, 'Venue', esc_attr($_POST['course_venue']));
     if ($_POST['course_date']) update_post_meta( $order_id, 'Date', esc_attr($_POST['course_date']));
     if ($_POST['course_duration']) update_post_meta( $order_id, 'Duration', esc_attr($_POST['course_duration']));
+    if ($_POST['course_location']) update_post_meta( $order_id, 'Duration', esc_attr($_POST['course_location']));
+
 }
 
 add_action( 'woocommerce_admin_order_data_after_billing_address', 'my_custom_checkout_field_display_admin_order_meta', 10, 1 );
@@ -221,9 +250,13 @@ function my_custom_checkout_field_display_admin_order_meta( $order ){
     $course_venue = get_post_meta( $order_id, 'course_venue', true );
     $course_date = get_post_meta( $order_id, 'course_date', true );
     $course_duration = get_post_meta( $order_id, 'course_duration', true );
+    $course_location = get_post_meta( $order_id, 'course_location', true );
 
     if(isset($course_venue) && !empty($course_venue)) {
         echo '<p><strong>'.__('Venue').':</strong> ' . $course_venue . '</p>';
+    }
+    if(isset($course_duration) && !empty($course_duration)) {
+        echo '<p><strong>'.__('Location').':</strong> ' . $course_location . '</p>';
     }
 
     if(isset($course_date) && !empty($course_date)) {
