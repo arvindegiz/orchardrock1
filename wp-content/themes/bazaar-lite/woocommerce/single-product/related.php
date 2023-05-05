@@ -91,12 +91,25 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 							?>
 				<tr>
 					<td class="related-venue-td"><a class="venue-related-product-title" href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a>
+					<?php $product = wc_get_product( get_the_ID() ); /* get the WC_Product Object */ ?>
 							<p class="custom_date"><?php echo $new_course_date; ?></p>
 				</td>
 					<td class="custom_add_to_cart">
 					<?php 
 					if($product_tag == 'public-course') {
-						woocommerce_template_loop_add_to_cart();
+						// woocommerce_template_loop_add_to_cart();
+						$avilable_seat_count = $product->get_stock_quantity();
+						if($avilable_seat_count > 0) {
+							$available_seat = $avilable_seat_count > 1 ? "Seats" : "Seat";
+							$available_seat = $avilable_seat_count. " " . $available_seat;
+						} else {
+							$available_seat = "None";
+						}
+						if($avilable_seat_count > 0) {
+							woocommerce_template_loop_add_to_cart();
+						} else { ?>
+						<a class="button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart" href="<?php echo get_the_permalink(); ?>">View Detail</a>
+						<?php }
 					} else { ?>
 						<a class="view_deatils_btn" href="<?php echo get_the_permalink(); ?>"><button class="view_detail">View Detail</button></a>
 					<?php } ?>
@@ -141,9 +154,22 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 					</div>
 					<?php 
 					if($product_tag == 'public-course') {
-						woocommerce_template_loop_add_to_cart();
+						$avilable_seat_count = $product->get_stock_quantity();
+						if($avilable_seat_count > 0) {
+							$available_seat = $avilable_seat_count > 1 ? "Seats" : "Seat";
+							$available_seat = $avilable_seat_count. " " . $available_seat;
+						} else {
+							$available_seat = "None";
+						}
+						// woocommerce_template_loop_add_to_cart();
+						if($avilable_seat_count > 0) {
+							woocommerce_template_loop_add_to_cart();
+						 } else { ?>
+							<a class="button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart" href="<?php echo get_the_permalink(); ?>">View Detail</a>
+						<?php }
+				
 					} else { ?>
-						<a href="<?php echo get_the_permalink(); ?>"><button class="view_detail">View Detail</button></a>
+						<a class="button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart" href="<?php echo get_the_permalink(); ?>">View Detail</a>
 					<?php } ?>
 				</div>
 			</div>

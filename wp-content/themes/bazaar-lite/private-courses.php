@@ -23,7 +23,15 @@
 		'post_status' => 'publish',
 		'paged' => $paged,
 		'product_tag'    => array('private-course'),
-		'posts_per_page' => 10
+		'posts_per_page' => 10,
+		'meta_query' => array(
+			array(
+				'key' => 'course_date',
+				'value' => date("Y-m-d"), 
+				'compare' => '>=', 
+				'type' => 'DATE' 
+			)
+		)
 	);
 
 	$serach_course_value = '';
@@ -267,7 +275,7 @@
 									<td><?php echo get_post_meta(get_the_ID(), 'course_venue', true); ?></td>
 									<td><?php echo $new_course_date; ?></td>
 									<td><?php echo get_post_meta(get_the_ID(), 'course_duration', true); ?></td>
-									<td width="10%"><a href="<?php echo get_the_permalink(); ?>"><button class="view_detail button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart">View Detail</button></a></td>
+									<td width="10%"><a href="<?php echo get_the_permalink(); ?>"><button class="view_detail button">View Detail</button></a></td>
 								</tr>
 
 							<?php endwhile;

@@ -54,3 +54,9 @@ $show_shipping = ! wc_ship_to_billing_address_only() && $order->needs_shipping_a
 	<?php do_action( 'woocommerce_order_details_after_customer_details', $order ); ?>
 
 </section>
+
+<style>
+	.woocommerce-column__title{
+		color: #00B4E0;
+	}
+</style>

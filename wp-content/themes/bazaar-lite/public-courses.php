@@ -23,7 +23,15 @@
 		'post_status' => 'publish',
 		'paged' => $paged,
 		'product_tag'    => array('public-course'),
-		'posts_per_page' => 10
+		'posts_per_page' => 10,
+		'meta_query' => array(
+			array(
+				'key' => 'course_date',
+				'value' => date("Y-m-d"), 
+				'compare' => '>=', 
+				'type' => 'DATE' 
+			)
+		)
 	);
 
 	$serach_course_value = '';
@@ -245,6 +253,7 @@
 							<th class="fw-bold align-middle" scope="col">Course Date</th>
 							<th class="fw-bold align-middle" scope="col">Course Duration</th>
 							<th class="fw-bold align-middle" scope="col">Price</th>
+							<th class="fw-bold align-middle" scope="col">Available Seats</th>
 							<th class="fw-bold align-middle" scope="col">Book Now</th>
 						</tr>
 					</thead>
@@ -261,7 +270,15 @@
 							$timestamp = strtotime($course_date);
 							$new_course_date = date('M d, Y', $timestamp);
 						}
-
+						
+						$avilable_seat_count = $product->get_stock_quantity();
+						if($avilable_seat_count > 0) {
+							$available_seat = $avilable_seat_count > 1 ? "Seats" : "Seat";
+							$available_seat = $avilable_seat_count. " " . $available_seat;
+						} else {
+							$available_seat = "None";
+						}
+						
 						?>
 								<tr>
 									<td><?php if ( has_post_thumbnail() ) {
@@ -276,7 +293,13 @@
 									<td><?php echo get_post_meta(get_the_ID(), 'course_duration', true); ?></td>
 									<td><?php $product = wc_get_product( get_the_ID() ); /* get the WC_Product Object */ ?>
 										<p class="product-price-del"><?php echo $product->get_price_html(); ?></p></td>
-									<td ><?php woocommerce_template_loop_add_to_cart();?></td>
+									<td class="course_availablety"><?php echo $available_seat; ?></td>
+									<td ><?php if($avilable_seat_count > 0) {
+												woocommerce_template_loop_add_to_cart();
+											 } else { ?>
+												<a href="<?php echo get_the_permalink(); ?>"><button class="view_detail button wp-element-button product_type_simplet">View Detail</button></a>
+											<?php }
+									?></td>
 								</tr>
 
 							<?php endwhile;
@@ -461,6 +484,34 @@ span.woocommerce-Price-amount.amount {
 }
 span.public-course-location {
     color: #000;
+}
+.view_detail{
+	white-space: pre;
+	border-radius: 5px ;
+	border : 1px solid #d1d1d1;
+	color: #ffffff;
+	background-color: #333333;
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    display: inline-block; 
+    margin: auto;
+    width: auto;
+    padding: 8px 18px;
+}
+.view_detail:hover{
+	white-space: pre;
+	color: #ffffff;
+    background-color: #2ecc71;
+	margin: 25px auto -10px auto;
+	border: solid 1px #fff;
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    display: inline-block; 
+    margin: auto;
+    width: auto;
+    padding: 8px 18px;
 }
 
 </style>

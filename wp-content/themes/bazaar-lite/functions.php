@@ -292,4 +292,23 @@ function custom_woocommerce_checkout_spinner_blogies() {
     </style>
     <?php
 }
+
+
+function custom_woocommerce_get_availability_text( $text, $product ) {
+    if (!$product->is_in_stock()) {
+        $text = 'No seat available';
+    } else {
+        $avilable_seat_count = $product->get_stock_quantity();
+        if($avilable_seat_count > 0) {
+            $text = $avilable_seat_count > 1 ? "Seats available" : "Seat available";
+            $text = $avilable_seat_count. " " . $text;
+        } else {
+            $text = 'No seat available';
+        }
+        
+    }
+    return $text;
+}
+
+add_filter( 'woocommerce_get_availability_text', 'custom_woocommerce_get_availability_text', 999, 2);
 ?>
