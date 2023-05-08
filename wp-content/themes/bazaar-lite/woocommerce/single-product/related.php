@@ -93,6 +93,20 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 					<td class="related-venue-td"><a class="venue-related-product-title" href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a>
 					<?php $product = wc_get_product( get_the_ID() ); /* get the WC_Product Object */ ?>
 							<p class="custom_date"><?php echo $new_course_date; ?></p>
+							<?php 
+							$avilable_seat_count = $product->get_stock_quantity();
+							if($avilable_seat_count > 0) {
+								$available_seat = $avilable_seat_count > 1 ? "Seats available" : "Seat available";
+								$available_seat = $avilable_seat_count. " " . $available_seat;
+							} else {
+								$available_seat = "No Seat Available";
+							}
+							if($avilable_seat_count > 0) {
+							?>
+								<p class="custom_date"><?php echo $available_seat ?></p>
+							<?php } else { ?>
+								<p class="custom_seat_none"><?php echo $available_seat ?></p>
+							<?php } ?>
 				</td>
 					<td class="custom_add_to_cart">
 					<?php 
@@ -151,6 +165,22 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 						<?php if($product_tag == 'public-course') { ?>
 							<p><?php echo $product->get_price_html(); ?></p>
 						<?php } ?>
+					</div>
+					<div>
+					<?php 
+							$avilable_seat_count = $product->get_stock_quantity();
+							if($avilable_seat_count > 0) {
+								$available_seat = $avilable_seat_count > 1 ? "Seats available" : "Seat available";
+								$available_seat = $avilable_seat_count. " " . $available_seat;
+							} else {
+								$available_seat = "No Seat Available";
+							}
+							if($avilable_seat_count > 0) {
+							?>
+								<p class="custom_date"><?php echo $available_seat ?></p>
+							<?php } else { ?>
+								<p class="custom_seat_none"><?php echo $available_seat ?></p>
+							<?php } ?>
 					</div>
 					<?php 
 					if($product_tag == 'public-course') {
@@ -220,6 +250,11 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
 
 .custom_date {
     color: #2ecc71;
+    font-size: 12px;
+	margin-bottom: 0px;
+}
+.custom_seat_none {
+    color: #ff0000;
     font-size: 12px;
 	margin-bottom: 0px;
 }
