@@ -1,0 +1,81 @@
+2023-05-08T11:03:49+00:00 CRITICAL Uncaught ArgumentCountError: time() expects exactly 0 arguments, 2 given in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\price.php:34
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\price.php(34): time('H:i:s', 1683540000)
+#1 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1647): wc_get_template('single-product/...')
+#3 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): woocommerce_template_single_price('')
+#4 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\content-single-product.php(77): do_action('woocommerce_sin...')
+#7 C:\xampp\htdocs\orchardrock1\wp-includes\template.php(785): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template('C:\\xampp\\htdocs...', false)
+#9 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product.php(30): wc_get_template_part('content', 'single-product')
+#10 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#13 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\price.php on line 34
+
+2023-05-08T11:07:23+00:00 CRITICAL Uncaught ArgumentCountError: time() expects exactly 0 arguments, 2 given in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\price.php:34
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\price.php(34): time('H:i:s', 1683540000)
+#1 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1647): wc_get_template('single-product/...')
+#3 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): woocommerce_template_single_price('')
+#4 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\content-single-product.php(77): do_action('woocommerce_sin...')
+#7 C:\xampp\htdocs\orchardrock1\wp-includes\template.php(785): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template('C:\\xampp\\htdocs...', false)
+#9 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product.php(30): wc_get_template_part('content', 'single-product')
+#10 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#13 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\price.php on line 34
+
+2023-05-08T11:08:26+00:00 CRITICAL Uncaught ArgumentCountError: time() expects exactly 0 arguments, 2 given in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\price.php:34
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\price.php(34): time('', 1683540000)
+#1 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1647): wc_get_template('single-product/...')
+#3 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): woocommerce_template_single_price('')
+#4 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\content-single-product.php(77): do_action('woocommerce_sin...')
+#7 C:\xampp\htdocs\orchardrock1\wp-includes\template.php(785): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template('C:\\xampp\\htdocs...', false)
+#9 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product.php(30): wc_get_template_part('content', 'single-product')
+#10 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#13 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\price.php on line 34
+
+2023-05-08T11:21:42+00:00 CRITICAL Uncaught ArgumentCountError: time() expects exactly 0 arguments, 2 given in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:185
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php(185): time('H:i:s', 1683540000)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(310): save_my_custom_checkout_field(Array, 3211)
+#2 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#3 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1138): apply_filters('woocommerce_add...', Array, 3211, 0, 1)
+#4 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-form-handler.php(824): WC_Cart->add_to_cart(3211, 1)
+#5 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-form-handler.php(796): WC_Form_Handler::add_to_cart_handler_simple(3211)
+#6 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_Form_Handler::add_to_cart_action('')
+#7 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#8 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#9 C:\xampp\htdocs\orchardrock1\wp-settings.php(639): do_action('wp_loaded')
+#10 C:\xampp\htdocs\orchardrock1\wp-config.php(96): require_once('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\orchardrock1\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(13): require_once('C:\\xampp\\htdocs...')
+#13 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#14 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 185
+
+2023-05-08T11:32:59+00:00 CRITICAL syntax error, unexpected token ">" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 292
+
+2023-05-08T11:33:19+00:00 CRITICAL syntax error, unexpected token "." in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 292
+
+2023-05-08T11:33:25+00:00 CRITICAL syntax error, unexpected token "." in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 292
+
+2023-05-08T11:33:27+00:00 CRITICAL syntax error, unexpected token "." in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 292
+

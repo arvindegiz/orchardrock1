@@ -27,6 +27,12 @@ if(isset($course_date) && !empty($course_date)) {
 	$timestamp = strtotime($course_date);
 	$new_course_date = date('M d, Y', $timestamp);
 }
+$new_course_time = '';
+$course_time = get_post_meta( get_the_ID(), 'course_time', true );
+if(isset($course_time) && !empty($course_time)) {
+	$timestamp = strtotime($course_time);
+	$new_course_time = date('H:i A', $timestamp);
+}
 
 $course_duration = '';
 $course_duration_data = get_post_meta( get_the_ID(), 'course_duration', true );
@@ -64,18 +70,16 @@ jQuery(document).ready(function()
 <p class="addition_attr"><span class="price_addition_attr">Location: </span><?php echo $course_location; ?> </p>
 <?php } if (!empty($new_course_date)) { ?>
 <p class="addition_attr"><span class="price_addition_attr">Date: </span><?php echo $new_course_date; ?></p>
+<?php } if (!empty($new_course_time)) { ?>
+<p class="addition_attr"><span class="price_addition_attr">Time: </span><?php echo $new_course_time; ?></p>
+
 <?php } if (!empty($course_duration)) { ?>
 <p class="addition_attr"><span class="price_addition_attr">Duration: </span><?php echo $course_duration; ?> <i class="fa fa-clock-o" aria-hidden="true"></i></p>
 <?php }  ?>
-<!-- <p class="addition_btn"><?php woocommerce_template_loop_add_to_cart();?></p> -->
+
 
 <style>
-	/* .button.single_add_to_cart_button.button.alt.wp-element-button {
-		display: none !important;
-	} 
-	.button.product_type_simple.add_to_cart_button.ajax_add_to_cart.added::after {
-    display: none !important;
-}*/
+
 	.price_addition_attr, .posted_in {
 		color:#00B4E0;
 		font-weight:600;

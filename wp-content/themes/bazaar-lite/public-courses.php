@@ -250,10 +250,10 @@
 							<th class="fw-bold align-middle" scope="col" width="15%">Name</th>
 							<th class="fw-bold align-middle" scope="col">Description</th>
 							<th class="fw-bold align-middle" scope="col">Venue</th>
-							<th class="fw-bold align-middle" scope="col">Course Date</th>
-							<th class="fw-bold align-middle" scope="col">Course Duration</th>
+							<th class="fw-bold align-middle" scope="col">Date</th>
+							<th class="fw-bold align-middle" scope="col">Time</th>
 							<th class="fw-bold align-middle" scope="col">Price</th>
-							<th class="fw-bold align-middle" scope="col">Available Seats</th>
+							<th class="fw-bold align-middle" scope="col">Available Seat</th>
 							<th class="fw-bold align-middle" scope="col">Book Now</th>
 						</tr>
 					</thead>
@@ -269,6 +269,13 @@
 						if(isset($course_date) && !empty($course_date)) {
 							$timestamp = strtotime($course_date);
 							$new_course_date = date('M d, Y', $timestamp);
+						}
+
+						$new_course_time = '';
+						$course_time = get_post_meta( get_the_ID(), 'course_time', true );
+						if(isset($course_time) && !empty($course_time)) {
+							$timestamp = strtotime($course_time);
+							$new_course_time = date('H:i A', $timestamp);
 						}
 						
 						$avilable_seat_count = $product->get_stock_quantity();
@@ -290,8 +297,8 @@
 									<td> <?php echo get_excerpt(); ?></td>
 									<td><?php echo get_post_meta(get_the_ID(), 'course_venue', true); ?> - <span class="public-course-location"><?php echo get_post_meta(get_the_ID(), 'course_location', true); ?></span></td>
 									<td><?php echo $new_course_date; ?></td>
-									<td><?php echo get_post_meta(get_the_ID(), 'course_duration', true); ?></td>
-									<td><?php $product = wc_get_product( get_the_ID() ); /* get the WC_Product Object */ ?>
+									<td><?php echo $new_course_time." (".get_post_meta(get_the_ID(), 'course_duration', true).")"; ?></td>
+									<td><?php $product = wc_get_product( get_the_ID() ); ?>
 										<p class="product-price-del"><?php echo $product->get_price_html(); ?></p></td>
 									<td class="course_availablety"><?php echo $available_seat; ?></td>
 									<td ><?php if($avilable_seat_count > 0) {

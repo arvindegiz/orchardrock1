@@ -244,8 +244,8 @@
 							<th class="fw-bold align-middle" scope="col" width="20%">Name</th>
 							<th class="fw-bold align-middle" scope="col">Description</th>
 							<th class="fw-bold align-middle" scope="col">Venue</th>
-							<th class="fw-bold align-middle" scope="col">Course Date</th>
-							<th class="fw-bold align-middle" scope="col">Course Duration</th>
+							<th class="fw-bold align-middle" scope="col">Date</th>
+							<th class="fw-bold align-middle" scope="col">Time</th>
 							<th class="fw-bold align-middle" scope="col" width="10%">Detail</th>
 						</tr>
 					</thead>
@@ -262,6 +262,12 @@
 							$timestamp = strtotime($course_date);
 							$new_course_date = date('M d, Y', $timestamp);
 						}
+						$new_course_time = '';
+						$course_time = get_post_meta( get_the_ID(), 'course_time', true );
+						if(isset($course_time) && !empty($course_time)) {
+							$timestamp = strtotime($course_time);
+							$new_course_time = date('H:i A', $timestamp);
+						}
 
 						?>
 								<tr>
@@ -274,7 +280,7 @@
 									<td> <?php echo get_excerpt(); ?></td>
 									<td><?php echo get_post_meta(get_the_ID(), 'course_venue', true); ?></td>
 									<td><?php echo $new_course_date; ?></td>
-									<td><?php echo get_post_meta(get_the_ID(), 'course_duration', true); ?></td>
+									<td><?php echo $new_course_time." (".get_post_meta(get_the_ID(), 'course_duration', true).")"; ?></td>
 									<td width="10%"><a href="<?php echo get_the_permalink(); ?>"><button class="view_detail button">View Detail</button></a></td>
 								</tr>
 
