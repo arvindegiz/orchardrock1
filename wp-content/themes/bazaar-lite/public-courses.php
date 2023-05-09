@@ -248,12 +248,12 @@
 						<tr>
 							<th class="fw-bold align-middle" scope="col">Image</th>
 							<th class="fw-bold align-middle" scope="col" width="15%">Name</th>
-							<th class="fw-bold align-middle" scope="col">Description</th>
+							<!-- <th class="fw-bold align-middle" scope="col">Description</th> -->
 							<th class="fw-bold align-middle" scope="col">Venue</th>
-							<th class="fw-bold align-middle" scope="col">Date</th>
+							<th class="fw-bold align-middle" scope="col" width="10%">Date</th>
 							<th class="fw-bold align-middle" scope="col">Time</th>
-							<th class="fw-bold align-middle" scope="col">Price</th>
-							<th class="fw-bold align-middle" scope="col">Available Seat</th>
+							<th class="fw-bold align-middle" scope="col" width="8%">Price</th>
+							<th class="fw-bold align-middle" scope="col" width="8%">Seat</th>
 							<th class="fw-bold align-middle" scope="col">Book Now</th>
 						</tr>
 					</thead>
@@ -278,12 +278,15 @@
 							$new_course_time = date('H:i A', $timestamp);
 						}
 						
+						$seat_available_class = "";
 						$avilable_seat_count = $product->get_stock_quantity();
 						if($avilable_seat_count > 0) {
 							$available_seat = $avilable_seat_count > 1 ? "Seats" : "Seat";
 							$available_seat = $avilable_seat_count. " " . $available_seat;
+							$seat_available_class = "seat_available";
 						} else {
 							$available_seat = "None";
+							$seat_available_class = "seat_unavailable";
 						}
 						
 						?>
@@ -294,13 +297,13 @@
 											echo '<img src="'.get_site_url().'/wp-content/uploads/2023/03/download-1-1.png" width="50" hieght="50"/>';
 									}; ?></td>
 									<td width="15%"><a class="public-course-title" href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></td>
-									<td> <?php echo get_excerpt(); ?></td>
+									<!-- <td> <?php echo get_excerpt(); ?></td> -->
 									<td><?php echo get_post_meta(get_the_ID(), 'course_venue', true); ?> - <span class="public-course-location"><?php echo get_post_meta(get_the_ID(), 'course_location', true); ?></span></td>
-									<td><?php echo $new_course_date; ?></td>
-									<td><?php echo $new_course_time." (".get_post_meta(get_the_ID(), 'course_duration', true).")"; ?></td>
-									<td><?php $product = wc_get_product( get_the_ID() ); ?>
+									<td width="10%"><?php echo $new_course_date; ?></td>
+									<td><?php echo $new_course_time." <span class='course_duration'>( ".get_post_meta(get_the_ID(), 'course_duration', true)." )"; ?></td>
+									<td width="8%"><?php $product = wc_get_product( get_the_ID() ); ?>
 										<p class="product-price-del"><?php echo $product->get_price_html(); ?></p></td>
-									<td class="course_availablety"><?php echo $available_seat; ?></td>
+									<td class="course_availablety <?php echo $seat_available_class; ?>" width="8%"><?php echo $available_seat; ?></td>
 									<td ><?php if($avilable_seat_count > 0) {
 												woocommerce_template_loop_add_to_cart();
 											 } else { ?>
@@ -519,6 +522,15 @@ span.public-course-location {
     margin: auto;
     width: auto;
     padding: 8px 18px;
+}
+span.course_duration {
+	float:left;
+}
+.seat_unavailable {
+	color:#FF0000;
+}
+.seat_available {
+	color:#0FBB56;
 }
 
 </style>

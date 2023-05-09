@@ -99,7 +99,7 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 								$available_seat = $avilable_seat_count > 1 ? "Seats available" : "Seat available";
 								$available_seat = $avilable_seat_count. " " . $available_seat;
 							} else {
-								$available_seat = "No Seat Available";
+								$available_seat = "No seat available";
 							}
 							if($avilable_seat_count > 0) {
 							?>
@@ -122,7 +122,8 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 						if($avilable_seat_count > 0) {
 							woocommerce_template_loop_add_to_cart();
 						} else { ?>
-						<a class="button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart" href="<?php echo get_the_permalink(); ?>">View Detail</a>
+								<a class="view_deatils_btn" href="<?php echo get_the_permalink(); ?>"><button class="view_detail">View Detail</button></a>
+
 						<?php }
 					} else { ?>
 						<a class="view_deatils_btn" href="<?php echo get_the_permalink(); ?>"><button class="view_detail">View Detail</button></a>
@@ -173,7 +174,7 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 								$available_seat = $avilable_seat_count > 1 ? "Seats available" : "Seat available";
 								$available_seat = $avilable_seat_count. " " . $available_seat;
 							} else {
-								$available_seat = "No Seat Available";
+								$available_seat = "No seat available";
 							}
 							if($avilable_seat_count > 0) {
 							?>
@@ -195,11 +196,11 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 						if($avilable_seat_count > 0) {
 							woocommerce_template_loop_add_to_cart();
 						 } else { ?>
-							<a class="button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart" href="<?php echo get_the_permalink(); ?>">View Detail</a>
+							<a class="view_deatils_btn" href="<?php echo get_the_permalink(); ?>"><button class="view_detail">View Detail</button></a>
 						<?php }
 				
 					} else { ?>
-						<a class="button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart" href="<?php echo get_the_permalink(); ?>">View Detail</a>
+						<a class="view_deatils_btn" href="<?php echo get_the_permalink(); ?>"><button class="view_detail">View Detail</button></a>
 					<?php } ?>
 				</div>
 			</div>
@@ -320,6 +321,7 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
     position: relative;
     display: inline-block; 
     margin: auto;
+	white-space: pre;
     padding: 8px 15px;
 }
 .view_detail:hover{
@@ -337,8 +339,8 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
     padding: 8px 15px;
 }
 .view_deatils_btn{
-	width: 99px;
-    float: left;
+	/* width: 99px; */
+    /* float: left; */
 }
 .all_realated_products a {
 	border-radius: 5px ;
@@ -349,7 +351,8 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
 	text-decoration: none;
     border-radius: 5px;
     border: 1px solid #d1d1d1;
-	font-size:14px;
+	font-size:12px;
+	/* width: 98px; */
 	padding:10px 15px;
 }
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.added::after {
