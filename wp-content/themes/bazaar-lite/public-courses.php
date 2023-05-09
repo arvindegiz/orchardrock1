@@ -501,13 +501,13 @@ span.public-course-location {
 	border : 1px solid #d1d1d1;
 	color: #ffffff;
 	background-color: #333333;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     position: relative;
     display: inline-block; 
     margin: auto;
     width: auto;
-    padding: 8px 18px;
+    padding: 8px 12px;
 }
 .view_detail:hover{
 	white-space: pre;
@@ -515,13 +515,13 @@ span.public-course-location {
     background-color: #2ecc71;
 	margin: 25px auto -10px auto;
 	border: solid 1px #fff;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     position: relative;
     display: inline-block; 
     margin: auto;
     width: auto;
-    padding: 8px 18px;
+    padding: 8px 12px;
 }
 span.course_duration {
 	float:left;

@@ -316,13 +316,13 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
 	margin: 25px auto -10px auto;
 	border-radius: 5px ;
 	border : 1px solid #d1d1d1;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     position: relative;
     display: inline-block; 
     margin: auto;
 	white-space: pre;
-    padding: 8px 15px;
+    padding: 8px 12px;
 }
 .view_detail:hover{
 	color: #ffffff;
@@ -330,13 +330,13 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
 	margin: 25px auto -10px auto;
 	border-radius: 5px ;
 	border : 1px solid #d1d1d1;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     position: relative;
     display: inline-block; 
     margin: auto;
     width: auto;
-    padding: 8px 15px;
+    padding: 8px 12px;
 }
 .view_deatils_btn{
 	/* width: 99px; */
@@ -351,7 +351,7 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
 	text-decoration: none;
     border-radius: 5px;
     border: 1px solid #d1d1d1;
-	font-size:12px;
+	font-size:14px;
 	/* width: 98px; */
 	padding:10px 15px;
 }

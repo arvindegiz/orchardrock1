@@ -244,8 +244,8 @@
 							<th class="fw-bold align-middle" scope="col" width="20%">Name</th>
 							<th class="fw-bold align-middle" scope="col">Description</th>
 							<th class="fw-bold align-middle" scope="col">Venue</th>
-							<th class="fw-bold align-middle" scope="col">Date</th>
-							<th class="fw-bold align-middle" scope="col">Time</th>
+							<th class="fw-bold align-middle" scope="col" width="10%">Date</th>
+							<th class="fw-bold align-middle" scope="col" width="10%">Time</th>
 							<th class="fw-bold align-middle" scope="col" width="10%">Detail</th>
 						</tr>
 					</thead>
@@ -279,8 +279,8 @@
 									<td  width="20%"><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></td>
 									<td> <?php echo get_excerpt(); ?></td>
 									<td><?php echo get_post_meta(get_the_ID(), 'course_venue', true); ?></td>
-									<td><?php echo $new_course_date; ?></td>
-									<td><?php echo $new_course_time." (".get_post_meta(get_the_ID(), 'course_duration', true).")"; ?></td>
+									<td width="10%"><?php echo $new_course_date; ?></td>
+									<td width="10%"><?php echo $new_course_time." <span class='course_duration'>( ".get_post_meta(get_the_ID(), 'course_duration', true)." )"; ?></td>
 									<td width="10%"><a href="<?php echo get_the_permalink(); ?>"><button class="view_detail button">View Detail</button></a></td>
 								</tr>
 
@@ -464,7 +464,7 @@ a.page-numbers {
 	border : 1px solid #d1d1d1;
 	color: #ffffff;
 	background-color: #333333;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     position: relative;
     display: inline-block; 
@@ -478,7 +478,7 @@ a.page-numbers {
     background-color: #2ecc71;
 	margin: 25px auto -10px auto;
 	border: solid 1px #fff;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     position: relative;
     display: inline-block; 
@@ -488,7 +488,10 @@ a.page-numbers {
 }
 td{
     vertical-align: middle !important;
+}
 
+span.course_duration {
+	float:left;
 }
 </style>
 <script type="text/javascript" >

@@ -1,0 +1,34 @@
+2023-05-09T11:34:39+00:00 CRITICAL Uncaught TypeError: WC_Stripe_API::detach_payment_method_from_customer(): Argument #2 ($payment_method_id) must be of type string, null given, called in C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php on line 472 and defined in C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:327
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(472): WC_Stripe_API::detach_payment_method_from_customer('cus_NrXotmms0jy...', NULL)
+#1 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-intent-controller.php(137): WC_Stripe_Customer->delete_source(NULL)
+#2 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_Stripe_Intent_Controller->verify_intent('')
+#3 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#4 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(96): do_action('wc_ajax_wc_stri...')
+#6 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_AJAX::do_wc_ajax('')
+#7 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#8 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#9 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(13): do_action('template_redire...')
+#10 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#12 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 327
+
+2023-05-09T11:34:56+00:00 CRITICAL Uncaught TypeError: WC_Stripe_API::detach_payment_method_from_customer(): Argument #2 ($payment_method_id) must be of type string, null given, called in C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php on line 472 and defined in C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:327
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(472): WC_Stripe_API::detach_payment_method_from_customer('cus_NrXotmms0jy...', NULL)
+#1 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-intent-controller.php(137): WC_Stripe_Customer->delete_source(NULL)
+#2 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_Stripe_Intent_Controller->verify_intent('')
+#3 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#4 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(96): do_action('wc_ajax_wc_stri...')
+#6 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_AJAX::do_wc_ajax('')
+#7 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#8 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#9 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(13): do_action('template_redire...')
+#10 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#12 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 327
+
