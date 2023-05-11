@@ -56,7 +56,7 @@ define( 'AUTH_SALT',        ';AF=hhi(zFG>*J?>cb&jRH|^~K(etl:x6Iq}hs88-&N?xDetLm}
 define( 'SECURE_AUTH_SALT', '&mV|cwoZlY:t`[07xDp2])eiPN/JDviWQ2JW-,y>2W#:}{ZY7M&4Q=RmuOH?KF#z' );
 define( 'LOGGED_IN_SALT',   'K]1FT#(d)M_ge F)H?!T5R*KKV$D2N7^=O&mP^QzhYNPYsw_,w-pPY^or}QAY9_,' );
 define( 'NONCE_SALT',       '-$ S XxAZN}|+#?Q>oWL]O(YV<tlWB*dv {PR8pl^SD0L2!wtZ102t 1//#W`4}o' );
-
+// define( 'WP_MEMORY_LIMIT', '256M' );
 /**#@-*/
 
 /**
@@ -94,3 +94,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+
+

@@ -358,7 +358,14 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.added::after {
 	display:none;
 }
-
+@media screen and (min-width: 400px) and (max-width: 992px){
+		.venue-related-product-title {
+		width:190px;
+	}
+	td.custom_add_to_cart {
+    text-align: center;
+}
+}
 </style>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {

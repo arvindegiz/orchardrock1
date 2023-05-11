@@ -248,7 +248,7 @@
 						<tr>
 							<th class="fw-bold align-middle" scope="col">Image</th>
 							<th class="fw-bold align-middle" scope="col" width="15%">Name</th>
-							<!-- <th class="fw-bold align-middle" scope="col">Description</th> -->
+							<th class="fw-bold align-middle" scope="col">Description</th>
 							<th class="fw-bold align-middle" scope="col">Venue</th>
 							<th class="fw-bold align-middle" scope="col" width="10%">Date</th>
 							<th class="fw-bold align-middle" scope="col">Time</th>
@@ -297,14 +297,14 @@
 											echo '<img src="'.get_site_url().'/wp-content/uploads/2023/03/download-1-1.png" width="50" hieght="50"/>';
 									}; ?></td>
 									<td width="15%"><a class="public-course-title" href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></td>
-									<!-- <td> <?php echo get_excerpt(); ?></td> -->
-									<td><?php echo get_post_meta(get_the_ID(), 'course_venue', true); ?> - <span class="public-course-location"><?php echo get_post_meta(get_the_ID(), 'course_location', true); ?></span></td>
+									<td> <?php echo get_excerpt(); ?></td>
+									<td><?php echo get_post_meta(get_the_ID(), 'course_venue', true); ?></td>
 									<td width="10%"><?php echo $new_course_date; ?></td>
 									<td><?php echo $new_course_time." <span class='course_duration'>( ".get_post_meta(get_the_ID(), 'course_duration', true)." )"; ?></td>
 									<td width="8%"><?php $product = wc_get_product( get_the_ID() ); ?>
 										<p class="product-price-del"><?php echo $product->get_price_html(); ?></p></td>
 									<td class="course_availablety <?php echo $seat_available_class; ?>" width="8%"><?php echo $available_seat; ?></td>
-									<td ><?php if($avilable_seat_count > 0) {
+									<td class="view_detail_btn" ><?php if($avilable_seat_count > 0) {
 												woocommerce_template_loop_add_to_cart();
 											 } else { ?>
 												<a href="<?php echo get_the_permalink(); ?>"><button class="view_detail button wp-element-button product_type_simplet">View Detail</button></a>
@@ -346,7 +346,9 @@
 </div>
 
 <style>
-
+.view_detail_btn{
+	text-align:center;
+}
 td.No_Record {
 	text-align:center;
 }
