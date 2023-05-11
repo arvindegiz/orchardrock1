@@ -1,0 +1,397 @@
+2023-05-11T07:51:22+00:00 CRITICAL Uncaught Error: Call to undefined function dd_action() in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:359
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-settings.php(585): include()
+#1 C:\xampp\htdocs\orchardrock1\wp-config.php(96): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(13): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 359
+
+2023-05-11T07:51:27+00:00 CRITICAL Uncaught Error: Call to undefined function dd_action() in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:359
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-settings.php(585): include()
+#1 C:\xampp\htdocs\orchardrock1\wp-config.php(96): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\orchardrock1\wp-admin\admin-ajax.php(22): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 359
+
+2023-05-11T09:47:46+00:00 CRITICAL Unmatched '}' in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 377
+
+2023-05-11T09:48:07+00:00 CRITICAL Unmatched '}' in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 377
+
+2023-05-11T09:49:12+00:00 CRITICAL Unmatched '}' in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 377
+
+2023-05-11T09:49:27+00:00 CRITICAL Unmatched '}' in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 377
+
+2023-05-11T09:49:42+00:00 CRITICAL Unmatched '}' in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 377
+
+2023-05-11T09:49:47+00:00 CRITICAL Unmatched '}' in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 377
+
+2023-05-11T09:49:57+00:00 CRITICAL Unmatched '}' in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 377
+
+2023-05-11T09:51:57+00:00 CRITICAL Unmatched '}' in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 377
+
+2023-05-11T09:52:25+00:00 CRITICAL Unmatched '}' in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 377
+
+2023-05-11T09:52:41+00:00 CRITICAL Unmatched '}' in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 377
+
+2023-05-11T09:53:06+00:00 CRITICAL Unmatched '}' in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 377
+
+2023-05-11T09:53:11+00:00 CRITICAL Unmatched '}' in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 377
+
+2023-05-11T09:53:12+00:00 CRITICAL Unmatched '}' in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 377
+
+2023-05-11T09:53:22+00:00 CRITICAL Unmatched '}' in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 377
+
+2023-05-11T09:53:27+00:00 CRITICAL Unmatched '}' in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 377
+
+2023-05-11T09:53:37+00:00 CRITICAL Unmatched '}' in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 377
+
+2023-05-11T09:54:12+00:00 CRITICAL Unmatched '}' in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 377
+
+2023-05-11T09:55:38+00:00 CRITICAL Unclosed '{' on line 360 in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 464
+
+2023-05-11T09:56:13+00:00 CRITICAL Unclosed '{' on line 360 in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 464
+
+2023-05-11T09:57:29+00:00 CRITICAL Unclosed '{' on line 360 in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 464
+
+2023-05-11T09:57:39+00:00 CRITICAL Unclosed '{' on line 360 in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 464
+
+2023-05-11T09:58:14+00:00 CRITICAL Unclosed '{' on line 360 in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 441
+
+2023-05-11T09:58:54+00:00 CRITICAL Unclosed '{' on line 360 in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 441
+
+2023-05-11T09:58:56+00:00 CRITICAL Unclosed '{' on line 360 in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 441
+
+2023-05-11T09:59:30+00:00 CRITICAL Unclosed '{' on line 360 in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 441
+
+2023-05-11T09:59:40+00:00 CRITICAL Unclosed '{' on line 360 in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 441
+
+2023-05-11T09:59:54+00:00 CRITICAL Unclosed '{' on line 360 in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 441
+
+2023-05-11T10:30:45+00:00 CRITICAL Uncaught Error: Undefined constant "order_id" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:393
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(310): wh_pre_paymentcall(3727)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1267): do_action('woocommerce_che...', 3727, Array, Object(Automattic\WooCommerce\Admin\Overrides\Order))
+#4 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(485): WC_Checkout->process_checkout()
+#5 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_AJAX::checkout('')
+#6 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#7 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(96): do_action('wc_ajax_checkou...')
+#9 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_AJAX::do_wc_ajax('')
+#10 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#11 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#12 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(13): do_action('template_redire...')
+#13 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#14 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#15 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 393
+
+2023-05-11T10:45:00+00:00 CRITICAL Uncaught Error: Call to a member function update_meta_data() on null in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:364
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): wdm_send_order_to_ext(3730)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\checkout\thankyou.php(80): do_action('woocommerce_tha...', 3730)
+#4 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(279): wc_get_template('checkout/thanky...', Array)
+#6 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(63): WC_Shortcode_Checkout::order_received(3730)
+#7 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(72): WC_Shortcode_Checkout::output('')
+#8 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(95): WC_Shortcodes::shortcode_wrapper(Array, '')
+#9 C:\xampp\htdocs\orchardrock1\wp-includes\shortcodes.php(355): WC_Shortcodes::checkout('', '', 'woocommerce_che...')
+#10 [internal function]: do_shortcode_tag(Array)
+#11 C:\xampp\htdocs\orchardrock1\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(woocom...', 'do_shortcode_ta...', '[woocommerce_ch...')
+#12 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): do_shortcode('[woocommerce_ch...')
+#13 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(205): WP_Hook->apply_filters('[woocommerce_ch...', Array)
+#14 C:\xampp\htdocs\orchardrock1\wp-includes\post-template.php(255): apply_filters('the_content', '<!-- wp:shortco...')
+#15 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\core\templates\after-content.php(36): the_content()
+#16 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): bazaarlite_after_content_function('')
+#17 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#18 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#19 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\core\post-formats\page-format.php(19): do_action('bazaarlite_afte...')
+#20 C:\xampp\htdocs\orchardrock1\wp-includes\template.php(785): require('C:\\xampp\\htdocs...')
+#21 C:\xampp\htdocs\orchardrock1\wp-includes\template.php(718): load_template('C:\\xampp\\htdocs...', false, Array)
+#22 C:\xampp\htdocs\orchardrock1\wp-includes\general-template.php(204): locate_template(Array, true, false, Array)
+#23 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\core\templates\post-formats.php(40): get_template_part('core/post-forma...')
+#24 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): bazaarlite_postformat_function('')
+#25 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#26 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#27 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\page.php(36): do_action('bazaarlite_post...')
+#28 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#29 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#30 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#31 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 364
+
+2023-05-11T11:05:18+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function before_checkout_create_order(), 1 passed in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308 and exactly 2 expected in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:360
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): before_checkout_create_order(3733)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\checkout\thankyou.php(80): do_action('woocommerce_tha...', 3733)
+#4 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(279): wc_get_template('checkout/thanky...', Array)
+#6 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(63): WC_Shortcode_Checkout::order_received(3733)
+#7 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(72): WC_Shortcode_Checkout::output('')
+#8 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(95): WC_Shortcodes::shortcode_wrapper(Array, '')
+#9 C:\xampp\htdocs\orchardrock1\wp-includes\shortcodes.php(355): WC_Shortcodes::checkout('', '', 'woocommerce_che...')
+#10 [internal function]: do_shortcode_tag(Array)
+#11 C:\xampp\htdocs\orchardrock1\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(woocom...', 'do_shortcode_ta...', '[woocommerce_ch...')
+#12 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): do_shortcode('[woocommerce_ch...')
+#13 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(205): WP_Hook->apply_filters('[woocommerce_ch...', Array)
+#14 C:\xampp\htdocs\orchardrock1\wp-includes\post-template.php(255): apply_filters('the_content', '<!-- wp:shortco...')
+#15 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\core\templates\after-content.php(36): the_content()
+#16 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): bazaarlite_after_content_function('')
+#17 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#18 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#19 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\core\post-formats\page-format.php(19): do_action('bazaarlite_afte...')
+#20 C:\xampp\htdocs\orchardrock1\wp-includes\template.php(785): require('C:\\xampp\\htdocs...')
+#21 C:\xampp\htdocs\orchardrock1\wp-includes\template.php(718): load_template('C:\\xampp\\htdocs...', false, Array)
+#22 C:\xampp\htdocs\orchardrock1\wp-includes\general-template.php(204): locate_template(Array, true, false, Array)
+#23 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\core\templates\post-formats.php(40): get_template_part('core/post-forma...')
+#24 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): bazaarlite_postformat_function('')
+#25 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#26 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#27 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\page.php(36): do_action('bazaarlite_post...')
+#28 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#29 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#30 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#31 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 360
+
+2023-05-11T11:31:50+00:00 CRITICAL Cannot redeclare my_custom_function() (previously declared in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:358) in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 372
+
+2023-05-11T11:32:03+00:00 CRITICAL Cannot redeclare my_custom_function() (previously declared in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:358) in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 372
+
+2023-05-11T11:32:08+00:00 CRITICAL Cannot redeclare my_custom_function() (previously declared in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:358) in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 372
+
+2023-05-11T11:32:18+00:00 CRITICAL Cannot redeclare my_custom_function() (previously declared in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:358) in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 372
+
+2023-05-11T11:57:11+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Order::update_post_meta() in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:364
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): before_checkout_create_order(Object(WC_Order), Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(446): do_action('woocommerce_che...', Object(WC_Order), Array)
+#4 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1256): WC_Checkout->create_order(Array)
+#5 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(485): WC_Checkout->process_checkout()
+#6 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_AJAX::checkout('')
+#7 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#8 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#9 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(96): do_action('wc_ajax_checkou...')
+#10 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_AJAX::do_wc_ajax('')
+#11 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#12 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#13 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(13): do_action('template_redire...')
+#14 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#15 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#16 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 364
+
+2023-05-11T11:59:10+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Order::update_post_meta() in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:364
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): before_checkout_create_order(Object(WC_Order), Array)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(446): do_action('woocommerce_che...', Object(WC_Order), Array)
+#4 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1256): WC_Checkout->create_order(Array)
+#5 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(485): WC_Checkout->process_checkout()
+#6 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_AJAX::checkout('')
+#7 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#8 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#9 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(96): do_action('wc_ajax_checkou...')
+#10 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_AJAX::do_wc_ajax('')
+#11 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#12 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#13 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(13): do_action('template_redire...')
+#14 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#15 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#16 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 364
+
+2023-05-11T12:10:02+00:00 CRITICAL Uncaught Error: Call to a member function update_post_meta() on int in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:364
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(310): my_custom_function(Object(WC_Order))
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(446): do_action('woocommerce_che...', Object(WC_Order), Array)
+#4 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1256): WC_Checkout->create_order(Array)
+#5 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(485): WC_Checkout->process_checkout()
+#6 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_AJAX::checkout('')
+#7 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#8 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#9 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(96): do_action('wc_ajax_checkou...')
+#10 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_AJAX::do_wc_ajax('')
+#11 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#12 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#13 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(13): do_action('template_redire...')
+#14 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#15 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#16 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 364
+
+2023-05-11T12:11:23+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function my_custom_function(), 1 passed in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 310 and exactly 2 expected in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:359
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(310): my_custom_function(Object(WC_Order))
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(446): do_action('woocommerce_che...', Object(WC_Order), Array)
+#4 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1256): WC_Checkout->create_order(Array)
+#5 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(485): WC_Checkout->process_checkout()
+#6 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_AJAX::checkout('')
+#7 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#8 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#9 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(96): do_action('wc_ajax_checkou...')
+#10 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_AJAX::do_wc_ajax('')
+#11 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#12 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#13 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(13): do_action('template_redire...')
+#14 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#15 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#16 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 359
+
+2023-05-11T12:15:04+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function my_custom_function(), 1 passed in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 310 and exactly 2 expected in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:359
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(310): my_custom_function(Object(WC_Order))
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(446): do_action('woocommerce_che...', Object(WC_Order), Array)
+#4 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1256): WC_Checkout->create_order(Array)
+#5 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(485): WC_Checkout->process_checkout()
+#6 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_AJAX::checkout('')
+#7 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#8 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#9 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(96): do_action('wc_ajax_checkou...')
+#10 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_AJAX::do_wc_ajax('')
+#11 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#12 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#13 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(13): do_action('template_redire...')
+#14 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#15 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#16 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 359
+
+2023-05-11T12:15:49+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function my_custom_function(), 1 passed in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 310 and exactly 2 expected in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:359
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(310): my_custom_function(Object(WC_Order))
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(446): do_action('woocommerce_che...', Object(WC_Order), Array)
+#4 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1256): WC_Checkout->create_order(Array)
+#5 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(485): WC_Checkout->process_checkout()
+#6 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_AJAX::checkout('')
+#7 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#8 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#9 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(96): do_action('wc_ajax_checkou...')
+#10 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_AJAX::do_wc_ajax('')
+#11 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#12 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#13 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(13): do_action('template_redire...')
+#14 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#15 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#16 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 359
+
+2023-05-11T12:16:55+00:00 CRITICAL Unmatched '}' in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 412
+
+2023-05-11T12:53:07+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function before_checkout_create_order(), 1 passed in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308 and exactly 2 expected in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:360
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): before_checkout_create_order(3747)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\checkout\thankyou.php(80): do_action('woocommerce_tha...', 3747)
+#4 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(279): wc_get_template('checkout/thanky...', Array)
+#6 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(63): WC_Shortcode_Checkout::order_received(3747)
+#7 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(72): WC_Shortcode_Checkout::output('')
+#8 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(95): WC_Shortcodes::shortcode_wrapper(Array, '')
+#9 C:\xampp\htdocs\orchardrock1\wp-includes\shortcodes.php(355): WC_Shortcodes::checkout('', '', 'woocommerce_che...')
+#10 [internal function]: do_shortcode_tag(Array)
+#11 C:\xampp\htdocs\orchardrock1\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(woocom...', 'do_shortcode_ta...', '[woocommerce_ch...')
+#12 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): do_shortcode('[woocommerce_ch...')
+#13 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(205): WP_Hook->apply_filters('[woocommerce_ch...', Array)
+#14 C:\xampp\htdocs\orchardrock1\wp-includes\post-template.php(255): apply_filters('the_content', '<!-- wp:shortco...')
+#15 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\core\templates\after-content.php(36): the_content()
+#16 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): bazaarlite_after_content_function('')
+#17 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#18 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#19 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\core\post-formats\page-format.php(19): do_action('bazaarlite_afte...')
+#20 C:\xampp\htdocs\orchardrock1\wp-includes\template.php(785): require('C:\\xampp\\htdocs...')
+#21 C:\xampp\htdocs\orchardrock1\wp-includes\template.php(718): load_template('C:\\xampp\\htdocs...', false, Array)
+#22 C:\xampp\htdocs\orchardrock1\wp-includes\general-template.php(204): locate_template(Array, true, false, Array)
+#23 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\core\templates\post-formats.php(40): get_template_part('core/post-forma...')
+#24 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): bazaarlite_postformat_function('')
+#25 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#26 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#27 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\page.php(36): do_action('bazaarlite_post...')
+#28 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#29 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#30 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#31 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 360
+
+2023-05-11T12:54:38+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function before_checkout_create_order(), 1 passed in C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php on line 308 and exactly 2 expected in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:360
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): before_checkout_create_order(3748)
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\checkout\thankyou.php(80): do_action('woocommerce_tha...', 3748)
+#4 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(279): wc_get_template('checkout/thanky...', Array)
+#6 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(63): WC_Shortcode_Checkout::order_received(3748)
+#7 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(72): WC_Shortcode_Checkout::output('')
+#8 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(95): WC_Shortcodes::shortcode_wrapper(Array, '')
+#9 C:\xampp\htdocs\orchardrock1\wp-includes\shortcodes.php(355): WC_Shortcodes::checkout('', '', 'woocommerce_che...')
+#10 [internal function]: do_shortcode_tag(Array)
+#11 C:\xampp\htdocs\orchardrock1\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(woocom...', 'do_shortcode_ta...', '[woocommerce_ch...')
+#12 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): do_shortcode('[woocommerce_ch...')
+#13 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(205): WP_Hook->apply_filters('[woocommerce_ch...', Array)
+#14 C:\xampp\htdocs\orchardrock1\wp-includes\post-template.php(255): apply_filters('the_content', '<!-- wp:shortco...')
+#15 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\core\templates\after-content.php(36): the_content()
+#16 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): bazaarlite_after_content_function('')
+#17 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#18 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#19 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\core\post-formats\page-format.php(19): do_action('bazaarlite_afte...')
+#20 C:\xampp\htdocs\orchardrock1\wp-includes\template.php(785): require('C:\\xampp\\htdocs...')
+#21 C:\xampp\htdocs\orchardrock1\wp-includes\template.php(718): load_template('C:\\xampp\\htdocs...', false, Array)
+#22 C:\xampp\htdocs\orchardrock1\wp-includes\general-template.php(204): locate_template(Array, true, false, Array)
+#23 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\core\templates\post-formats.php(40): get_template_part('core/post-forma...')
+#24 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): bazaarlite_postformat_function('')
+#25 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#26 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#27 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\page.php(36): do_action('bazaarlite_post...')
+#28 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#29 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#30 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#31 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 360
+
+2023-05-11T13:00:21+00:00 CRITICAL Uncaught Error: Call to a member function get_id() on int in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:363
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): before_checkout_create_order(3749, 'ch_3N6Z6YHIGAsc...')
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-order.php(145): do_action('woocommerce_pay...', 3749, 'ch_3N6Z6YHIGAsc...')
+#4 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce-gateway-stripe\includes\abstracts\abstract-wc-stripe-payment-gateway.php(547): WC_Order->payment_complete('ch_3N6Z6YHIGAsc...')
+#5 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-gateway-stripe.php(472): WC_Stripe_Payment_Gateway->process_response(Object(stdClass), Object(Automattic\WooCommerce\Admin\Overrides\Order))
+#6 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1050): WC_Gateway_Stripe->process_payment(3749)
+#7 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1279): WC_Checkout->process_order_payment(3749, 'stripe')
+#8 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(485): WC_Checkout->process_checkout()
+#9 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_AJAX::checkout('')
+#10 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#11 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#12 C:\xampp\htdocs\orchardrock1\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(96): do_action('wc_ajax_checkou...')
+#13 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(308): WC_AJAX::do_wc_ajax('')
+#14 C:\xampp\htdocs\orchardrock1\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#15 C:\xampp\htdocs\orchardrock1\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#16 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(13): do_action('template_redire...')
+#17 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#18 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#19 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 363
+
