@@ -341,142 +341,73 @@ function custom_woocommerce_get_availability_text( $text, $product ) {
 
 add_filter( 'woocommerce_get_availability_text', 'custom_woocommerce_get_availability_text', 999, 2);
 
-// function wpb_image_editor_default_to_gd( $editors ) {
-//     $gd_editor = 'WP_Image_Editor_GD';
-//     $editors = array_diff( $editors, array( $gd_editor ) );
-//     array_unshift( $editors, $gd_editor );
-//     return $editors;
-// }
-// add_filter( 'wp_image_editors', 'wpb_image_editor_default_to_gd' );
 
+add_action( 'woocommerce_thankyou', 'transaction_after_order_completion', 10, 1 );
 
+function transaction_after_order_completion( $order_id ) {
+    $order = wc_get_order( $order_id ); // phpcs:ignore.
+    $status = $order->get_status();
 
+    // 0: In Progress, 1: Completed, 2: Not Started, 3: Awaiting Client, 4: Task Paused, 6: PB
+    // pending, processing, on-hold, completed, cancelled, refunded, failed and trash. Default is pendin
 
-//Send Order Details to an External System
-
-add_action('woocommerce_payment_complete', 'my_custom_function');
-
-function my_custom_function($order_id) {
-    // Access the order ID
-    $order = wc_get_order($order_id);
-    $order_id = $order->get_id();
-    $order->update_meta_data( '_order_json_data_id', $order_id) ;
-    // Use the order ID for further processing
-    // ...
-}
-
-add_action('woocommerce_checkout_create_order', 'before_checkout_create_order', 20, 2);
-function before_checkout_create_order( $order, $data ) {
-// //     if(!empty($data)) {
+    if(strtolower($status) == 'completed') {
+        $order_status = 1;
+    } else if(strtolower($status) == 'processing') {
+        $order_status = 0;
+    } else if(strtolower($status) == 'pending') {
+        $order_status = 2;
+    } else if(strtolower($status) == 'on-hold') {
+        $order_status = 3;
+    } else {
+        $order_status = 4;
+    }
    
-    // $order_id = $order->get_id();
-    // $order->update_meta_data( '_order_json_data', json_encode($data) );
-    
-    // $order->update_meta_data( '_order_json_data_id', json_encode($order_id)) ;
-    // $order->save();
-//         $response = wp_remote_post( 'https://crudcrud.com/api/923f7f5aeae8418fbb225eeaa3bdfe27/s', $data );
-//         $order->update_meta_data( 'send_api_request', 0 );
-//     }
-//     if(!empty($data)) {
-//         $response = wp_remote_post( 'https://crudcrud.com/api/923f7f5aeae8418fbb225eeaa3bdfe27/s', $data );
-//         if( isset($response['_id']) && ($response['_id']))  {
-//             $order->update_post_meta( 'send_api_request', 0);
-//             $order->save();
-//         }
-//           $order->update_meta_data( 'send_api_request', 0 );
+
+    if ( $order ) {
+
+        $stripe_entity_id = $order->get_transaction_id();
+        $stripe_url = "https://dashboard.stripe.com/test/payments/".get_post_meta($order_id, '_stripe_intent_id', true);
         
-//         update_post_meta($order_id, 'send_api_request', 0);
-        
-//    }
+        foreach ($order->get_items() as $item_id => $item) {
+            $course_name = $item->get_name();
+            $course_total_price = $item->get_total();
+         
+            // $course_total_quantity = $item->get_quantity()."<br>";
+            $course_venue =  get_post_meta($item->get_product_id(), 'course_venue', true);
+            $course_location = get_post_meta($item->get_product_id(), 'course_location', true);
+            $course_date = get_post_meta($item->get_product_id(), 'course_date', true);
+            $token = 'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjI1NTM3Mjg2OSwiYWFpIjoxMSwidWlkIjozOTg1NjY0NSwiaWFkIjoiMjAyMy0wNS0wOVQxMzo1NzowNy4yNDhaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MTQ4OTE1MDcsInJnbiI6InVzZTEifQ.UsOAVUrb-wbWtQV8hpGJXj1KrbSaL0gm7wyjrafVryg';
+            $apiUrl = 'https://api.monday.com/v2';
+            $headers = ['Content-Type: application/json', 'Authorization: ' . $token];
+
+            $query = 'mutation ($myItemName: String!, $columnVals: JSON!) { create_item (board_id:4440677252, item_name:$myItemName, column_values:$columnVals) { id } }';
+            
+            $order_id = "#".$order_id;
+            $vars = ['myItemName' => "$order_id",
+            'columnVals' => json_encode([
+                'text' => "$course_location", // Location
+                'text_1' => "$course_venue", //Venue
+                'text1' => "$course_total_price", //Price
+                'text_11' => "GBP", //Currency
+                'status1' => json_encode(1),
+                'status2' => json_encode($order_status),
+                'date' =>  ['date' => "$course_date",],
+                'stripe_charge' => ['url' => "$stripe_url", 'entity_id' => "$stripe_entity_id"],
+            
+            ])];
 
 
-    // $token = 'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjI1NTM3Mjg2OSwiYWFpIjoxMSwidWlkIjozOTg1NjY0NSwiaWFkIjoiMjAyMy0wNS0wOVQxMzo1NzowNy4yNDhaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MTQ4OTE1MDcsInJnbiI6InVzZTEifQ.UsOAVUrb-wbWtQV8hpGJXj1KrbSaL0gm7wyjrafVryg';
-    // $apiUrl = 'https://api.monday.com/v2';
-    // $headers = ['Content-Type: application/json', 'Authorization: ' . $token];
-
-    // $query = 'mutation ($myItemName: String!, $columnVals: JSON!) { create_item (board_id:4440677252, item_name:$myItemName, column_values:$columnVals) { id } }';
-
-
-    // $vars = ['myItemName' => '5433322',
-    // 'columnVals' => json_encode([
-    //     'text' => "Cabin-54, Sector-74", // Location
-    //     'text_1' => "Cabin-54, Sector-74", //Venue
-    //     'text1' => "32.6", //Price
-    //     'text_11' => "POUND", //Currency
-    //     // 'text8' => json_encode(67777),
-    //     'status1' => json_encode(1),
-    //     'status2' => json_encode(1),
-    //     'date' =>  ['date' => '2023-08-27',]
-    
-    // ])];
-
-
-    // $data = @file_get_contents($apiUrl, false, stream_context_create([
-    // 'http' => [
-    // 'method' => 'POST',
-    // 'header' => $headers,
-    // 'content' => json_encode(['query' => $query, 'variables' => $vars]),
-    // ]
-    // ]));
-
+            $data = @file_get_contents($apiUrl, false, stream_context_create([
+            'http' => [
+            'method' => 'POST',
+            'header' => $headers,
+            'content' => json_encode(['query' => $query, 'variables' => $vars]),
+            ]
+            ]));
+        }
+    }
 }
-
-
-// function sendOrderToMonday($orderData) {
-    // $token = 'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjI1NTM3Mjg2OSwiYWFpIjoxMSwidWlkIjozOTg1NjY0NSwiaWFkIjoiMjAyMy0wNS0wOVQxMzo1NzowNy4yNDhaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MTQ4OTE1MDcsInJnbiI6InVzZTEifQ.UsOAVUrb-wbWtQV8hpGJXj1KrbSaL0gm7wyjrafVryg';
-    // $apiUrl = 'https://api.monday.com/v2';
-    // $headers = ['Content-Type: application/json', 'Authorization: ' . $token];
-
-    // $query = 'mutation ($myItemName: String!, $columnVals: JSON!) { create_item (board_id:4440677252, item_name:$myItemName, column_values:$columnVals) { id } }';
-
-
-    // $vars = ['myItemName' => '900000',
-    // 'columnVals' => json_encode([
-    //     'text' => "Cabin-54, Sector-74", // Location
-    //     'text_1' => "Cabin-54, Sector-74", //Venue
-    //     'text1' => "32.6", //Price
-    //     'text_11' => "POUND", //Currency
-    //     // 'text8' => json_encode(67777),
-    //     'status1' => json_encode(1),
-    //     'status2' => json_encode(1),
-    //     'date' =>  ['date' => '2023-08-27',]
-    
-    // ])];
-
-
-    // $data = @file_get_contents($apiUrl, false, stream_context_create([
-    // 'http' => [
-    // 'method' => 'POST',
-    // 'header' => $headers,
-    // 'content' => json_encode(['query' => $query, 'variables' => $vars]),
-    // ]
-    // ]));
-// }
-
-// function orderPlaced($orderData) {
-//     // Process the order placement and other actions
-
-//     // Call the sendOrderToMonday function to send the order data to Monday.com
-//     $response = sendOrderToMonday($orderData);
-
-//     // Handle the Monday.com API response or perform any further actions
-//     if (is_array($response) && isset($response['data'])) {
-//         echo $data;
-//     } else {
-//         // Error occurred, handle it
-//     }
-// }
-
-// // Example usage of the orderPlaced function
-// $orderData = [
-//     'customer_name' => 'John Doe',
-//     'order_total' => 100.00,
-//     // Add other relevant order data
-// ];
-
-// orderPlaced($orderData);
-
-
 
 
 ?>
