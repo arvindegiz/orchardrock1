@@ -382,7 +382,7 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
 		});
 
 		toastr.options = {
-			"closeButton": false,
+			"closeButton": true,
 			"debug": false,
 			"newestOnTop": false,
 			"progressBar": false,
@@ -391,7 +391,7 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
 			"onclick": null,
 			"showDuration": "300",
 			"hideDuration": "2000",
-			"timeOut": "5000",
+			"timeOut": "4000",
 			"extendedTimeOut": "2000",
 			"showEasing": "swing",
 			"hideEasing": "linear",

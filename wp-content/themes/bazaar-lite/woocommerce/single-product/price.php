@@ -31,7 +31,7 @@ $new_course_time = '';
 $course_time = get_post_meta( get_the_ID(), 'course_time', true );
 if(isset($course_time) && !empty($course_time)) {
 	$timestamp = strtotime($course_time);
-	$new_course_time = date('H:i A', $timestamp);
+	$new_course_time = date('h:i A', $timestamp);
 }
 
 $course_duration = '';

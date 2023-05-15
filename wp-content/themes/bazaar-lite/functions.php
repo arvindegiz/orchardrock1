@@ -182,7 +182,7 @@ function save_my_custom_checkout_field( $cart_item_data, $product_id ) {
         }
         if(isset($course_time) && !empty($course_time)) {
             $course_time = strtotime($course_time);
-            $cart_item_data[ 'course_time' ] = date('H:i:A', $course_time);
+            $cart_item_data[ 'course_time' ] = date('h:i A', $course_time);
         }
 
         if(isset($course_duration) && !empty($course_duration)) {
@@ -383,8 +383,8 @@ function transaction_after_order_completion( $order_id ) {
 
             $query = 'mutation ($myItemName: String!, $columnVals: JSON!) { create_item (board_id:4440677252, item_name:$myItemName, column_values:$columnVals) { id } }';
             
-            $order_id = "#".$order_id;
-            $vars = ['myItemName' => "$order_id",
+            $course_order_id = "#".$order_id;
+            $vars = ['myItemName' => "$course_order_id",
             'columnVals' => json_encode([
                 'text' => "$course_location", // Location
                 'text_1' => "$course_venue", //Venue
@@ -408,6 +408,45 @@ function transaction_after_order_completion( $order_id ) {
         }
     }
 }
+
+
+add_filter( 'woocommerce_register_post_type_product', 'custom_post_type_label_woo' );
+function custom_post_type_label_woo( $args ){
+    $labels = array(
+        'name'               => __( 'Courses', 'your-custom-plugin' ),
+        'singular_name'      => __( 'Course', 'your-custom-plugin' ),
+        'menu_name'          => _x( 'Courses', 'Admin menu name', 'your-custom-plugin' ),
+        'add_new'            => __( 'Add Course', 'your-custom-plugin' ),
+        'add_new_item'       => __( 'Add New Course', 'your-custom-plugin' ),
+        'edit'               => __( 'Edit Course', 'your-custom-plugin' ),
+        'edit_item'          => __( 'Edit Course', 'your-custom-plugin' ),
+        'new_item'           => __( 'New Course', 'your-custom-plugin' ),
+        'view'               => __( 'View Course', 'your-custom-plugin' ),
+        'view_item'          => __( 'View Course', 'your-custom-plugin' ),
+        'search_items'       => __( 'Search Courses', 'your-custom-plugin' ),
+        'not_found'          => __( 'No Course found', 'your-custom-plugin' ),
+        'not_found_in_trash' => __( 'No Course found in trash', 'your-custom-plugin' ),
+        'parent'             => __( 'Parent Course', 'your-custom-plugin' )
+    );
+    $args['labels'] = $labels;
+    $args['description'] = __( 'This is where you can add new tours to your store.', 'your-custom-plugin' );
+    return $args;
+}
+
+// function my_validation_handler($is_valid, $product_id) {
+//     foreach(WC()->cart->get_cart() as $cart_item_key => $values) {
+//         if ($values['data']->id == $product_id) {
+//             return false;
+//         }
+//     }
+
+//     return $is_valid;
+// }
+
+// add_filter('woocommerce_add_to_cart_validation', 'my_validation_handler', 10, 2);
+// add_filter( 'woocommerce_is_sold_individually', '__return_true' ); 
+
+
 
 
 ?>

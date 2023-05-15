@@ -275,7 +275,7 @@
 						$course_time = get_post_meta( get_the_ID(), 'course_time', true );
 						if(isset($course_time) && !empty($course_time)) {
 							$timestamp = strtotime($course_time);
-							$new_course_time = date('H:i A', $timestamp);
+							$new_course_time = date('h:i A', $timestamp);
 						}
 						
 						$seat_available_class = "";
@@ -304,9 +304,9 @@
 									<td width="8%"><?php $product = wc_get_product( get_the_ID() ); ?>
 										<p class="product-price-del"><?php echo $product->get_price_html(); ?></p></td>
 									<td class="course_availablety <?php echo $seat_available_class; ?>" width="8%"><?php echo $available_seat; ?></td>
-									<td class="view_detail_btn" ><?php if($avilable_seat_count > 0) {
+									<td class="view_detail_btn" ><?php if($avilable_seat_count > 0) { 
 												woocommerce_template_loop_add_to_cart();
-											 } else { ?>
+										} else { ?>
 												<a href="<?php echo get_the_permalink(); ?>"><button class="view_detail button wp-element-button product_type_simplet">View Detail</button></a>
 											<?php }
 									?></td>
@@ -323,24 +323,24 @@
 						?>
 					</tbody>
 				</table>
-				<nav class="center">
-					<ul class="pagination">
-						<li>
-						<?php
-						$big = 999999999;
-						echo paginate_links( array(
-							'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
-							'format' => '?paged=%#%',
-							'current' => max( 1, get_query_var('paged') ),
-							'total' => $loop->max_num_pages,
-							'prev_text'    => __('<span class="direction-arrow"> < Previous </span>'),
-							'next_text'    => __('<span class="direction-arrow"> Next > </span>'),
-						) );
-						?>
-						</li>
-					</ul>
-				</nav>
 			</div>
+			<nav class="center">
+				<ul class="pagination">
+					<li>
+					<?php
+					$big = 999999999;
+					echo paginate_links( array(
+						'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+						'format' => '?paged=%#%',
+						'current' => max( 1, get_query_var('paged') ),
+						'total' => $loop->max_num_pages,
+						'prev_text'    => __('<span class="direction-arrow"> < Previous </span>'),
+						'next_text'    => __('<span class="direction-arrow"> Next > </span>'),
+					) );
+					?>
+					</li>
+				</ul>
+			</nav>
 		</div>
 	</div>
 </div>
@@ -602,7 +602,7 @@ span.course_duration {
 		});
 
 		toastr.options = {
-			"closeButton": false,
+			"closeButton": true,
 			"debug": false,
 			"newestOnTop": false,
 			"progressBar": false,
@@ -611,7 +611,7 @@ span.course_duration {
 			"onclick": null,
 			"showDuration": "300",
 			"hideDuration": "2000",
-			"timeOut": "5000",
+			"timeOut": "4000",
 			"extendedTimeOut": "2000",
 			"showEasing": "swing",
 			"hideEasing": "linear",
