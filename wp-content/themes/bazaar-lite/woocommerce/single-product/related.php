@@ -122,11 +122,11 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 						if($avilable_seat_count > 0) {
 							woocommerce_template_loop_add_to_cart();
 						} else { ?>
-								<a class="view_deatils_btn" href="<?php echo get_the_permalink(); ?>"><button class="view_detail">View Detail</button></a>
+								<a href="<?php echo get_the_permalink(); ?>"><button class="view_detail">View Detail</button></a>
 
 						<?php }
 					} else { ?>
-						<a class="view_deatils_btn" href="<?php echo get_the_permalink(); ?>"><button class="view_detail">View Detail</button></a>
+						<a href="<?php echo get_the_permalink(); ?>"><button class="view_detail">View Detail</button></a>
 					<?php } ?>
 					</td>		
 					</tr>
@@ -151,7 +151,7 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 		<?php	if($category_related_loop->post_count != 0)  {	
 			while ( $category_related_loop->have_posts() ) : $category_related_loop->the_post();  ?>
 			<div class="col-md-3 related-product">
-				<input type="hidden" class="">
+				<input type="hidden">
 				<div class="related-product-inner">
 					<div class="related-post-image">
 							<?php if ( has_post_thumbnail() ) {
@@ -196,11 +196,11 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 						if($avilable_seat_count > 0) {
 							woocommerce_template_loop_add_to_cart();
 						 } else { ?>
-							<a class="view_deatils_btn" href="<?php echo get_the_permalink(); ?>"><button class="view_detail">View Detail</button></a>
+							<a href="<?php echo get_the_permalink(); ?>"><button class="view_detail">View Detail</button></a>
 						<?php }
 				
 					} else { ?>
-						<a class="view_deatils_btn" href="<?php echo get_the_permalink(); ?>"><button class="view_detail">View Detail</button></a>
+						<a href="<?php echo get_the_permalink(); ?>"><button class="view_detail">View Detail</button></a>
 					<?php } ?>
 				</div>
 			</div>
@@ -213,7 +213,7 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 	</div>
 	<?php	if($total_products->post_count > 4)  {	?>
 		<div class="all_realated_products">
-			<a class="" href="<?php echo $more_link; ?>">More Courses</a>
+			<a href="<?php echo $more_link; ?>">More Courses</a>
 		</div>
 	<?php } ?>
 
@@ -247,8 +247,6 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
     margin-top: 10px;
     margin-bottom: 5px;
 }
-
-
 .custom_date {
     color: #2ecc71;
     font-size: 12px;
@@ -338,21 +336,15 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
     width: auto;
     padding: 8px 12px;
 }
-.view_deatils_btn{
-	/* width: 99px; */
-    /* float: left; */
-}
 .all_realated_products a {
 	border-radius: 5px ;
 	border : 1px solid #d1d1d1;
 }
 a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_cart {
-    /* border: 1px; */
-	text-decoration: none;
+   	text-decoration: none;
     border-radius: 5px;
     border: 1px solid #d1d1d1;
 	font-size:14px;
-	/* width: 98px; */
 	padding:10px 15px;
 }
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.added::after {

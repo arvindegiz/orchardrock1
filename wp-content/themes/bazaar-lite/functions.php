@@ -377,6 +377,9 @@ function transaction_after_order_completion( $order_id ) {
             $course_venue =  get_post_meta($item->get_product_id(), 'course_venue', true);
             $course_location = get_post_meta($item->get_product_id(), 'course_location', true);
             $course_date = get_post_meta($item->get_product_id(), 'course_date', true);
+            $buyer_name = $order->get_billing_first_name() ." ". $order->get_billing_last_name();
+            $byer_email = $order->get_billing_email();
+
             $token = 'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjI1NTM3Mjg2OSwiYWFpIjoxMSwidWlkIjozOTg1NjY0NSwiaWFkIjoiMjAyMy0wNS0wOVQxMzo1NzowNy4yNDhaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MTQ4OTE1MDcsInJnbiI6InVzZTEifQ.UsOAVUrb-wbWtQV8hpGJXj1KrbSaL0gm7wyjrafVryg';
             $apiUrl = 'https://api.monday.com/v2';
             $headers = ['Content-Type: application/json', 'Authorization: ' . $token];
@@ -394,6 +397,8 @@ function transaction_after_order_completion( $order_id ) {
                 'status2' => json_encode($order_status),
                 'date' =>  ['date' => "$course_date",],
                 'stripe_charge' => ['url' => "$stripe_url", 'entity_id' => "$stripe_entity_id"],
+                'text9' => "$buyer_name",
+                'text12' => "$byer_email"
             
             ])];
 
@@ -432,20 +437,6 @@ function custom_post_type_label_woo( $args ){
     $args['description'] = __( 'This is where you can add new tours to your store.', 'your-custom-plugin' );
     return $args;
 }
-
-// function my_validation_handler($is_valid, $product_id) {
-//     foreach(WC()->cart->get_cart() as $cart_item_key => $values) {
-//         if ($values['data']->id == $product_id) {
-//             return false;
-//         }
-//     }
-
-//     return $is_valid;
-// }
-
-// add_filter('woocommerce_add_to_cart_validation', 'my_validation_handler', 10, 2);
-// add_filter( 'woocommerce_is_sold_individually', '__return_true' ); 
-
 
 
 

@@ -338,7 +338,6 @@ th.fw-bold.align-middle {
 	background-color: #273842;
 	color:#fff;
 }
-
 .table-bordered td{
 	border: none !important;
 	border-right: solid 1px #ccc !important;
@@ -370,7 +369,6 @@ input.form-control.col-md-10 {
 	bottom: 0;
 	margin: auto;
 }
-
 a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_cart{
 	margin: 10px auto 10px auto;
 	width: 90px;
@@ -458,9 +456,7 @@ a.page-numbers {
 }
 .view_detail{
 	white-space: pre;
-    /* vertical-align: middle !important; */
-	/* margin: 10px auto 10px auto; */
-	border-radius: 5px ;
+  	border-radius: 5px ;
 	border : 1px solid #d1d1d1;
 	color: #ffffff;
 	background-color: #333333;

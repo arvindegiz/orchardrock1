@@ -31,7 +31,7 @@ if ( function_exists('wp_body_open') ) {
             
                 <div class="row">
                 
-                    <div class="col-md-2">
+                    <div class="col-md-3">
             
                         <div id="logo">
                         
@@ -45,7 +45,7 @@ if ( function_exists('wp_body_open') ) {
 						
 						if ( bazaarlite_is_woocommerce_active() && bazaarlite_setting('wip_woocommerce_header_cart') == "on" ) :
 							
-							$menu_class="col-md-9";
+							$menu_class="col-md-8";
 							
 							echo '<div class="col-md-1 right">';
 		
@@ -55,7 +55,7 @@ if ( function_exists('wp_body_open') ) {
 							
 						else:
 	
-							$menu_class="col-md-10";
+							$menu_class="col-md-9";
 
 						endif;
 

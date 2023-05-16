@@ -401,11 +401,9 @@ input.form-control.col-md-10 {
 	bottom: 0;
 	margin: auto;
 }
-/* book now button Add to cart */
 a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_cart{
 	margin: 10px auto 10px auto;
 	width: 90px;
-	/* background-color: #00B4E1; */
 	border-radius: 5px ;
 	border : 1px solid #d1d1d1;
 }
@@ -434,8 +432,7 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
 .clear_search_filter:hover{
 	color:#fff !important;
 }
-
-	span.page-numbers.current{
+span.page-numbers.current{
 	background-color: #4CAF50;
 	color:#fff;
 }
@@ -461,7 +458,6 @@ ul.pagination li a:hover:not(.active) {
 	background-color: #4CAF50;
 	color:#fff;
 }
-
 div.center {text-align: center;}
 
 a.prev.page-numbers {
@@ -471,12 +467,10 @@ a.next.page-numbers {
 	color:black;
 		margin-left: 10px!important;
 }
-
 a.prev.page-numbers:hover {
 	color: white;
 	background-color: #21C04E!important;
 	margin-right: 10px!important;
-
 }
 a.next.page-numbers:hover {
 	color: white;

@@ -1,0 +1,12 @@
+2023-05-16T07:55:05+00:00 CRITICAL syntax error, unexpected variable "$order" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 380
+
+2023-05-16T07:59:20+00:00 CRITICAL syntax error, unexpected token "," in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 380
+
+2023-05-16T07:59:57+00:00 CRITICAL syntax error, unexpected variable "$order" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 380
+
+2023-05-16T08:00:30+00:00 CRITICAL syntax error, unexpected variable "$order" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 380
+
+2023-05-16T09:04:31+00:00 CRITICAL syntax error, unexpected token "." in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 380
+
+2023-05-16T09:04:57+00:00 CRITICAL syntax error, unexpected token "." in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 380
+
