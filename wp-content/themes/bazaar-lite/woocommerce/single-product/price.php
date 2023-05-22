@@ -81,7 +81,7 @@ jQuery(document).ready(function()
 <style>
 
 	.price_addition_attr, .posted_in {
-		color:#00B4E0;
+		color:#132257;
 		font-weight:600;
 	} 
 	.addition_attr {
@@ -126,6 +126,9 @@ jQuery(document).ready(function()
 		border-radius: 5px;
 		border: 1px solid #d1d1d1;
 	}
+	.single_add_to_cart_button:hover{
+    background: #49ab3e !important;
+}
 </style>
 
 

@@ -157,7 +157,7 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 							<?php if ( has_post_thumbnail() ) {
 									the_post_thumbnail("small_thumbnail");
 									} else {
-									echo '<img src="'.get_site_url().'/wp-content/uploads/2023/03/download-1-1.png" width="50" hieght="50"/>';
+									echo '<img src="'.get_site_url().'/wp-content/uploads/2023/05/cropped-fevicon.png" width="50" hieght="50"/>';
 							}; ?>
 					</div>
 					<div class="related-product-content">
@@ -233,7 +233,7 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 	float:left;
 }
 .venue_course_heading{
-	background: #00B4E0;
+	background: #068095;
     line-height: 50px;
     margin-bottom: 0;
     color: #fff;
@@ -248,7 +248,7 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
     margin-bottom: 5px;
 }
 .custom_date {
-    color: #2ecc71;
+    color: #49ab3e;
     font-size: 12px;
 	margin-bottom: 0px;
 }
@@ -263,7 +263,7 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
 	text-align:center;
 }
 .related-products h1 {
-	color:#00B4E0;
+	color:#132257;
 	margin-bottom:40px;
 }
 .related-product a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_cart {
@@ -288,7 +288,13 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
 }
 .all_realated_products a {
     color: #fff!important;
-    background: #00B4E0;
+    background: #068095;
+    padding: 8px 15px;
+	text-decoration:none;
+}
+.all_realated_products a:hover {
+    color: #fff!important;
+    background: #06B0CD;
     padding: 8px 15px;
 	text-decoration:none;
 }
@@ -324,7 +330,7 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
 }
 .view_detail:hover{
 	color: #ffffff;
-    background-color: #2ecc71;
+    background-color: #49ab3e;
 	margin: 25px auto -10px auto;
 	border-radius: 5px ;
 	border : 1px solid #d1d1d1;
@@ -349,6 +355,9 @@ a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_ca
 }
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.added::after {
 	display:none;
+}
+.add_to_cart_button.ajax_add_to_cart:hover{
+    background: #49ab3e !important;
 }
 @media screen and (min-width: 400px) and (max-width: 992px){
 		.venue-related-product-title {

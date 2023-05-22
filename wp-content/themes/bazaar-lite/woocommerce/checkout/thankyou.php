@@ -88,7 +88,7 @@ defined( 'ABSPATH' ) || exit;
 </div>
 <style>
 	p.woocommerce-notice.woocommerce-notice--success.woocommerce-thankyou-order-received {
-	    background: #0fbb56;
+	    background: #0FBB56;
 	    padding: 10px 15px;
 	    color: #fff;
 	    margin-bottom: 0;
@@ -107,6 +107,6 @@ defined( 'ABSPATH' ) || exit;
 	}
 
 	h2.woocommerce-order-details__title {
-	    color: #00B4E0;
+	    color: #132257;
 	}
 	</style>

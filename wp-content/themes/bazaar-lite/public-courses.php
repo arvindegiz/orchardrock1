@@ -294,7 +294,7 @@
 									<td><?php if ( has_post_thumbnail() ) {
 											the_post_thumbnail("small_thumbnail");
 											} else {
-											echo '<img src="'.get_site_url().'/wp-content/uploads/2023/03/download-1-1.png" width="50" hieght="50"/>';
+											echo '<img src="'.get_site_url().'/wp-content/uploads/2023/05/cropped-fevicon.png" width="50" hieght="50"/>';
 									}; ?></td>
 									<td width="15%"><a class="public-course-title" href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></td>
 									<td> <?php echo get_excerpt(); ?></td>
@@ -508,7 +508,7 @@ span.public-course-location {
 .view_detail:hover{
 	white-space: pre;
 	color: #ffffff;
-    background-color: #2ecc71;
+    background-color: #49ab3e;
 	margin: 25px auto -10px auto;
 	border: solid 1px #fff;
     font-size: 14px;
@@ -526,9 +526,11 @@ span.course_duration {
 	color:#FF0000;
 }
 .seat_available {
-	color:#0FBB56;
+	color:#49ab3e;
 }
-
+.add_to_cart_button.ajax_add_to_cart:hover{
+    background: #49ab3e !important;
+}
 </style>
 <script type="text/javascript" >
 	// Search By Venue
