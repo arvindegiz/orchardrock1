@@ -177,7 +177,7 @@
 
 <div class="container"> 
 	<div class="course_heading my-5">
-		<h1 class="fw-bold">Search Public Courses</h1>
+		<h1 class="fw-bold public_courses_heading">Search Public Courses</h1>
 	</div>
 	<div class="row search_course my-5">
 		<div class="col-md-3 top_search_bar input_box">
@@ -217,8 +217,8 @@
 					<option value="date_asc" <?php if(isset($_GET['sortByAttribute']) && !empty($_GET['sortByAttribute'])) {  echo $_GET['sortByAttribute']=='date_sort'?'selected':''; } ?>>Sort by Date</option>
 			</select>
 		</div>
-		<div class="col-md-3 top_search_bar d-flex input_box">
-			<input type="date" name="course_search_date" id="course_date" class="form-control col-md-10" value="<?php echo $serach_course_date_value; ?>">
+		<div class="col-md-3 top_search_bar input_box">
+			<input placeholder="Date" type="date" name="course_search_date" id="course_date" class="form-control col-md-10" value="<?php echo $serach_course_date_value; ?>">
 			<button class="text-white btn btn-info col-md-2" id="date_submit"><i class="fa fa-search" aria-hidden="true"></i></button>
 		</div>
 			<img class="hidden" id="spinner" src="<?php echo site_url(); ?>/wp-content/uploads/2023/04/Spin-1.3s-281px-1.svg" />
@@ -297,7 +297,7 @@
 											echo '<img src="'.get_site_url().'/wp-content/uploads/2023/05/cropped-fevicon.png" width="50" hieght="50"/>';
 									}; ?></td>
 									<td width="15%"><a class="public-course-title" href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></td>
-									<td> <?php echo get_excerpt(); ?></td>
+									<td> <?php echo excerpt(20); ?></td>
 									<td><?php echo get_post_meta(get_the_ID(), 'course_venue', true); ?></td>
 									<td width="10%"><?php echo $new_course_date; ?></td>
 									<td><?php echo $new_course_time." <span class='course_duration'>( ".get_post_meta(get_the_ID(), 'course_duration', true)." )"; ?></td>
@@ -346,6 +346,21 @@
 </div>
 
 <style>
+.public_courses_heading{
+	color:#068095;
+}
+input[type="date"]
+{
+    display:block;
+  
+    /* Solution 1 */
+     -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    min-height: 1.2em; 
+  
+    /* Solution 2 */
+	min-width: 84%; 
+}
 .view_detail_btn{
 	text-align:center;
 }

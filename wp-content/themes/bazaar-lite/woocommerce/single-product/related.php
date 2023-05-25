@@ -146,9 +146,10 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 
 	</div>
 
+    <?php	if($category_related_loop->post_count != 0)  {	?>
     <div class="related-products">
 		<h1>Related Courses</h1>
-		<?php	if($category_related_loop->post_count != 0)  {	
+		<?php
 			while ( $category_related_loop->have_posts() ) : $category_related_loop->the_post();  ?>
 			<div class="col-md-3 related-product">
 				<input type="hidden">
@@ -205,17 +206,14 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 				</div>
 			</div>
 		<?php endwhile;
-		} else { ?>
-			<span class="No_Record" colspan="8">No Course Found</span>
-		<?php
-		}
 		wp_reset_postdata();?>
 	</div>
 	<?php	if($total_products->post_count > 4)  {	?>
 		<div class="all_realated_products">
 			<a href="<?php echo $more_link; ?>">More Courses</a>
 		</div>
-	<?php } ?>
+	<?php } 
+	} ?>
 
 <style>
 

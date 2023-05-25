@@ -1,0 +1,70 @@
+2023-05-22T11:58:57+00:00 CRITICAL Uncaught Error: Call to undefined function get_excerpt() in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php:300
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 300
+
+2023-05-22T12:04:27+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_excerpt(), 0 passed in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 300 and exactly 1 expected in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:124
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php(300): get_excerpt()
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 124
+
+2023-05-22T12:08:02+00:00 CRITICAL Uncaught TypeError: substr(): Argument #3 ($length) must be of type ?int, string given in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:127
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php(127): substr('', 0, '<style>/*! elem...')
+#1 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php(300): get_excerpt(4371, '<style>/*! elem...', 40)
+#2 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 127
+
+2023-05-22T12:08:28+00:00 CRITICAL Uncaught TypeError: substr(): Argument #3 ($length) must be of type ?int, string given in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:127
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php(127): substr('40', 0, '<style>/*! elem...')
+#1 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php(300): get_excerpt(4371, '<style>/*! elem...', '40')
+#2 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 127
+
+2023-05-22T12:09:47+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_excerpt(), 0 passed in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 300 and exactly 3 expected in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php:124
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php(300): get_excerpt()
+#1 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\functions.php on line 124
+
+2023-05-22T12:14:24+00:00 CRITICAL Uncaught Error: Call to undefined function echoexcerpt() in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php:300
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 300
+
+2023-05-22T12:17:04+00:00 CRITICAL Uncaught Error: Call to undefined function content() in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php:300
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 300
+
+2023-05-22T12:59:03+00:00 CRITICAL Uncaught Error: Call to undefined function get_excerpt() in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\private-courses.php:280
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\private-courses.php on line 280
+

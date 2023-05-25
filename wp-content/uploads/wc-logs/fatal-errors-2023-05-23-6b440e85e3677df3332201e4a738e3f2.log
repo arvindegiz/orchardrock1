@@ -1,0 +1,48 @@
+2023-05-23T05:50:05+00:00 CRITICAL Uncaught Error: Call to undefined function get_excerpt() in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\private-courses.php:280
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\private-courses.php on line 280
+
+2023-05-23T05:50:26+00:00 CRITICAL Uncaught Error: Call to undefined function get_excerpt() in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\private-courses.php:280
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\private-courses.php on line 280
+
+2023-05-23T05:51:49+00:00 CRITICAL Uncaught Error: Call to undefined function get_excerpt() in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\private-courses.php:280
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\private-courses.php on line 280
+
+2023-05-23T05:52:18+00:00 CRITICAL Uncaught Error: Call to undefined function get_excerpt() in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\private-courses.php:280
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\private-courses.php on line 280
+
+2023-05-23T05:52:40+00:00 CRITICAL Uncaught Error: Call to undefined function get_excerpt() in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\private-courses.php:280
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\private-courses.php on line 280
+
+2023-05-23T05:54:36+00:00 CRITICAL Uncaught Error: Call to undefined function excerpt() in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php:300
+Stack trace:
+#0 C:\xampp\htdocs\orchardrock1\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\orchardrock1\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\orchardrock1\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 300
+

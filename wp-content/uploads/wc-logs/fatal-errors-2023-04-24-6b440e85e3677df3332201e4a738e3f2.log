@@ -1,6 +1,0 @@
-2023-04-24T05:11:57+00:00 CRITICAL syntax error, unexpected token "}" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 9
-
-2023-04-24T05:39:03+00:00 CRITICAL syntax error, unexpected integer "1075", expecting ")" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\public-courses.php on line 5
-
-2023-04-24T07:51:24+00:00 CRITICAL syntax error, unexpected token "<" in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\archive-product.php on line 89
-

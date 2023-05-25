@@ -277,7 +277,7 @@
 											echo '<img src="'.get_site_url().'/wp-content/uploads/2023/05/cropped-fevicon.png" width="50" hieght="50"/>';
 									}; ?></td>
 									<td  width="20%"><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></td>
-									<td> <?php echo get_excerpt(); ?></td>
+									<td> <?php echo excerpt(20); ?></td>
 									<td><?php echo get_post_meta(get_the_ID(), 'course_venue', true); ?></td>
 									<td width="10%"><?php echo $new_course_date; ?></td>
 									<td width="10%"><?php echo $new_course_time." <span class='course_duration'>( ".get_post_meta(get_the_ID(), 'course_duration', true)." )"; ?></td>
@@ -318,7 +318,9 @@
 </div>
 
 <style>
-
+a.button {
+    display: none;
+}
 td.No_Record {
 	text-align:center;
 }
