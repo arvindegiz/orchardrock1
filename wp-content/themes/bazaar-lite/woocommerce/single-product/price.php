@@ -53,29 +53,21 @@ if(isset($course_location_data) && !empty($course_location_data)) {
 }
 
 $tag = get_the_terms( $product->ID, 'product_tag' );
-if($tag[0]->slug == 'public-course') {
-	
-?>
-<script type="text/javascript">
-jQuery(document).ready(function() 
-{
-    jQuery(".woocommerce div.product form.cart div.quantity").css("display", "block");
-	jQuery(".woocommerce div.product form.cart .button").css("display", "block");
-});
-</script>
-<p class="<?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?>"><?php echo $product->get_price_html(); ?></p>
-<?php } if (!empty($course_venue)) { ?>
-<p class="addition_attr"><span class="price_addition_attr">Venue: </span><?php echo $course_venue; ?> </p>
-<?php } if (!empty($course_location)) { ?>
-<p class="addition_attr"><span class="price_addition_attr">Location: </span><?php echo $course_location; ?> </p>
-<?php } if (!empty($new_course_date)) { ?>
-<p class="addition_attr"><span class="price_addition_attr">Date: </span><?php echo $new_course_date; ?></p>
-<?php } if (!empty($new_course_time)) { ?>
-<p class="addition_attr"><span class="price_addition_attr">Time: </span><?php echo $new_course_time; ?></p>
+if($tag[0]->slug == 'public-course') { ?>
+	<p class="<?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?>"><?php echo $product->get_price_html(); ?></p>
+	<?php  if (!empty($course_venue)) { ?>
+	<p class="addition_attr"><span class="price_addition_attr">Venue: </span><?php echo $course_venue; ?> </p>
+	<?php } if (!empty($course_location)) { ?>
+	<p class="addition_attr"><span class="price_addition_attr">Location: </span><?php echo $course_location; ?> </p>
+	<?php } if (!empty($new_course_date)) { ?>
+	<p class="addition_attr"><span class="price_addition_attr">Date: </span><?php echo $new_course_date; ?></p>
+	<?php } if (!empty($new_course_time)) { ?>
+	<p class="addition_attr"><span class="price_addition_attr">Time: </span><?php echo $new_course_time; ?></p>
 
-<?php } if (!empty($course_duration)) { ?>
-<p class="addition_attr"><span class="price_addition_attr">Duration: </span><?php echo $course_duration; ?> <i class="fa fa-clock-o" aria-hidden="true"></i></p>
-<?php }  ?>
+	<?php } if (!empty($course_duration)) { ?>
+	<p class="addition_attr"><span class="price_addition_attr">Duration: </span><?php echo $course_duration; ?> <i class="fa fa-clock-o" aria-hidden="true"></i></p>
+	<?php } 
+} ?>
 
 
 <style>
@@ -130,5 +122,12 @@ jQuery(document).ready(function()
     background: #49ab3e !important;
 }
 </style>
+<script type="text/javascript">
+	jQuery(document).ready(function() 
+	{
+		jQuery(".woocommerce div.product form.cart div.quantity").css("display", "block");
+		jQuery(".woocommerce div.product form.cart .button").css("display", "block");
+	});
+	</script>
 
 

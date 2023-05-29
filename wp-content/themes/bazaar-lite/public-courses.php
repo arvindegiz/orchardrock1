@@ -23,7 +23,9 @@
 		'post_status' => 'publish',
 		'paged' => $paged,
 		'product_tag'    => array('public-course'),
-		'posts_per_page' => 10,
+		'posts_per_page' => 15,
+		'order' => 'ASC',
+    	'orderby' => 'title',
 		'meta_query' => array(
 			array(
 				'key' => 'course_date',
@@ -177,7 +179,7 @@
 
 <div class="container"> 
 	<div class="course_heading my-5">
-		<h1 class="fw-bold public_courses_heading">Search Public Courses</h1>
+		<h1 class="fw-bold">Search Public Courses</h1>
 	</div>
 	<div class="row search_course my-5">
 		<div class="col-md-3 top_search_bar input_box">
@@ -247,14 +249,14 @@
 					<thead>
 						<tr>
 							<th class="fw-bold align-middle" scope="col">Image</th>
-							<th class="fw-bold align-middle" scope="col" width="15%">Name</th>
-							<th class="fw-bold align-middle" scope="col">Description</th>
+							<th class="fw-bold align-middle" scope="col" width="20%">Name</th>
+							<!--<th class="fw-bold align-middle" scope="col">Description</th>-->
 							<th class="fw-bold align-middle" scope="col">Venue</th>
 							<th class="fw-bold align-middle" scope="col" width="10%">Date</th>
 							<th class="fw-bold align-middle" scope="col">Time</th>
-							<th class="fw-bold align-middle" scope="col" width="8%">Price</th>
+							<th class="fw-bold align-middle" scope="col" width="15%">Price</th>
 							<th class="fw-bold align-middle" scope="col" width="8%">Seat</th>
-							<th class="fw-bold align-middle" scope="col">Book Now</th>
+							<th class="fw-bold align-middle" scope="col" width="8%">Book Now</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -296,15 +298,15 @@
 											} else {
 											echo '<img src="'.get_site_url().'/wp-content/uploads/2023/05/cropped-fevicon.png" width="50" hieght="50"/>';
 									}; ?></td>
-									<td width="15%"><a class="public-course-title" href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></td>
-									<td> <?php echo excerpt(20); ?></td>
+									<td width="20%"><a class="public-course-title" href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></td>
+									<!--<td> <?php //echo excerpt(20); ?></td>-->
 									<td><?php echo get_post_meta(get_the_ID(), 'course_venue', true); ?></td>
 									<td width="10%"><?php echo $new_course_date; ?></td>
-									<td><?php echo $new_course_time." <span class='course_duration'>( ".get_post_meta(get_the_ID(), 'course_duration', true)." )"; ?></td>
-									<td width="8%"><?php $product = wc_get_product( get_the_ID() ); ?>
+									<td><?php echo $new_course_time." <span class='course_duration'>(".get_post_meta(get_the_ID(), 'course_duration', true).")&nbsp;"; ?></td>
+									<td width="15%"><?php $product = wc_get_product( get_the_ID() ); ?>
 										<p class="product-price-del"><?php echo $product->get_price_html(); ?></p></td>
 									<td class="course_availablety <?php echo $seat_available_class; ?>" width="8%"><?php echo $available_seat; ?></td>
-									<td class="view_detail_btn" ><?php if($avilable_seat_count > 0) { 
+									<td class="view_detail_btn" width="8%"><?php if($avilable_seat_count > 0) { 
 												woocommerce_template_loop_add_to_cart();
 										} else { ?>
 												<a href="<?php echo get_the_permalink(); ?>"><button class="view_detail button wp-element-button product_type_simplet">View Detail</button></a>
@@ -346,9 +348,6 @@
 </div>
 
 <style>
-.public_courses_heading{
-	color:#068095;
-}
 input[type="date"]
 {
     display:block;
@@ -359,7 +358,7 @@ input[type="date"]
     min-height: 1.2em; 
   
     /* Solution 2 */
-	min-width: 84%; 
+     min-width: 84%; 
 }
 .view_detail_btn{
 	text-align:center;
@@ -370,6 +369,7 @@ td.No_Record {
 .course_heading{
 	font-family: 'Myriad Pro';
 	font-size: 20px;
+	color:#068095;
 }
 table, td{
 	font-family: "Myriad Pro Light", Sans-serif;
@@ -534,9 +534,9 @@ span.public-course-location {
     width: auto;
     padding: 8px 12px;
 }
-span.course_duration {
-	float:left;
-}
+/*span.course_duration {*/
+/*	float:left;*/
+/*}*/
 .seat_unavailable {
 	color:#FF0000;
 }

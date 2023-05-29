@@ -1,0 +1,4 @@
+2023-05-29T10:39:23+00:00 CRITICAL Unclosed '{' on line 56 in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\price.php on line 123
+
+2023-05-29T10:49:19+00:00 CRITICAL Unmatched '}' in C:\xampp\htdocs\orchardrock1\wp-content\themes\bazaar-lite\woocommerce\single-product\price.php on line 67
+

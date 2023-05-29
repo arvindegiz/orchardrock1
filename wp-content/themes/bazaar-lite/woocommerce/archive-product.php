@@ -15,6 +15,9 @@
  * @version 3.4.0
  */
 
+ wp_redirect( get_site_url().'/public-courses');
+ exit;
+
 defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' );

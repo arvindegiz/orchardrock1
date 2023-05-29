@@ -23,7 +23,9 @@
 		'post_status' => 'publish',
 		'paged' => $paged,
 		'product_tag'    => array('private-course'),
-		'posts_per_page' => 10,
+		'posts_per_page' => 15,
+		'order' => 'ASC',
+    	'orderby' => 'title',
 		'meta_query' => array(
 			array(
 				'key' => 'course_date',
@@ -45,24 +47,6 @@
 		$args['s'] = $_GET['searchByCourse'];
 	}
 
-	if(isset($_GET['searchByVenue']) && !empty($_GET['searchByVenue']) && !isset($_GET['searchBydate']) && empty($_GET['searchBydate'])) {
-		$filter_row = array();
-		$filter_row['type'] = 'searchByVenue';
-		$filter_row['value'] = $_GET['searchByVenue'];
-		$filter_row['label'] = $filter_row['value'];
-		$search_filter_values[] = $filter_row;
-
-		$args['meta_query'] = array(
-			'relation' => 'AND',
-			array(
-				array(
-					'key'       => 'course_venue',
-					'value'     => $_GET['searchByVenue'],
-					'compare'   => '=',
-				)
-			)
-		);   
-	}
 	if(isset($_GET['searchByCategory'])  && !empty($_GET['searchByCategory'])) {
 		$filter_row = array();
 		$search_filter = str_replace("-", " ", $_GET['searchByCategory']);
@@ -79,28 +63,6 @@
 				'terms' => $_GET['searchByCategory']
 			)
 		);
-	}
-
-	$serach_course_date_value = '';
-	if(isset($_GET['searchBydate']) && !empty($_GET['searchBydate']) && !isset($_GET['searchByVenue']) && empty($_GET['searchByVenue'])) {
-		$serach_course_date_value = $_GET['searchBydate'];
-		$filter_row = array();
-		$filter_row['type'] = 'searchBydate';
-		$filter_row['value'] = $_GET['searchBydate'];
-		$timestamp = strtotime($_GET['searchBydate']);
-		$filter_row['label'] = date('M d, Y', $timestamp);
-		$search_filter_values[] = $filter_row;
-
-		$args['meta_query'] = array(
-			'relation' => 'AND',
-			array(
-				array(
-					'key'       => 'course_date',
-					'value'     => $_GET['searchBydate'],
-					'compare'   => '=',
-				)
-			)
-		);   
 	}
 
 	if(isset($_GET['sortByAttribute']) && !empty($_GET['sortByAttribute'])) {
@@ -133,66 +95,20 @@
 		}
 	}
 
-	if(isset($_GET['searchByVenue']) && !empty($_GET['searchByVenue']) && isset($_GET['searchBydate']) && !empty($_GET['searchBydate'])) {
-		$filter_index = count($search_filter_values);
-		$filter_venue_row = array();
-		$filter_venue_row['type'] = 'searchByVenue';
-		$filter_venue_row['value'] = $_GET['searchByVenue'];
-		$filter_venue_row['label'] = $filter_venue_row['value'];
-		$search_filter_values[$filter_index] = $filter_venue_row;
-
-		$filter_date_row = array();
-		$filter_date_row['type'] = 'searchBydate';
-		$filter_date_row['value'] = $_GET['searchBydate'];
-		$timestamp = strtotime($_GET['searchBydate']);
-		$filter_date_row['label'] = date('M d, Y', $timestamp);
-		$search_filter_values[$filter_index+1] = $filter_date_row;
-
-		$args['meta_query'] = array(
-			'relation' => 'AND',
-			array(
-				array(
-					'key'       => 'course_venue',
-					'value'     => $_GET['searchByVenue'],
-					'compare'   => '=',
-				)
-				), 
-				array(
-					array(
-						'key'       => 'course_date',
-						'value'     => $_GET['searchBydate'],
-						'compare'   => '=',
-					)
-				)
-		);   
-	}
-	
 
     $loop = new WP_Query($args);
 	
 	?>
 <div class="container"> 
 	<div class="course_heading my-5">
-		<h1 class="fw-bold">Search Private Courses</h1>
+		<h1 class="fw-bold">Search Courses</h1>
 	</div>
 	<div class="row search_course my-5">
 		<div class="col-md-3 top_search_bar input_box">
 			<input class="form-control col-md-10" type="search" name="product_search" id="product_search" placeholder="Search Course" value="<?php echo $serach_course_value; ?>">
 			<button class="text-white btn btn-info col-md-2" id="searchsubmit"><i class="fa fa-search" aria-hidden="true"></i></button>
 		</div>
-		<div class="col-md-2 top_search_bar">
-			<select class="form-control" id="searchByVenue" style="width:100% !important">
-				<option value="" >Select Venue</option>
-					<?php 
-					if(!empty($venues)) {
-						foreach($venues as $venue) { ?>
-							<option value="<?php echo $venue->meta_value; ?>" <?php if(isset($_GET['searchByVenue']) && !empty($_GET['searchByVenue']) &&  $_GET['searchByVenue'] == $venue->meta_value ) { echo "selected"; } ?>><?php echo $venue->meta_value; ?></option>;
-						<?php }
-					}
-					?>
-			</select>
-		</div>
-		<div class="col-md-2 top_search_bar">
+		<div class="col-md-3 top_search_bar">
 			<select class="form-control" id="searchByCategory" style="width:100% !important">
 				<option value="" >Select Category</option>
 					<?php 
@@ -204,18 +120,15 @@
 					?>
 			</select>
 		</div>
-		<div class="col-md-2 top_search_bar">
+		<div class="col-md-3 top_search_bar">
 			<select class="form-control" id="sortByAttribute" style="width:100% !important">
 					<option value="name_asc" <?php if(isset($_GET['sortByAttribute']) && !empty($_GET['sortByAttribute'])) {  echo $_GET['sortByAttribute']=='name_asc'?'selected':''; } ?>>Sort by Name A - Z</option>
 					<option value="name_desc" <?php if(isset($_GET['sortByAttribute']) && !empty($_GET['sortByAttribute'])) {  echo $_GET['sortByAttribute']=='name_desc'?'selected':''; } ?>>Sort by Name Z - A</option>
 					<option value="date_asc" <?php if(isset($_GET['sortByAttribute']) && !empty($_GET['sortByAttribute'])) {  echo $_GET['sortByAttribute']=='date_sort'?'selected':''; } ?>>Sort by Date</option>
 			</select>
 		</div>
-		<div class="col-md-3 top_search_bar d-flex input_box">
-			<input type="date" name="course_search_date" id="course_date" class="form-control col-md-10" value="<?php echo $serach_course_date_value; ?>">
-			<button class="text-white btn btn-info col-md-2" id="date_submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-		</div>
-			<img class="hidden" id="spinner" src="<?php echo site_url(); ?>/wp-content/uploads/2023/04/Spin-1.3s-281px-1.svg" />
+	
+	    <img class="hidden" id="spinner" src="<?php echo site_url(); ?>/wp-content/uploads/2023/04/Spin-1.3s-281px-1.svg" />
 
 		<?php if(!empty($search_filter_values)) {  ?>
 			<div class="col-md-12">
@@ -243,9 +156,6 @@
 							<th class="fw-bold align-middle" scope="col">Image</th>
 							<th class="fw-bold align-middle" scope="col" width="20%">Name</th>
 							<th class="fw-bold align-middle" scope="col">Description</th>
-							<th class="fw-bold align-middle" scope="col">Venue</th>
-							<th class="fw-bold align-middle" scope="col" width="10%">Date</th>
-							<th class="fw-bold align-middle" scope="col" width="10%">Time</th>
 							<th class="fw-bold align-middle" scope="col" width="10%">Detail</th>
 						</tr>
 					</thead>
@@ -278,9 +188,6 @@
 									}; ?></td>
 									<td  width="20%"><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></td>
 									<td> <?php echo excerpt(20); ?></td>
-									<td><?php echo get_post_meta(get_the_ID(), 'course_venue', true); ?></td>
-									<td width="10%"><?php echo $new_course_date; ?></td>
-									<td width="10%"><?php echo $new_course_time." <span class='course_duration'>( ".get_post_meta(get_the_ID(), 'course_duration', true)." )"; ?></td>
 									<td width="10%"><a href="<?php echo get_the_permalink(); ?>"><button class="view_detail button">View Detail</button></a></td>
 								</tr>
 
@@ -318,6 +225,18 @@
 </div>
 
 <style>
+input[type="date"]
+{
+    display:block;
+  
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    min-height: 1.2em; 
+  
+   	min-width: 84%; 
+	min-width: 84%; 
+   	min-width: 84%; 
+}
 a.button {
     display: none;
 }
@@ -327,6 +246,7 @@ td.No_Record {
 .course_heading{
 	font-family: 'Myriad Pro';
 	font-size: 20px;
+	color:#068095;
 }
 table, td{
 	font-family: "Myriad Pro Light", Sans-serif;
@@ -488,20 +408,10 @@ td{
     vertical-align: middle !important;
 }
 
-span.course_duration {
-	float:left;
-}
 </style>
 <script type="text/javascript" >
 	// Search By Venue
     jQuery(document).ready(function($) {
-        $(document).on("change", "#searchByVenue" ,function(){
-			jQuery('body').css("opacity", "0.5");
-			jQuery('#spinner').removeClass('hidden');
-            var query_value = jQuery(this).val();
-			prepare_redirect_URL('searchByVenue', query_value)
-			
-        });
 		// Clear filter
 		$(document).on("click", ".clear_filter" ,function(){
 			jQuery('body').css("opacity", "0.5");
@@ -535,13 +445,6 @@ span.course_duration {
             var query_value = jQuery(this).val();
 			prepare_redirect_URL('sortByAttribute', query_value)
         });
-		// Search by Date
-		$(document).on("click", "#date_submit" ,function(){
-			jQuery('body').css("opacity", "0.5");
-			jQuery('#spinner').removeClass('hidden');
-			var query_value = jQuery("#course_date").val();
-            prepare_redirect_URL('searchBydate', query_value);
-		});
 		// clear filter
 		$(document).on("click", ".clear_search_filter" ,function(){
 			jQuery('body').css("opacity", "0.5");
