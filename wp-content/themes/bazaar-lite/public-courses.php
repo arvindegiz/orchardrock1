@@ -220,7 +220,7 @@
 			</select>
 		</div>
 		<div class="col-md-3 top_search_bar input_box">
-			<input placeholder="Date" type="date" name="course_search_date" id="course_date" class="form-control col-md-10" value="<?php echo $serach_course_date_value; ?>">
+			<input placeholder="Select Date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="course_search_date" id="course_date" class="form-control col-md-10" value="<?php echo $serach_course_date_value; ?>">
 			<button class="text-white btn btn-info col-md-2" id="date_submit"><i class="fa fa-search" aria-hidden="true"></i></button>
 		</div>
 			<img class="hidden" id="spinner" src="<?php echo site_url(); ?>/wp-content/uploads/2023/04/Spin-1.3s-281px-1.svg" />

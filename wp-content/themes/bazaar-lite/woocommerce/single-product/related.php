@@ -76,7 +76,7 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 </div>
 	<div class="col-md-4 related_venue_courses" id="related_course_venue_product_<?php the_ID(); ?>">
 	
-		<h5 class="venue_course_heading">Similar Venue Related Courses</h5>
+		<h5 class="venue_course_heading">Similar Related Courses</h5>
 		<table  class="table table-striped table-bordered table-container-related-venue-courses" style="overflow-x:auto;">
 			<tbody>	
 				<?php if($loop->post_count != 0)
@@ -94,19 +94,21 @@ $category_related_loop = new WP_Query($category_related_args); ?>
 					<?php $product = wc_get_product( get_the_ID() ); /* get the WC_Product Object */ ?>
 							<p class="custom_date"><?php echo $new_course_date; ?></p>
 							<?php 
-							$avilable_seat_count = $product->get_stock_quantity();
-							if($avilable_seat_count > 0) {
-								$available_seat = $avilable_seat_count > 1 ? "Seats available" : "Seat available";
-								$available_seat = $avilable_seat_count. " " . $available_seat;
-							} else {
-								$available_seat = "No seat available";
-							}
-							if($avilable_seat_count > 0) {
-							?>
-								<p class="custom_date"><?php echo $available_seat ?></p>
-							<?php } else { ?>
-								<p class="custom_seat_none"><?php echo $available_seat ?></p>
-							<?php } ?>
+							if($product_tag == 'public-course') {
+								$avilable_seat_count = $product->get_stock_quantity();
+								if($avilable_seat_count > 0) {
+									$available_seat = $avilable_seat_count > 1 ? "Seats available" : "Seat available";
+									$available_seat = $avilable_seat_count. " " . $available_seat;
+								} else {
+									$available_seat = "No seat available";
+								}
+								if($avilable_seat_count > 0) {
+								?>
+									<p class="custom_date"><?php echo $available_seat ?></p>
+								<?php } else { ?>
+									<p class="custom_seat_none"><?php echo $available_seat ?></p>
+								<?php } 
+							} ?>
 				</td>
 					<td class="custom_add_to_cart">
 					<?php 

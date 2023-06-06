@@ -324,18 +324,24 @@ function custom_woocommerce_checkout_spinner_blogies() {
 
 
 function custom_woocommerce_get_availability_text( $text, $product ) {
-    if (!$product->is_in_stock()) {
-        $text = 'No seat available';
-    } else {
-        $avilable_seat_count = $product->get_stock_quantity();
-        if($avilable_seat_count > 0) {
-            $text = $avilable_seat_count > 1 ? "Seats available" : "Seat available";
-            $text = $avilable_seat_count. " " . $text;
-        } else {
+    $tag = get_the_terms( $product->id, 'product_tag' );
+    $product_tag = $tag[0]->slug;
+    $text ='';
+    if($product_tag == 'public-course') {
+        if (!$product->is_in_stock()) {
             $text = 'No seat available';
+        } else {
+            $avilable_seat_count = $product->get_stock_quantity();
+            if($avilable_seat_count > 0) {
+                $text = $avilable_seat_count > 1 ? "Seats available" : "Seat available";
+                $text = $avilable_seat_count. " " . $text;
+            } else {
+                $text = 'No seat available';
+            }
+            
         }
-        
     }
+    
     return $text;
 }
 
